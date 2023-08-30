@@ -9,8 +9,6 @@
 # Don't track data
 *.xlsx
 *.xlsm
-*.docx
-*.pptx
 *.Rdata
 
 # ignore shape files
