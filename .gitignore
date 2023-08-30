@@ -2,3 +2,22 @@
 .Rhistory
 .RData
 .Ruserdata
+
+# confidential fishery dependent data
+*confidential*
+
+# Don't track data
+*.xlsx
+*.xlsm
+*.docx
+*.pptx
+*.Rdata
+
+# ignore shape files
+shapefiles
+
+# ignore zip files
+*.zip
+
+# Windows thumbnail cache files
+Thumbs.db
