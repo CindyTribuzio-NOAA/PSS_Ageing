@@ -1,0 +1,40 @@
+---
+title: "NPRB2301 Sample and Data Update"
+format: pdf
+editor: visual
+---
+
+This report summarizes the samples available for NPRB 2301, their status and the status of laboratory processes. Updates will be made available whenever significant updates to the sample database or analytical data become available.
+
+# Report Date
+
+```{r}
+#| echo: false
+print(Sys.Date())
+
+```
+
+# Version Notes
+
+AMS data back from NOSAMS for training sample layers.
+
+# Sample Summaries
+
+## Pacific sleeper sharks
+insert summary table of n animals sampled (that we have complete data for!) by LME and n eyes total (some only have one eye)
+insert graphs of length dist by sex
+insert summary table of n eyes which have been delaminated and n layers created
+
+## Spiny dogfish
+insert summary table of n animals sampled (that we have complete data for!) by LME and n eyes total (some only have one eye), add in how many animals had embryos
+insert graphs of length dist by sex
+insert summary table of n eyes which have been delaminated and n layers created, n spines prepped
+
+## AMS
+summary table of AMS samples run to date and est of how many we still can run based on funds remaining
+
+## Isotopes
+summary table of bulk isotopes run to date and est of how many we still can run based on funds remaining
+
+## CSIAA
+summary table of CSIAA isotopes run to date and est of how many we still can run based on funds remaining

@@ -1,0 +1,124 @@
+---
+title: "NPRB2301 Sample and Data Update"
+format: html
+editor: visual
+date: today
+date-format: long
+---
+
+```{r set-up}
+#| echo: false
+#| warning: false
+#| output: false
+libs <- c("tidyverse", "janitor", "googlesheets4", 'DiagrammeR')
+#, "Hmisc", "RColorBrewer", "gridExtra", "gtable", 
+#          "grid", "flextable", "officer", "lubridate", "RODBC", "DBI", "gtable", "patchwork")
+if(length(libs[which(libs %in% rownames(installed.packages()) == FALSE )]) > 0) {
+  install.packages(libs[which(libs %in% rownames(installed.packages()) == FALSE)])}
+lapply(libs, library, character.only = TRUE)
+'%nin%'<-Negate('%in%') #this is a handy function
+round_any = function(x, accuracy, f=round){f(x/ accuracy) * accuracy}
+
+spec_dat <- read_sheet('1J3IKrdptj7eS3VZj_qbxXTXorgktHXnQ_gUv1mVaxwk') %>% clean_names()
+
+samp_spec_join <- read_sheet('1pbSRX_9vj3Xe3_vqK_psvamk18oGSH3Kb-R6NeVSQkc', sheet = 'Sample_Join') %>% clean_names()
+
+layer_dat <- read_sheet('1j-TdYjQsN56HmBb07apldWv-TvOh1S_9T3oP6LuKoHU') %>% clean_names() %>% 
+  select(sample_id, ams_id, layer_type, layer_order, methods, vial_mt_g, vial_dry_samp_g, layer_diam_mm,
+         wt_to_nosams_mg, f_modern, fm_err) %>% 
+  left_join(samp_spec_join)
+
+```
+
+This report summarizes the samples available for NPRB 2301, their status and the status of laboratory processes. Updates will be made available whenever significant updates to the sample database or analytical data become available.
+
+# Version Notes
+
+NOSAMS AMS 14C results from the training layers are now available.
+Another batch of layers sent to NOSAMS for AMS.
+First batch of layers for stable isotopes sent to Stanford lab.
+
+# Links and Resources
+
+-   [github repo](https://github.com/CindyTribuzio-NOAA/PSS_Ageing) (public)
+-   [Research Workspace](https://www.researchworkspace.com/login) (password protected)
+-   [Google Folder](https://drive.google.com/drive/folders/1xsjlj4UVk1kSxjrBIXrRbMp6OHLY9GhE) (access controlled)
+
+# Specimen, Sample and Layer Summaries
+
+-   Each animal has a specimen_ID. The exception is spiny dogfish embryos, which are considered samples taken of the adult.
+-   Each eye, embryo, spine, etc. has a unique sample_id, which links back to the specimen_id that that sample was taken from.
+-   Each eye is further separated into layers and each layer_id links back to the sample_id (and thus, specimen_id).
+
+```{r sample2layer, echo = F}
+# Maybe just take this out and insert it as an image, then can still do pdf.
+library(DiagrammeR)
+mermaid("
+        graph LR
+        A[specimen_id = 107] --> B[sample_id = 306]
+        A[specimen_id = 107] --> C(sample_id = 304)
+        B --> D(layer_id = 306_N)
+        B --> E(layer_id = 306_2)
+        B --> F(layer_id = 306_3)
+        B --> G(layer_id = 306_4)
+        B --> H(layer_id = 306_R)
+        C --> I(layer_id = 304_N)
+        C --> J(layer_id = 304_R)
+        ")
+```
+
+```{r changing-parameters, echo = F}
+
+```
+
+## Pacific sleeper sharks
+
+```{r PSS_summary, echo = F}
+PSS_dat <- spec_dat %>% 
+  filter(species_common_name == "Pacific Sleeper Shark",
+         !is.na(length_cm),
+         !is.na(noncon_lat)|!is.na(nmfs_area))
+
+nPSS <- nrow(PSS_dat)
+nPSSeyes <- PSS_dat %>% 
+  select(c(eye_l, eye_r)) %>% 
+  sum(na.rm = T)
+nPSSdelam <- length(unique(layer_dat$specimen_id))
+nPSSgoodeye <- layer_dat %>% 
+  filter(methods != "M9/M10") %>% 
+  group_by(specimen_id) %>% 
+  summarise(n = length(sample_id)) %>% 
+  nrow()
+nPSSlayers <- layer_dat %>% 
+  filter(methods != "M9/M10") %>% 
+  group_by(specimen_id) %>% 
+  summarise(n = length(sample_id))
+nPSSlayers <- sum(nPSSlayers$n)
+
+
+```
+The below table only includes specimens with both length and haul data. There are some samples without haul data, and some without length. As data gaps get filled in, these numbers will change. Please request any other data breakdowns for future reports.
+
+| N PSS      | N PSS eyes    | N PSS Delaminated | N PSS Layers     | 
+|------------|---------------|-------------------|------------------|
+| `{r} nPSS` | `{r} nPSSeyes`| `{r} nPSSgoodeye` | `{r} nPSSlayers` |
+
+
+
+insert graphs of length dist by sex insert summary table of n eyes which have been delaminated and n layers created
+
+## Spiny dogfish
+
+insert summary table of n animals sampled (that we have complete data for!) by LME and n eyes total (some only have one eye), add in how many animals had embryos insert graphs of length dist by sex insert summary table of n eyes which have been delaminated and n layers created, n spines prepped
+
+# AMS
+
+summary table of AMS samples run to date and est of how many we still can run based on funds remaining
+
+# Stable Isotopes
+
+First batch of stable isotope samples have been sent to Stanford lab for analysis. Stay tuned for results.
+
+# CSIAA
+
+This portion of the project has not begun.

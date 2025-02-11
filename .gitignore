@@ -3,8 +3,9 @@
 .RData
 .Ruserdata
 
-# confidential fishery dependent data
+# confidential fishery dependent data and/or passwords
 *confidential*
+database.csv
 
 # Don't track data
 *.xlsx

@@ -1,0 +1,213 @@
+specimen_id,species_common_name,species_scientific_name,length_cm,length_type,original_length_units,PCL_final_cm,sex,haul_id,large_marine_ecosystem,haul_date_akt,capture_depth_m,noncon_lat,noncon_long,confidential_flag,gear_type,haul_year,nmfs_area,fmp_subarea,source,contact,hauldat_complete,notes,n_eyes,pregnant,Sample_Quality,Data_qualtiy,Rank,"Practice_if paired, send one"
+281,Pacific Sleeper Shark,Somniosus pacificus,12,precaudal Length,feet,365.76,U,141,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Poor,Low,"Y Maybe, need to dig it out and look at bag again"
+263,Pacific Sleeper Shark,Somniosus pacificus,44,Precaudal Length,centimeters,44,M,104,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,Y
+57,Pacific Sleeper Shark,Somniosus pacificus,55,Total Length(?),centimeters,37.547,F,251,West Coast,9/8/2018,NA,NA,NA,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,N,NA,2,NA,Good,Medium,Medium,Y
+37,Pacific Sleeper Shark,Somniosus pacificus,56,Precaudal Length,centimeters,56,M,32,Bering Sea,8/4/2017,NA,NA,NA,Y,NA,2017,NA,NA,AKSRG,Erica Aus,N,NA,1,NA,Poor,Medium,Low,N
+275,Pacific Sleeper Shark,Somniosus pacificus,63,Total Length(?),centimeters,44.6094,F,246,West Coast,11/6/2018,47.44167,-125.9113607,438.912,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,1,NA,Good,Medium,Medium,N
+294,Pacific Sleeper Shark,Somniosus pacificus,63,Precaudal Length,centimeters,63,F,102,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+277,Pacific Sleeper Shark,Somniosus pacificus,64,Total Length(?),centimeters,45.4922,F,254,West Coast,1/8/2018,47.34167,-125.6711838,438.912,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+120,Pacific Sleeper Shark,Somniosus pacificus,65,Precaudal Length,centimeters,65,M,83,Bering Sea,5/7/2021,367.5888,NA,NA,Y,NPT,2021,517,EBS,NPGOP,NA,N,NA,1,NA,Good,Good,High,Y
+284,Pacific Sleeper Shark,Somniosus pacificus,65,Total Length(?),centimeters,46.375,M,229,West Coast,6/24/2018,48.02833,-125.7226228,237.744,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+127,Pacific Sleeper Shark,Somniosus pacificus,65,Precaudal Length,centimeters,65,M,88,Bering Sea,5/7/2021,367.5888,NA,NA,Y,NPT,2021,517,EBS,NPGOP,NA,N,duplicate haul,1,NA,Good,Good,High,N
+286,Pacific Sleeper Shark,Somniosus pacificus,66,Total Length(?),centimeters,47.2578,M,254,West Coast,1/8/2018,47.34167,-125.6711838,438.912,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+288,Pacific Sleeper Shark,Somniosus pacificus,69,Total Length(?),centimeters,49.9062,M,250,West Coast,5/24/2018,47.85833,-125.4812456,274.32,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+172,Pacific Sleeper Shark,Somniosus pacificus,70,Precaudal Length,centimeters,70,F,29,Bering Sea,8/4/2020,217.6272,NA,NA,Y,PTR,2020,517,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+289,Pacific Sleeper Shark,Somniosus pacificus,71,Total Length(?),centimeters,51.6718,M,254,West Coast,1/8/2018,47.34167,-125.6711838,438.912,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+266,Pacific Sleeper Shark,Somniosus pacificus,71,Total Length(?),centimeters,51.6718,M,256,West Coast,10/29/2018,43.6,-128.1017448,283.464,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+174,Pacific Sleeper Shark,Somniosus pacificus,73,Precaudal Length,centimeters,73,F,73,Bering Sea,9/29/2020,175.5648,NA,NA,Y,PTR,2020,524,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+33,Pacific Sleeper Shark,Somniosus pacificus,75,Precaudal Length,centimeters,75,F,131,Bering Sea,6/29/2022,104.2416,NA,NA,Y,PTR,2022,517,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+269,Pacific Sleeper Shark,Somniosus pacificus,75,Precaudal Length,centimeters,75,F,98,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+264,Pacific Sleeper Shark,Somniosus pacificus,78,Total Length(?),centimeters,57.8514,F,246,West Coast,11/6/2018,47.44167,-125.9113607,438.912,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+35,Pacific Sleeper Shark,Somniosus pacificus,80,Precaudal Length,centimeters,80,M,82,Bering Sea,5/7/2021,384.048,NA,NA,Y,NPT,2021,517,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+43,Pacific Sleeper Shark,Somniosus pacificus,80,Precaudal Length,centimeters,80,M,34,Bering Sea,8/7/2017,NA,NA,NA,Y,NA,2017,NA,NA,AKSRG,Erica Aus,N,NA,1,NA,Poor,Medium,Low,N
+47,Pacific Sleeper Shark,Somniosus pacificus,80,Precaudal Length,centimeters,80,M,38,Bering Sea,8/21/2017,NA,NA,NA,Y,NA,2017,NA,NA,AKSRG,Erica Aus,N,NA,1,NA,Poor,Medium,Low,N
+303,Pacific Sleeper Shark,Somniosus pacificus,80,Precaudal Length,centimeters,80,F,154,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+56,Pacific Sleeper Shark,Somniosus pacificus,82,Total Length(?),centimeters,61.3826,M,254,West Coast,1/8/2018,47.34167,-125.6711838,438.912,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+299,Pacific Sleeper Shark,Somniosus pacificus,83,Total Length(?),centimeters,62.2654,M,255,West Coast,11/3/2018,47.75,-125.6968014,384.048,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+89,Pacific Sleeper Shark,Somniosus pacificus,83,Precaudal Length,centimeters,83,F,107,Bering Sea,8/7/2020,234.0864,NA,NA,Y,PTR,2020,517,EBS,NPGOP,NA,N,NA,3,NA,Good,Good,High,N
+92,Pacific Sleeper Shark,Somniosus pacificus,83,Precaudal Length,centimeters,83,F,119,Bering Sea,8/1/2022,91.44,NA,NA,Y,PTR,2022,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+302,Pacific Sleeper Shark,Somniosus pacificus,83,Precaudal Length,centimeters,83,F,168,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+307,Pacific Sleeper Shark,Somniosus pacificus,86,Total Length(?),centimeters,64.9138,F,222,West Coast,5/21/2018,192.024,48.11491507,-125.4812456,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+38,Pacific Sleeper Shark,Somniosus pacificus,86,Precaudal Length,centimeters,86,F,42,Bering Sea,4/19/2018,NA,NA,NA,Y,NA,2018,NA,NA,AKSRG,Erica Aus,N,NA,1,NA,Poor,Medium,Low,N
+278,Pacific Sleeper Shark,Somniosus pacificus,87,Total Length(?),centimeters,65.7966,M,254,West Coast,1/8/2018,47.34167,-125.6711838,438.912,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+272,Pacific Sleeper Shark,Somniosus pacificus,88,Precaudal Length,centimeters,88,F,31,NA,8/23/2020,NA,NA,NA,Y,NA,2020,NA,NA,NPGOP,NA,N,needs permit double checked,2,NA,Good,Waiting,Medium,N
+308,Pacific Sleeper Shark,Somniosus pacificus,89,Total Length(?),centimeters,67.5622,M,223,West Coast,5/19/2018,201.168,48.19050054,-125.7226228,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+262,Pacific Sleeper Shark,Somniosus pacificus,89,Precaudal Length,centimeters,89,M,96,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+95,Pacific Sleeper Shark,Somniosus pacificus,89.5,Precaudal Length,centimeters,89.5,M,26,SEAK,5/31/2018,263.3472,58.14166667,-136.4533333,N,LL,2018,659,SEI,OceanAire_CharlieMason,Cindy Tribuzio,Y,NA,2,NA,Good,Good,High,N
+119,Pacific Sleeper Shark,Somniosus pacificus,90,Precaudal Length,centimeters,90,M,159,Aleutian Islands,11/6/2022,109.728,NA,NA,Y,NPT,2022,542,AI,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+126,Pacific Sleeper Shark,Somniosus pacificus,90,Precaudal Length,centimeters,90,F,134,Bering Sea,8/9/2022,212.1408,NA,NA,Y,PTR,2022,517,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+40,Pacific Sleeper Shark,Somniosus pacificus,90,Precaudal Length,centimeters,90,M,33,Bering Sea,8/2/2017,NA,NA,NA,Y,PTR,2017,517,EBS,AKSRG,Erica Aus,N,"No haul, location is generic for area",1,NA,Poor,Medium,Low,N
+221,Spiny Dogfish,Squalus suckleyi,90,Precaudal Length,centimeters,90,F,15,GOA,7/12/2021,201,56.3862,-135.3505,N,LL,2021,650,EGOA,AFSC_LL,Cindy Tribuzio,Y,NA,2,Y,Great,Good,Best,N
+39,Pacific Sleeper Shark,Somniosus pacificus,91,Total Length(?),centimeters,69.3278,M,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,Good,Poor,Low,Y
+231,Spiny Dogfish,Squalus suckleyi,91,Precaudal Length,centimeters,91,F,15,GOA,7/12/2021,201,56.3862,-135.3505,N,LL,2021,650,EGOA,AFSC_LL,Cindy Tribuzio,Y,NA,2,Y,Great,Good,Best,N
+232,Spiny Dogfish,Squalus suckleyi,91,Precaudal Length,centimeters,91,F,15,GOA,7/12/2021,201,56.3862,-135.3505,N,LL,2021,650,EGOA,AFSC_LL,Cindy Tribuzio,Y,NA,2,Y,Great,Good,Best,N
+298,Pacific Sleeper Shark,Somniosus pacificus,92,Total Length(?),centimeters,70.2106,M,235,West Coast,6/25/2018,48.04833,-125.2646909,274.32,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+134,Pacific Sleeper Shark,Somniosus pacificus,92,Precaudal Length,centimeters,92,F,27,Bering Sea,8/10/2020,272.4912,NA,NA,Y,PTR,2020,517,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+45,Pacific Sleeper Shark,Somniosus pacificus,92,Precaudal Length,centimeters,92,M,35,Bering Sea,8/5/2017,NA,NA,NA,Y,NA,2017,NA,NA,AKSRG,Erica Aus,N,NA,1,NA,Poor,Medium,Low,N
+233,Spiny Dogfish,Squalus suckleyi,92,Precaudal Length,centimeters,92,F,15,GOA,7/12/2021,201,56.3862,-135.3505,N,LL,2021,650,EGOA,AFSC_LL,Cindy Tribuzio,Y,NA,2,Y,Great,Good,Best,N
+306,Pacific Sleeper Shark,Somniosus pacificus,93,Total Length(?),centimeters,71.0934,M,224,West Coast,5/19/2018,210.312,48.11491507,-125.4812456,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+313,Pacific Sleeper Shark,Somniosus pacificus,94,Total Length(?),centimeters,71.9762,M,253,West Coast,11/2/2018,47.91333,-125.7226228,438.912,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+279,Pacific Sleeper Shark,Somniosus pacificus,94,Precaudal Length,centimeters,94,M,94,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+300,Pacific Sleeper Shark,Somniosus pacificus,95,Precaudal Length,centimeters,95,F,169,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+311,Pacific Sleeper Shark,Somniosus pacificus,96,Total Length(?),centimeters,73.7418,NA,232,West Coast,6/27/2018,47.34,-125.6711838,246.888,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+305,Pacific Sleeper Shark,Somniosus pacificus,96,Total Length(?),centimeters,73.7418,M,253,West Coast,11/2/2018,47.91333,-125.7226228,438.912,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+312,Pacific Sleeper Shark,Somniosus pacificus,97,Total Length(?),centimeters,74.6246,M,227,West Coast,5/22/2018,265.176,48.0090764,-125.6968014,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+44,Pacific Sleeper Shark,Somniosus pacificus,97,Precaudal Length,centimeters,97,M,40,Bering Sea,8/27/2017,NA,NA,NA,Y,NA,2017,NA,NA,AKSRG,Erica Aus,N,NA,1,NA,Poor,Medium,Low,N
+309,Pacific Sleeper Shark,Somniosus pacificus,98,Precaudal Length,centimeters,98,M,95,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+304,Pacific Sleeper Shark,Somniosus pacificus,100,Total Length(?),centimeters,77.273,M,225,West Coast,5/23/2018,256.032,47.44253031,-124.4821483,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+145,Pacific Sleeper Shark,Somniosus pacificus,100,Precaudal Length,centimeters,100,F,74,Bering Sea,9/26/2020,199.3392,NA,NA,Y,PR,2020,524,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+42,Pacific Sleeper Shark,Somniosus pacificus,100,Precaudal Length,centimeters,100,M,39,Bering Sea,8/21/2017,NA,NA,NA,Y,NA,2017,NA,NA,AKSRG,Erica Aus,N,duplicate haul,1,NA,Poor,Medium,Low,N
+268,Pacific Sleeper Shark,Somniosus pacificus,100,Precaudal Length,centimeters,100,M,219,West Coast,9/29/2018,44.955,-128.5752432,391.3632,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+270,Pacific Sleeper Shark,Somniosus pacificus,101,Total Length(?),centimeters,78.1558,F,215,West Coast,9/29/2018,45.12667,-128.3740794,384.048,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+148,Pacific Sleeper Shark,Somniosus pacificus,101,Precaudal Length,centimeters,101,F,120,Bering Sea,7/31/2022,91.44,NA,NA,Y,PTR,2022,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+301,Pacific Sleeper Shark,Somniosus pacificus,101,Precaudal Length,centimeters,101,M,97,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+149,Pacific Sleeper Shark,Somniosus pacificus,102,Precaudal Length,centimeters,102,F,92,Bering Sea,6/21/2021,80.4672,NA,NA,Y,PTR,2021,509,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+283,Pacific Sleeper Shark,Somniosus pacificus,103,Total Length(?),centimeters,79.9214,F,231,West Coast,6/29/2018,47.23,-126.3656709,283.464,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+271,Pacific Sleeper Shark,Somniosus pacificus,103,Total Length(?),centimeters,79.9214,F,243,West Coast,6/22/2018,NA,NA,NA,Y,NA,2018,NA,WC,ASHOP,Vanessa Tuttle,N,NA,1,NA,Good,Medium,Medium,N
+280,Pacific Sleeper Shark,Somniosus pacificus,104,Total Length(?),centimeters,80.8042,M,229,West Coast,6/24/2018,48.02833,-125.7226228,237.744,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+296,Pacific Sleeper Shark,Somniosus pacificus,105,Precaudal Length,centimeters,105,F,99,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+41,Pacific Sleeper Shark,Somniosus pacificus,107,Precaudal Length,centimeters,107,F,37,Bering Sea,8/13/2017,NA,NA,NA,Y,NA,2017,NA,NA,AKSRG,Erica Aus,N,NA,1,NA,Poor,Medium,Low,N
+274,Pacific Sleeper Shark,Somniosus pacificus,108,Total Length(?),centimeters,84.3354,M,252,West Coast,11/1/2018,47.91833,-125.4812456,347.472,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+161,Pacific Sleeper Shark,Somniosus pacificus,108,Precaudal Length,centimeters,108,M,103,Bering Sea,6/26/2020,376.7328,NA,NA,Y,NPT,2020,517,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+46,Pacific Sleeper Shark,Somniosus pacificus,108,Precaudal Length,centimeters,108,F,36,Bering Sea,8/13/2017,NA,NA,NA,Y,NA,2017,NA,NA,AKSRG,Erica Aus,N,NA,1,NA,Poor,Medium,Low,N
+310,Pacific Sleeper Shark,Somniosus pacificus,108,Precaudal Length,centimeters,108,F,85,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+182,Pacific Sleeper Shark,Somniosus pacificus,111,Precaudal Length,centimeters,111,F,75,Bering Sea,7/9/2021,85.9536,NA,NA,Y,PTR,2021,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+183,Pacific Sleeper Shark,Somniosus pacificus,112,Precaudal Length,centimeters,112,F,106,Bering Sea,7/22/2020,164.592,NA,NA,Y,PTR,2020,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+150,Pacific Sleeper Shark,Somniosus pacificus,113,Precaudal Length,centimeters,113,M,41,Bering Sea,9/6/2017,NA,NA,NA,Y,NA,2018,NA,NA,AKSRG,Erica Aus,N,NA,1,NA,Poor,Medium,Low,N
+282,Pacific Sleeper Shark,Somniosus pacificus,113,Precaudal Length,centimeters,113,F,150,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+88,Pacific Sleeper Shark,Somniosus pacificus,117,Precaudal Length,centimeters,117,M,130,Bering Sea,6/29/2022,181.0512,NA,NA,Y,PTR,2022,517,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+93,Pacific Sleeper Shark,Somniosus pacificus,118,Precaudal Length,centimeters,118,F,86,Bering Sea,6/27/2021,82.296,NA,NA,Y,PTR,2021,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+34,Pacific Sleeper Shark,Somniosus pacificus,118,Precaudal Length,centimeters,118,F,123,Bering Sea,3/11/2022,107.8992,NA,NA,Y,NPT,2022,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+291,Pacific Sleeper Shark,Somniosus pacificus,119,Total Length(?),centimeters,94.0462,F,245,West Coast,11/3/2018,48.03667,-125.7226228,384.048,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+276,Pacific Sleeper Shark,Somniosus pacificus,119,Total Length(?),centimeters,94.0462,M,252,West Coast,11/1/2018,47.91833,-125.4812456,347.472,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+78,Pacific Sleeper Shark,Somniosus pacificus,120,Precaudal Length,centimeters,120,F,72,Bering Sea,4/25/2021,73.152,NA,NA,Y,PTR,2021,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+136,Pacific Sleeper Shark,Somniosus pacificus,120,Precaudal Length,centimeters,120,M,124,Bering Sea,8/3/2022,82.296,NA,NA,Y,PTR,2022,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+295,Pacific Sleeper Shark,Somniosus pacificus,120,Precaudal Length,centimeters,120,U,128,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+290,Pacific Sleeper Shark,Somniosus pacificus,120,Precaudal Length,centimeters,120,F,147,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+293,Pacific Sleeper Shark,Somniosus pacificus,122,Total Length(?),centimeters,96.6946,M,221,West Coast,5/22/2018,210.312,48.0090764,-125.6968014,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+87,Pacific Sleeper Shark,Somniosus pacificus,123,Precaudal Length,centimeters,123,F,48,SEAK,5/31/2018,263.3472,58.14166667,-136.4533333,N,LL,2018,659,SEI,OceanAire_CharlieMason,Cindy Tribuzio,Y,NA,2,NA,Good,Good,High,N
+285,Pacific Sleeper Shark,Somniosus pacificus,128,Total Length(?),centimeters,101.9914,F,253,West Coast,11/2/2018,47.91333,-125.7226228,438.912,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+292,Pacific Sleeper Shark,Somniosus pacificus,129,Total Length(?),centimeters,102.8742,M,237,West Coast,6/22/2018,48.03333,-125.7226228,310.896,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+273,Pacific Sleeper Shark,Somniosus pacificus,129,Total Length(?),centimeters,102.8742,F,244,West Coast,NA,NA,NA,NA,Y,NA,2018,NA,WC,ASHOP,Vanessa Tuttle,N,NA,2,NA,Good,Medium,Medium,N
+112,Pacific Sleeper Shark,Somniosus pacificus,129,Precaudal Length,centimeters,129,M,126,Bering Sea,7/31/2022,85.9536,NA,NA,Y,PTR,2022,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+124,Pacific Sleeper Shark,Somniosus pacificus,130,Precaudal Length,centimeters,130,F,109,Bering Sea,8/18/2020,310.896,NA,NA,Y,PTR,2020,517,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,Y
+314,Pacific Sleeper Shark,Somniosus pacificus,133,Total Length(?),centimeters,106.4054,M,226,West Coast,5/26/2018,192.024,47.86990937,-126.3656709,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+31,Pacific Sleeper Shark,Somniosus pacificus,135,Precaudal Length,centimeters,135,M,148,Bering Sea,7/31/2020,117.0432,NA,NA,Y,PTR,2020,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,Y
+171,Pacific Sleeper Shark,Somniosus pacificus,136,Precaudal Length,centimeters,136,F,139,Bering Sea,3/19/2022,104.2416,NA,NA,Y,NPT,2022,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+64,Pacific Sleeper Shark,Somniosus pacificus,136,Precaudal Length,centimeters,136,M,167,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+265,Pacific Sleeper Shark,Somniosus pacificus,140,Total Length(?),centimeters,112.585,F,248,West Coast,5/23/2018,47.89,-125.4812456,274.32,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+297,Pacific Sleeper Shark,Somniosus pacificus,140,Total Length(?),centimeters,112.585,F,245,West Coast,11/3/2018,48.03667,-125.7226228,384.048,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+287,Pacific Sleeper Shark,Somniosus pacificus,143,Total Length(?),centimeters,115.2334,M,252,West Coast,11/1/2018,47.91833,-125.4812456,347.472,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+267,Pacific Sleeper Shark,Somniosus pacificus,151,Total Length(?),centimeters,122.2958,F,218,West Coast,10/12/2018,43.90167,-128.3654574,384.048,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+60,Pacific Sleeper Shark,Somniosus pacificus,151,Total Length(?),centimeters,122.2958,F,249,West Coast,5/24/2018,47.94667,-125.7226228,310.896,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+61,Pacific Sleeper Shark,Somniosus pacificus,155,Total Length(?),centimeters,125.827,NA,234,West Coast,5/26/2018,NA,NA,NA,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,N,NA,1,NA,Good,Medium,Medium,N
+139,Pacific Sleeper Shark,Somniosus pacificus,159,Precaudal Length,centimeters,159,F,101,Bering Sea,8/22/2020,95.0976,NA,NA,Y,PTR,2020,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,send 1 of these next
+62,Pacific Sleeper Shark,Somniosus pacificus,160,Total Length(?),centimeters,130.241,M,239,West Coast,6/23/2018,48.05167,-125.2646909,237.744,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+63,Pacific Sleeper Shark,Somniosus pacificus,165,Total Length(?),centimeters,134.655,F,247,West Coast,5/22/2018,47.75333,-125.6968014,237.744,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+65,Pacific Sleeper Shark,Somniosus pacificus,169,Total Length(?),centimeters,138.1862,F,242,West Coast,6/23/2018,NA,NA,NA,Y,NA,2018,NA,WC,ASHOP,Vanessa Tuttle,N,NA,2,NA,Good,Medium,Medium,N
+79,Pacific Sleeper Shark,Somniosus pacificus,170,Precaudal Length,centimeters,170,F,108,Bering Sea,8/22/2020,102.4128,NA,NA,Y,PTR,2020,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,send 1 of these next
+66,Pacific Sleeper Shark,Somniosus pacificus,170,Precaudal Length,centimeters,170,M,100,NA,1-Jul,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+125,Pacific Sleeper Shark,Somniosus pacificus,171,Precaudal Length,centimeters,171,M,161,Bering Sea,7/2/2022,91.44,NA,NA,Y,PTR,2022,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,send 1 of these next
+97,Pacific Sleeper Shark,Somniosus pacificus,176,Precaudal Length,centimeters,176,F,156,Bering Sea,7/23/2020,133.5024,NA,NA,Y,PTR,2020,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,send 1 of these next
+67,Pacific Sleeper Shark,Somniosus pacificus,180,Precaudal Length,centimeters,180,M,217,West Coast,NA,NA,NA,NA,Y,NA,2018,NA,WC,ASHOP,Vanessa Tuttle,N,NA,2,NA,Good,Medium,Medium,N
+68,Pacific Sleeper Shark,Somniosus pacificus,180.34,Estimate_PCL,inches,180.34,M,51,NA,2/9/2021,NA,NA,NA,NA,NA,2021,NA,NA,NA,NA,N,"Haul info may be in bag, may not be observed trips",2,NA,Good,Medium,Medium,N
+108,Pacific Sleeper Shark,Somniosus pacificus,184,Precaudal Length,centimeters,184,F,116,Bering Sea,8/22/2020,93.2688,NA,NA,Y,PTR,2020,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,send 1 of these next
+32,Pacific Sleeper Shark,Somniosus pacificus,202,Total Length,centimeters,167.3186,M,113,Bering Sea,3/17/2022,107.8992,NA,NA,Y,NPT,2022,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,Save for last
+69,Pacific Sleeper Shark,Somniosus pacificus,248.976,Precaudal Length,centimeters,248.976,U,47,NA,3/12/2021,NA,NA,NA,Y,NA,2021,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,Y
+80,Pacific Sleeper Shark,Somniosus pacificus,260,Precaudal Length,centimeters,260,M,165,Gulf of Alaska,6/7/2022,102.4128,NA,NA,Y,NPT,2022,620,CGOA,NPGOP,NA,N,NA,2,NA,Good,Good,High,Save for last
+111,Pacific Sleeper Shark,Somniosus pacificus,265,Precaudal Length,centimeters,265,F,172,SEAK,3/7/2022,NA,58.608,-134.9279,N,NA,2022,659,SEI,Washed Up,Cindy Tribuzio,Y,NA,2,NA,Good,Great,High,Y
+234,Pacific Sleeper Shark,Somniosus pacificus,266,Precaudal Length,centimeters,266,M,175,SEAK,8/25/2022,641.9088,58.31713333,-134.9835167,N,LL,2022,654,SEI,EM Shark Surveys,Cindy Tribuzio/Keith Fuller,Y,NA,2,NA,Good,Good,Best,Save for last
+18,Pacific Sleeper Shark,Somniosus pacificus,350,Precaudal Length,centimeters,350,F,173,Aleutian Islands,7/20/2022,273,52.05599,177.83122,N,TWL,2022,542,AI,RACE,Suzanne McDermott,Y,NA,2,NA,Great,Great,Best,Save for last
+70,Pacific Sleeper Shark,Somniosus pacificus,370.84,Total length,inches,316.370552,M,50,NA,3/10/2021,NA,NA,NA,NA,NA,2021,NA,NA,NA,NA,N,"Haul info may be in bag, may not be observed trips",2,NA,Good,Medium,Medium,"Y Maybe, need to dig it out and look at bag again"
+135,Pacific Sleeper Shark,Somniosus pacificus,371,Total Length,centimeters,316.5118,NA,91,Aleutian Islands,5/1/2021,484.632,NA,NA,Y,NPT,2021,541,AI,NPGOP,NA,N,NA,1,NA,Good,Good,High,N
+91,Pacific Sleeper Shark,Somniosus pacificus,387,Precaudal Length,centimeters,387,F,158,Aleutian Islands,6/1/2022,246.888,NA,NA,Y,NPT,2022,541,AI,NPGOP,NA,N,NA,2,NA,Good,Good,High,Save for last
+71,Pacific Sleeper Shark,Somniosus pacificus,420,Total Length(?),centimeters,359.769,F,220,West Coast,6/9/2018,420.624,44.2212125,-127.9715349,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,1,NA,Good,Medium,Medium,N
+128,Pacific Sleeper Shark,Somniosus pacificus,465,Total Length,centimeters,399.495,F,166,Aleutian Islands,10/18/2021,124.3584,NA,NA,Y,NPT,2021,541,AI,NPGOP,NA,N,NA,2,NA,Good,Good,High,Save for last
+48,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,43,NA,12/8/2019,NA,NA,NA,NA,NA,2019,NA,NA,AKSRG??,NA,N,NA,2,NA,Poor,Poor,Lower,Y
+49,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,44,NA,11/9/2019,NA,NA,NA,NA,NA,2019,NA,NA,AKSRG??,NA,N,NA,2,NA,Poor,Poor,Lower,Y
+50,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,45,NA,12/8/2019,NA,NA,NA,NA,NA,2019,NA,NA,AKSRG??,NA,N,NA,2,NA,Poor,Poor,Lower,Y
+77,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,115,Aleutian Islands,4/25/2022,155.448,NA,NA,Y,NPT,2022,541,AI,NPGOP,NA,N,NA,1,NA,Good,Good,High,N
+129,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,122,Aleutian Islands,4/25/2022,155.448,NA,NA,Y,NPT,2022,541,AI,NPGOP,NA,N,duplicate haul,1,NA,Good,Good,High,N
+53,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,160,Aleutian Islands,10/2/2022,274.32,NA,NA,Y,NPT,2022,542,AI,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+131,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,162,Aleutian Islands,5/8/2022,162.7632,NA,NA,Y,NPT,2022,541,AI,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+114,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,28,Bering Sea,7/16/2020,84.1248,NA,NA,Y,PTR,2020,521,EBS,NPGOP,NA,N,Could be haul 60,2,NA,Good,Good,High,N
+157,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,30,Bering Sea,7/16/2020,84.1248,NA,NA,Y,PTR,2020,521,EBS,NPGOP,NA,N,duplicate haul,2,NA,Good,Good,High,N
+147,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,84,Bering Sea,8/4/2020,208.4832,NA,NA,Y,PTR,2020,517,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+106,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,87,Bering Sea,9/8/2020,303.5808,NA,NA,Y,PTR,2020,517,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+113,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,90,Bering Sea,9/25/2020,263.3472,NA,NA,Y,PTR,NA,517,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+173,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,114,Bering Sea,3/14/2022,111.5568,NA,NA,Y,NPT,2022,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+168,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,121,Bering Sea,3/14/2022,113.3856,NA,NA,Y,NPT,2022,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+121,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,129,Bering Sea,3/7/2022,113.3856,NA,NA,Y,NPT,2022,521,EBS,NPGOP,NA,N,NA,1,NA,Good,Good,High,N
+184,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,137,Bering Sea,3/6/2022,113.3856,NA,NA,Y,NPT,2022,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+170,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,129,Bering Sea,3/7/2022,113.3856,NA,NA,Y,NPT,2022,521,EBS,NPGOP,NA,N,NA,1,NA,Good,Good,High,N
+118,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,140,Bering Sea,3/15/2022,107.8992,NA,NA,Y,NPT,2022,521,EBS,NPGOP,NA,N,NA,2,NA,Good,Good,High,N
+96,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,152,Bering Sea,7/25/2020,89.6112,NA,NA,Y,PTR,2020,521,EBS,NPGOP,NA,N,NA,1,NA,Good,Good,High,N
+185,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,164,Bering Sea,7/22/2002,84.1248,NA,NA,Y,PTR,2022,521,EBS,NPGOP,NA,N,NA,1,NA,Good,Good,High,N
+190,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,164,Bering Sea,7/22/2002,84.1248,NA,NA,Y,PTR,2022,521,EBS,NPGOP,NA,N,NA,1,NA,Good,Good,High,N
+259,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,212,NA,NA,NA,NA,NA,NA,NA,2017,NA,NA,NA,NA,N,NA,2,NA,Good,Waiting,Low,N
+72,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,216,West Coast,5/28/2018,164.592,46.99924243,-124.2076524,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+73,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,228,West Coast,5/26/2018,NA,NA,NA,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,N,NA,2,NA,Good,Medium,Medium,N
+74,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,230,West Coast,5/26/2018,47.345,-126.3656709,283.464,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+75,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,236,West Coast,5/26/2018,NA,NA,NA,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,N,NA,2,NA,Good,Medium,Medium,N
+76,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,238,West Coast,6/21/2018,48.015,-125.7226228,283.464,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+81,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,240,West Coast,5/25/2018,47.375,-125.9113607,210.312,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,1,NA,Good,Medium,Medium,N
+82,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,241,West Coast,5/25/2018,47.70333,-125.6968014,252.3744,Y,TWL,2018,NA,WC,ASHOP,Vanessa Tuttle,Y,NA,2,NA,Good,Medium,Medium,N
+83,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,55,NA,10/10/2020,NA,NA,NA,Y,NA,2020,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+84,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,56,NA,9/28/2020,NA,NA,NA,Y,NA,2020,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+85,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,57,NA,9/24/2020,NA,NA,NA,Y,NA,2020,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+86,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,58,NA,NA,NA,NA,NA,Y,NA,2020,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+94,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,59,NA,10/4/2020,NA,NA,NA,Y,NA,2020,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+98,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,60,NA,10/1/2020,NA,NA,NA,Y,NA,2020,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+110,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,61,NA,10/13/2020,NA,NA,NA,Y,NA,2020,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+115,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,62,NA,10/1/2020,NA,NA,NA,Y,NA,2020,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+116,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,63,NA,10/12/2020,NA,NA,NA,Y,NA,2020,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+117,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,64,NA,NA,NA,NA,NA,Y,NA,2020,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+123,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,65,NA,10/6/2020,NA,NA,NA,Y,NA,2020,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+130,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,66,NA,NA,NA,NA,NA,Y,NA,2020,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+132,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,67,NA,NA,NA,NA,NA,Y,NA,2020,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+137,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,68,NA,9/16/2020,NA,NA,NA,Y,NA,2020,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+138,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,69,NA,NA,NA,NA,NA,Y,NA,2020,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+140,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,70,NA,10/12/2020,NA,NA,NA,Y,NA,2020,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+141,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,71,NA,NA,NA,NA,NA,Y,NA,2020,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+142,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,76,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,1,NA,Good,Waiting,Medium,N
+143,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,77,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,1,NA,Good,Waiting,Medium,N
+144,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,78,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,1,NA,Good,Waiting,Medium,N
+146,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,79,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,1,NA,Good,Waiting,Medium,N
+151,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,80,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,1,NA,Good,Waiting,Medium,N
+152,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,81,NA,10/16/2020,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,1,NA,Good,Waiting,Medium,N
+153,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,89,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,permit doesn't match cruise,2,NA,Good,Waiting,Medium,N
+154,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,93,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,1,NA,Good,Waiting,Medium,N
+155,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,105,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+158,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,110,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,1,NA,Good,Waiting,Medium,N
+160,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,111,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,"permit doesn't match cruise, are there more than one Arcturus?",1,NA,Good,Waiting,Medium,N
+162,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,112,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,cruise and permit do not match,2,NA,Good,Waiting,Medium,N
+163,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,118,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,1,NA,Good,Waiting,Medium,N
+164,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,125,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+166,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,127,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+167,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,132,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+169,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,133,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+175,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,117,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,1,NA,Good,Waiting,Medium,N
+189,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,135,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,1,NA,Good,Waiting,Medium,N
+109,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,136,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,1,NA,Good,Waiting,Medium,N
+107,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,136,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,1,NA,Good,Waiting,Medium,N
+103,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,136,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,1,NA,Good,Waiting,Medium,N
+165,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,138,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+187,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,142,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,1,NA,Good,Waiting,Medium,N
+36,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,143,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+101,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,144,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+99,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,145,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+188,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,146,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+100,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,149,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+102,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,151,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,1,NA,Good,Waiting,Medium,N
+104,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,151,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,1,NA,Good,Waiting,Medium,N
+90,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,153,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+159,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,151,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+133,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,93,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,1,NA,Good,Waiting,Medium,N
+156,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,155,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,1,NA,Good,Waiting,Medium,N
+186,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,157,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,1,NA,Good,Waiting,Medium,N
+105,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,163,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,cruise and permit do not match,1,NA,Good,Waiting,Medium,N
+52,Pacific Sleeper Shark,Somniosus pacificus,NA,NA,NA,NA,NA,171,NA,NA,NA,NA,NA,Y,NA,NA,NA,NA,NPGOP,NA,N,NA,2,NA,Good,Waiting,Medium,N
+15,Spiny Dogfish,Squalus suckleyi,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,Y,Great,Good,Best,N
+17,Spiny Dogfish,Squalus suckleyi,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,Y,Great,Good,Best,N
+16,Spiny Dogfish,Squalus suckleyi,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,Y,Great,Good,Best,N
+191,Spiny Dogfish,Squalus suckleyi,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,Y,Great,Good,Best,N

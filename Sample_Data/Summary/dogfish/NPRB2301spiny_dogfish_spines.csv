@@ -1,0 +1,60 @@
+sample_id,specimen_id,alternate_specimen_id,length_cm,length_type,weight_kg,sex,maturity,large_marine_ecosystem,haul_date_akt,noncon_lat,noncon_long,nmfs_area,Source
+14,1052,Yellow_Tag_23,NA,NA,NA,NA,NULL,Gulf of Alaska,NA,NA,NA,NA,AFSC_LLS
+19,1053,Yellow_Tag_25,NA,NA,NA,NA,NULL,Gulf of Alaska,NA,NA,NA,NA,AFSC_LLS
+24,1054,Yellow_Tag_22,NA,NA,NA,NA,NULL,Gulf of Alaska,NA,NA,NA,NA,AFSC_LLS
+29,1055,Yellow_Tag_26,NA,NA,NA,NA,NULL,Gulf of Alaska,NA,NA,NA,NA,AFSC_LLS
+32,1056,Yellow_Tag_21,NA,NA,NA,NA,NULL,Gulf of Alaska,NA,NA,NA,NA,AFSC_LLS
+37,1057,Yellow_Tag_24,NA,NA,NA,NA,NULL,Gulf of Alaska,NA,NA,NA,NA,AFSC_LLS
+46,15,Yellow_Tag_20,91,Precaudal Length,6.26,F,NULL,Gulf of Alaska,2021-07-12T00:00:00Z,56.3862,-135.3505,650,AFSC_LLS
+52,16,Yellow_Tag_19,92,Precaudal Length,7.18,F,NULL,Gulf of Alaska,2021-07-12T00:00:00Z,56.3862,-135.3505,650,AFSC_LLS
+58,17,Yellow_Tag_18,91,Precaudal Length,6.395,F,NULL,Gulf of Alaska,2021-07-12T00:00:00Z,56.3862,-135.3505,650,AFSC_LLS
+63,18,Yellow_Tag_17,90,Precaudal Length,6.025,F,NULL,Gulf of Alaska,2021-07-12T00:00:00Z,56.3862,-135.3505,650,AFSC_LLS
+65,19,Yellow_Tag_12,63,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-08-01T00:00:00Z,59.5135,-145.5408,640,AFSC_LLS
+67,20,Yellow_Tag_11,91,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-25T00:00:00Z,58.6853,-140.6417,640,AFSC_LLS
+69,21,Yellow_Tag_10,91,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-19T00:00:00Z,58.4602,-139.609,650,AFSC_LLS
+71,22,Yellow_Tag_9,91,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-19T00:00:00Z,58.464,-139.4703,650,AFSC_LLS
+73,23,Yellow_Tag_8,92,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-18T00:00:00Z,58.1405,-138.738,650,AFSC_LLS
+75,23,Yellow_Tag_8,92,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-18T00:00:00Z,58.1405,-138.738,650,AFSC_LLS
+76,22,Yellow_Tag_9,91,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-19T00:00:00Z,58.464,-139.4703,650,AFSC_LLS
+77,21,Yellow_Tag_10,91,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-19T00:00:00Z,58.4602,-139.609,650,AFSC_LLS
+78,20,Yellow_Tag_11,91,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-25T00:00:00Z,58.6853,-140.6417,640,AFSC_LLS
+79,24,Yellow_Tag_7,92,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-18T00:00:00Z,58.1405,-138.738,650,AFSC_LLS
+80,24,Yellow_Tag_7,92,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-18T00:00:00Z,58.1405,-138.738,650,AFSC_LLS
+82,25,Yellow_Tag_6,89,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-18T00:00:00Z,58.1405,-138.738,650,AFSC_LLS
+83,25,Yellow_Tag_6,89,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-18T00:00:00Z,58.1405,-138.738,650,AFSC_LLS
+85,26,Yellow_Tag_5,89,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-14T00:00:00Z,57.1877,-136.2317,650,AFSC_LLS
+86,26,Yellow_Tag_5,89,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-14T00:00:00Z,57.1877,-136.2317,650,AFSC_LLS
+88,27,Yellow_Tag_4,94,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-12T00:00:00Z,56.381,-135.5292,650,AFSC_LLS
+89,27,Yellow_Tag_4,94,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-12T00:00:00Z,56.381,-135.5292,650,AFSC_LLS
+91,28,Yellow_Tag_3,87,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-10T00:00:00Z,55.9307,-134.9047,650,AFSC_LLS
+92,28,Yellow_Tag_3,87,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-10T00:00:00Z,55.9307,-134.9047,650,AFSC_LLS
+94,29,Yellow_Tag_2,85,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-06T00:00:00Z,54.4623,-133.918,650,AFSC_LLS
+95,29,Yellow_Tag_2,85,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-06T00:00:00Z,54.4623,-133.918,650,AFSC_LLS
+97,30,Yellow_Tag_1,89,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-05T00:00:00Z,54.6483,-132.844,650,AFSC_LLS
+98,30,Yellow_Tag_1,89,Precaudal Length,NA,F,NULL,Gulf of Alaska,2019-07-05T00:00:00Z,54.6483,-132.844,650,AFSC_LLS
+166,58,NULL,NA,NA,NA,NA,NULL,NA,NA,NA,NA,NA,
+603,231,DF16_LLS,NA,NA,NA,NA,NULL,Gulf of Alaska,NA,NA,NA,NA,AFSC_LLS
+609,232,DF13_LLS,NA,NA,NA,NA,NULL,Gulf of Alaska,NA,NA,NA,NA,AFSC_LLS
+615,233,DF15_LLS,NA,NA,NA,NA,NULL,Gulf of Alaska,NA,NA,NA,NA,AFSC_LLS
+621,234,DF14_LLS,NA,NA,NA,NA,NULL,Gulf of Alaska,NA,NA,NA,NA,AFSC_LLS
+792,326,1,84,Precaudal Length,NA,F,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
+793,326,1,84,Precaudal Length,NA,F,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
+795,327,2,88,Precaudal Length,NA,F,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
+796,327,2,88,Precaudal Length,NA,F,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
+802,328,3,90,Precaudal Length,NA,F,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
+804,329,4,90,Precaudal Length,NA,F,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
+805,329,4,90,Precaudal Length,NA,F,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
+807,330,5,66,Precaudal Length,NA,M,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
+808,330,5,66,Precaudal Length,NA,M,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
+810,331,6,73,Precaudal Length,NA,M,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
+811,331,6,73,Precaudal Length,NA,M,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
+813,332,7,69,Precaudal Length,NA,M,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
+814,332,7,69,Precaudal Length,NA,M,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
+816,333,8,69,Precaudal Length,NA,M,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
+818,334,9,67,Precaudal Length,NA,M,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
+820,335,10,63,Precaudal Length,NA,M,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
+822,336,11,71,Precaudal Length,NA,M,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
+824,337,12,64,Precaudal Length,NA,M,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
+826,338,13,70,Precaudal Length,NA,M,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
+828,339,14,65,Precaudal Length,NA,M,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
+844,347,22,80,Precaudal Length,NA,F,NULL,Gulf of Alaska,2023,NA,NA,NA,"AFSC_LLS (Cindy has haul data, just not entered yet)"
