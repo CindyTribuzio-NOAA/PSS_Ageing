@@ -5,21 +5,20 @@ output-file: "NPRB2301_sample_report_Feb_11_2025"
 editor: visual
 date: today
 date-format: long
-
 ---
 
 ```{r set-up}
 #| echo: false
 #| warning: false
 #| output: false
-libs <- c("tidyverse", "janitor", "googlesheets4", 'DiagrammeR')
+libs <- c("tidyverse", "janitor", "googlesheets4", 'DiagrammeR', 'patchwork')
 #, "Hmisc", "RColorBrewer", "gridExtra", "gtable", 
 #          "grid", "flextable", "officer", "lubridate", "RODBC", "DBI", "gtable", "patchwork")
 if(length(libs[which(libs %in% rownames(installed.packages()) == FALSE )]) > 0) {
   install.packages(libs[which(libs %in% rownames(installed.packages()) == FALSE)])}
 lapply(libs, library, character.only = TRUE)
 '%nin%'<-Negate('%in%') #this is a handy function
-round_any = function(x, accuracy, f=round){f(x/ accuracy) * accuracy}
+round_any = function(x, accuracy, f=floor){f(x/ accuracy) * accuracy} #note that this is specific to rounding down
 
 spec_dat <- read_sheet('1J3IKrdptj7eS3VZj_qbxXTXorgktHXnQ_gUv1mVaxwk') %>% clean_names()
 
@@ -68,7 +67,9 @@ This report summarizes the samples available for NPRB 2301, their status and the
 #        C --> J(layer_id = 304_R)
 #        ")
 ```
-[![Specimens to samples to layers flow chart](NPRB2301_sample_reports_files/sample_layer_flow_chart.png)]
+
+\[![Specimens to samples to layers flow chart](sample_layer_flow_chart.png)\]
+
 ```{r changing-parameters, echo = F}
 
 ```
@@ -76,6 +77,9 @@ This report summarizes the samples available for NPRB 2301, their status and the
 ## Pacific sleeper sharks
 
 ```{r PSS_summary, echo = F}
+#| echo: false
+#| warning: false
+#| output: false
 PSS_dat <- spec_dat %>% 
   filter(species_common_name == "Pacific Sleeper Shark",
          !is.na(length_cm),
@@ -97,17 +101,97 @@ nPSSlayers <- layer_dat %>%
   summarise(n = length(sample_id))
 nPSSlayers <- sum(nPSSlayers$n)
 
+spec_ams <- layer_dat %>% 
+  filter(methods != "M9/M10") %>% 
+  group_by(specimen_id, sample_id) %>% 
+  summarise(nlayers = length(f_modern),
+            fmodsum = sum(f_modern, na.rm = T)) %>% 
+  mutate(ams_results = if_else(fmodsum >0, "Y", "N")) %>% 
+  filter(ams_results == "Y") %>% 
+  group_by(specimen_id) %>% 
+  summarise(n_ams = length(ams_results))
 
+spec_delam <- layer_dat %>% 
+  filter(methods != "M9/M10") %>% 
+  group_by(specimen_id, sample_id) %>% 
+  summarise(nlayers = length(f_modern)) %>% 
+  group_by(specimen_id) %>% 
+  summarise(n_delam = length(sample_id))
+
+graph_dat <- spec_dat %>% 
+  filter(species_common_name == "Pacific Sleeper Shark",
+         !is.na(length_cm)) %>% 
+  left_join(spec_delam) %>% 
+  left_join(spec_ams) %>% 
+  select(specimen_id, length_cm, length_type, n_delam, n_ams, rank) %>% 
+  mutate(l_bin = round_any(length_cm, 10))
+
+all_spec <- graph_dat %>% 
+  group_by(l_bin, rank) %>% 
+  summarise(n_sharks = length(length_cm))
+
+all_spec_fig <- ggplot(all_spec, aes(x = l_bin, y = n_sharks, fill = as.factor(rank)))+
+  geom_bar(stat = "identity", position = 'stack')+
+  labs(x = "Length Bin", y = "No. Sharks", title = "All Specimens", fill = "Rank")
+
+ams_spec<- graph_dat %>% 
+  filter(!is.na(n_ams)) %>% 
+  group_by(l_bin, rank) %>% 
+  summarise(n_sharks = length(length_cm))
+
+ams_spec_fig <- ggplot(ams_spec, aes(x = l_bin, y = n_sharks, fill = as.factor(rank)))+
+  geom_bar(stat = "identity", position = 'stack')+
+  labs(x = "Length Bin", y = "No. Sharks", title = "AMS Specimens", fill = "Rank")
+
+delam_spec <- graph_dat %>% 
+  filter(!is.na(n_delam)) %>% 
+  group_by(l_bin, rank) %>% 
+  summarise(n_sharks = length(length_cm))
+
+delam_spec_fig <- ggplot(delam_spec, aes(x = l_bin, y = n_sharks, fill = as.factor(rank)))+
+  geom_bar(stat = "identity", position = 'stack')+
+  labs(x = "Length Bin", y = "No. Sharks", title = "Delaminated Specimens", fill = "Rank")
+
+rem_spec  <- graph_dat %>% 
+  filter(is.na(n_delam)) %>% 
+  group_by(l_bin, rank) %>% 
+  summarise(n_sharks = length(length_cm))
+
+remaining_spec_fig <- ggplot(rem_spec, aes(x = l_bin, y = n_sharks, fill = as.factor(rank)))+
+  geom_bar(stat = "identity", position = 'stack')+
+  labs(x = "Length Bin", y = "No. Sharks", title = "Remaining Specimens", fill = "Rank")
+
+pr_dat <- PSS_dat %>% 
+  mutate(n_eyes = eye_l + eye_r) %>% 
+  filter(n_eyes == 2) %>% 
+  left_join(spec_delam) %>% 
+  left_join(spec_ams) %>% 
+  select(specimen_id, length_cm, n_eyes, n_delam, n_ams) %>% 
+  mutate(l_bin = round_any(length_cm, 10),
+         rem_eye = if_else(!is.na(n_delam), n_eyes - n_delam, 2),
+         category = if_else(rem_eye == 2, "None",
+                            if_else(rem_eye == 1, "One", "Both"))) %>% 
+  group_by(l_bin, category) %>% 
+  summarise(tot_prs = length(n_eyes))
 ```
+
 The below table only includes specimens with both length and haul data. There are some samples without haul data, and some without length. As data gaps get filled in, these numbers will change. Please request any other data breakdowns for future reports.
 
-| N PSS      | N PSS eyes    | N PSS Delaminated | N PSS Layers     | 
-|------------|---------------|-------------------|------------------|
-| `{r} nPSS` | `{r} nPSSeyes`| `{r} nPSSgoodeye` | `{r} nPSSlayers` |
+| N PSS      | N PSS eyes     | N PSS Delaminated | N PSS Layers     |
+|------------|----------------|-------------------|------------------|
+| `{r} nPSS` | `{r} nPSSeyes` | `{r} nPSSgoodeye` | `{r} nPSSlayers` |
 
+For the purposes of this graph, all unknown length types are treated as Total Length until we resolve how to determine that. 
 
+```{r}
+#| echo: false
+#| warning: false
+(all_spec_fig|delam_spec_fig)/(ams_spec_fig|remaining_spec_fig)
 
-insert graphs of length dist by sex insert summary table of n eyes which have been delaminated and n layers created
+ggplot(pr_dat, aes(x = l_bin, y = tot_prs, fill = category))+
+  geom_bar(stat = "identity", position = 'stack')+
+  labs(x = "Length Bin", y = "No. Sharks", title = "Paired Eye Specimens", fill = "")
+```
 
 ## Spiny dogfish
 
