@@ -26,7 +26,7 @@ samp_spec_join <- read_sheet('1pbSRX_9vj3Xe3_vqK_psvamk18oGSH3Kb-R6NeVSQkc', she
 
 layer_dat <- read_sheet('1j-TdYjQsN56HmBb07apldWv-TvOh1S_9T3oP6LuKoHU') %>% clean_names() %>% 
   select(sample_id, ams_id, layer_type, layer_order, methods, vial_mt_g, vial_dry_samp_g, layer_diam_mm,
-         wt_to_nosams_mg, f_modern, fm_err) %>% 
+         wt_to_nosams_mg, f_modern, fm_err, wt_to_sia_mg) %>% 
   left_join(samp_spec_join)
 
 ```
@@ -68,14 +68,12 @@ This report summarizes the samples available for NPRB 2301, their status and the
 #        ")
 ```
 
-\[![Specimens to samples to layers flow chart](sample_layer_flow_chart.png)\]
+![Specimens to samples to layers flow chart](sample_layer_flow_chart.png)
 
 ```{r changing-parameters, echo = F}
 
 ```
-
 ## Pacific sleeper sharks
-
 ```{r PSS_summary, echo = F}
 #| echo: false
 #| warning: false
@@ -174,14 +172,13 @@ pr_dat <- PSS_dat %>%
   group_by(l_bin, category) %>% 
   summarise(tot_prs = length(n_eyes))
 ```
-
 The below table only includes specimens with both length and haul data. There are some samples without haul data, and some without length. As data gaps get filled in, these numbers will change. Please request any other data breakdowns for future reports.
 
 | N PSS      | N PSS eyes     | N PSS Delaminated | N PSS Layers     |
 |------------|----------------|-------------------|------------------|
 | `{r} nPSS` | `{r} nPSSeyes` | `{r} nPSSgoodeye` | `{r} nPSSlayers` |
 
-For the purposes of this graph, all unknown length types are treated as Total Length until we resolve how to determine that. 
+For the purposes of the below graphs, all unknown length types are treated as Total Length until we resolve how to determine that. 
 
 ```{r}
 #| echo: false
@@ -194,17 +191,106 @@ ggplot(pr_dat, aes(x = l_bin, y = tot_prs, fill = category))+
 ```
 
 ## Spiny dogfish
+```{r}
+#| echo: false
+#| warning: false
+#| output: false
+SD_dat <- spec_dat %>% 
+  filter(species_common_name == "Spiny Dogfish")
+nSD <- length(unique(SD_dat$specimen_id))
+nSD_wdat <- SD_dat %>% 
+  filter(!is.na(length_cm)) 
+nSD_wdat <- length(unique(nSD_wdat$specimen_id))
 
-insert summary table of n animals sampled (that we have complete data for!) by LME and n eyes total (some only have one eye), add in how many animals had embryos insert graphs of length dist by sex insert summary table of n eyes which have been delaminated and n layers created, n spines prepped
+nSD_delam <- SD_dat %>% 
+  filter(!is.na(length_cm)) %>% 
+  left_join(layer_dat) %>% 
+  filter(is.na(methods))
+nSD_avail <- length(unique(nSD_delam$specimen_id))
+
+nSD_wodat <- SD_dat %>% 
+  filter(is.na(length_cm),
+         !is.na(embryo_1))
+nSD_wodatavail <- length(unique(nSD_wodat$specimen_id))
+```
+
+|N SD     |N SD with full data|N SD available | N SD with samples but no length|
+|---------|-------------------|---------------|--------------------------------|
+|`{r} nSD`| `{r} nSD_wdat`    |`{r} nSD_avail`| `{r} nSD_wodatavail`           |
+
+There are two concerns with spiny dogfish samples:
+
+1. Four spiny dogfish were processed before we identified potential contaminations and considered not available, however are included in the total number of spiny dogfish.
+2. A subset of spiny dogfish do not have length or specific haul data (8). All of these samples do have both eyes and embryos and may still be useful for analyses between mother/offspring.
+
+No spiny dogfish eyes have been delaminated for AMS or stable isotopes yet.
 
 # AMS
+```{r}
+#| echo: false
+#| warning: false
+#| output: false
 
-summary table of AMS samples run to date and est of how many we still can run based on funds remaining
+nAMS <- layer_dat %>% 
+  filter(!is.na(f_modern))
+nAMS <- length(nAMS$ams_id)
+nsent<- layer_dat %>% 
+  filter(!is.na(wt_to_nosams_mg))
+nsent <- length(nsent$ams_id)
+
+# get the below info from Taylor as needed
+NOSAMS_used <- 9380
+NOSAMS_start <- 150080
+NOSAMS_rate <- 268
+NOSAMS_sampleft <- (NOSAMS_start - NOSAMS_used)/NOSAMS_rate
+```
+|N AMS sent     | N AMS returned |N AMS samples left per budget|
+|---------------|----------------|-----------------------------|
+| `{r} nsent`   | `{r} nAMS`     |`{r} NOSAMS_sampleft`        |
+
+AMS results can be found in [NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555).
 
 # Stable Isotopes
+```{r}
+#| echo: false
+#| warning: false
+#| output: false
+
+# no results yet, so don't know what that will look like in layer_data file
+#nSIA <- layer_dat %>% 
+#  filter(!is.na(wt_to_sia_mg))
+#nSIA <- length(nSIA$ams_id)
+nSIAsent<- layer_dat %>% 
+  filter(!is.na(wt_to_sia_mg))
+nSIAsent <- length(nSIAsent$ams_id)
+
+# get the below info from Taylor as needed
+SIA_used <- 0
+SIA_start <- 5600
+SIA_rate <- 10
+SIA_sampleft <- (SIA_start - SIA_used)/SIA_rate
+```
+|N SIA sent     | N SIA returned |N SIA samples left per budget|
+|---------------|----------------|-----------------------------|
+| `{r} nSIAsent`| 0              |`{r} SIA_sampleft`           |
 
 First batch of stable isotope samples have been sent to Stanford lab for analysis. Stay tuned for results.
 
 # CSIAA
+```{r}
+#| echo: false
+#| warning: false
+#| output: false
 
-This portion of the project has not begun.
+# no results yet, so don't know what that will look like in layer_data file
+
+
+# get the below info from Taylor as needed
+CSAA_used <- 0
+CSAA_start <- 14550
+CSAA_rate <- 485
+CSAA_sampleft <- (CSAA_start - CSAA_used)/CSAA_rate
+```
+|N CSIAA sent | N CSIAA returned |N CSIAA samples left per budget|
+|-------------|------------------|-------------------------------|
+| 0           | 0                |`{r} CSAA_sampleft`            |
