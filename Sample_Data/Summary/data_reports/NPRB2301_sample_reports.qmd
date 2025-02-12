@@ -1,9 +1,11 @@
 ---
 title: "NPRB2301 Sample and Data Update"
-format: html
+format: pdf
+output-file: "NPRB2301_sample_report_Feb_11_2025"
 editor: visual
 date: today
 date-format: long
+
 ---
 
 ```{r set-up}
@@ -34,9 +36,9 @@ This report summarizes the samples available for NPRB 2301, their status and the
 
 # Version Notes
 
-NOSAMS AMS 14C results from the training layers are now available.
-Another batch of layers sent to NOSAMS for AMS.
-First batch of layers for stable isotopes sent to Stanford lab.
+-   NOSAMS AMS 14C results from the training layers are now available.
+-   Another batch of layers sent to NOSAMS for AMS.
+-   First batch of layers for stable isotopes sent to Stanford lab.
 
 # Links and Resources
 
@@ -51,22 +53,22 @@ First batch of layers for stable isotopes sent to Stanford lab.
 -   Each eye is further separated into layers and each layer_id links back to the sample_id (and thus, specimen_id).
 
 ```{r sample2layer, echo = F}
-# Maybe just take this out and insert it as an image, then can still do pdf.
-library(DiagrammeR)
-mermaid("
-        graph LR
-        A[specimen_id = 107] --> B[sample_id = 306]
-        A[specimen_id = 107] --> C(sample_id = 304)
-        B --> D(layer_id = 306_N)
-        B --> E(layer_id = 306_2)
-        B --> F(layer_id = 306_3)
-        B --> G(layer_id = 306_4)
-        B --> H(layer_id = 306_R)
-        C --> I(layer_id = 304_N)
-        C --> J(layer_id = 304_R)
-        ")
+# Will only render to html. Insert it as a .png in order to render to .pdf
+#library(DiagrammeR)
+#mermaid("
+#        graph LR
+#        A[specimen_id = 107] --> B[sample_id = 306]
+#        A[specimen_id = 107] --> C(sample_id = 304)
+#        B --> D(layer_id = 306_N)
+#        B --> E(layer_id = 306_2)
+#        B --> F(layer_id = 306_3)
+#        B --> G(layer_id = 306_4)
+#        B --> H(layer_id = 306_R)
+#        C --> I(layer_id = 304_N)
+#        C --> J(layer_id = 304_R)
+#        ")
 ```
-
+[![Specimens to samples to layers flow chart](NPRB2301_sample_reports_files/sample_layer_flow_chart.png)]
 ```{r changing-parameters, echo = F}
 
 ```
