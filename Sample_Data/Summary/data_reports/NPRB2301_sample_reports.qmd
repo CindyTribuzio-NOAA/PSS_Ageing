@@ -1,7 +1,7 @@
 ---
 title: "NPRB2301 Sample and Data Update"
 format: pdf
-output-file: "NPRB2301_sample_report_Feb_11_2025"
+output-file: "NPRB2301_sample_report_Feb_19_2025"
 editor: visual
 date: today
 date-format: long
@@ -49,7 +49,7 @@ This report summarizes the samples available for NPRB 2301, their status and the
 
 -   Each animal has a specimen_ID. The exception is spiny dogfish embryos, which are considered samples taken of the adult.
 -   Each eye, embryo, spine, etc. has a unique sample_id, which links back to the specimen_id that that sample was taken from.
--   Each eye is further separated into layers and each layer_id links back to the sample_id (and thus, specimen_id).
+-   Each eye is further separated into layers and each layer_id links back to the sample_id (and thus, specimen_id)."N" is the nucleus, each number is the sequential layer from the center out, "R" is the remainder. Most layers will simply be numbered 1, 2...n from the smallest to largest layer.
 
 ```{r sample2layer, echo = F}
 # Will only render to html. Insert it as a .png in order to render to .pdf
@@ -178,7 +178,7 @@ The below table only includes specimens with both length and haul data. There ar
 |------------|----------------|-------------------|------------------|
 | `{r} nPSS` | `{r} nPSSeyes` | `{r} nPSSgoodeye` | `{r} nPSSlayers` |
 
-For the purposes of the below graphs, all unknown length types are treated as Total Length until we resolve how to determine that. 
+For the purposes of the below graphs, all unknown length types are treated as Total Length until we resolve how to determine that. Ranks are from 1 (lowest) to 4 (highest) and described [here](https://docs.google.com/spreadsheets/d/1i5Q1b6F8m9RK7l_L5-5fmbTkJq1hisUn8w2dwogeTPs/edit?gid=0#gid=0). Rank = 1 are samples that had poor handling and may have thawed before delamination, Rank = 2 are collections with missing length or haul data, but do have at least a "source" (being who provided the sample), Rank = 3 are collections with complete data, but some uncertainties (i.e., length type), and Rank = 4 are survey collections with best chain of custody and full data available. Many specimens have not yet been attributed to a "source" in the database, this is intentional. Many of the at-sea observer provided samples did not have full data with the sample, or deck forms submitted. Some of these data gaps will be filled as we dig through at-sea observer databases, and those specimens will change from "NA" to a numerical ranking.
 
 ```{r}
 #| echo: false
@@ -187,7 +187,7 @@ For the purposes of the below graphs, all unknown length types are treated as To
 
 ggplot(pr_dat, aes(x = l_bin, y = tot_prs, fill = category))+
   geom_bar(stat = "identity", position = 'stack')+
-  labs(x = "Length Bin", y = "No. Sharks", title = "Paired Eye Specimens", fill = "")
+  labs(x = "Length Bin", y = "No. Sharks", title = "Paired Eye Specimens Delaminated", fill = "")
 ```
 
 ## Spiny dogfish
@@ -250,6 +250,13 @@ NOSAMS_sampleft <- (NOSAMS_start - NOSAMS_used)/NOSAMS_rate
 
 AMS results can be found in [NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555).
 
+|Date Sent      | N layers sent |N layers returned|
+|---------------|---------------|-----------------|
+| Mar 25, 2019  | 8             |8                |
+| Aug  5, 2019  | 11            |11               |
+| Sep 11, 2024  | 36            |35               | 
+| Feb  6, 2025  | 70            |0                | 
+
 # Stable Isotopes
 ```{r}
 #| echo: false
@@ -273,6 +280,10 @@ SIA_sampleft <- (SIA_start - SIA_used)/SIA_rate
 |N SIA sent     | N SIA returned |N SIA samples left per budget|
 |---------------|----------------|-----------------------------|
 | `{r} nSIAsent`| 0              |`{r} SIA_sampleft`           |
+
+|Date Sent      | N layers sent |N layers returned|
+|---------------|---------------|-----------------|
+| Feb 10, 2025  | 81            |0                |
 
 First batch of stable isotope samples have been sent to Stanford lab for analysis. Stay tuned for results.
 

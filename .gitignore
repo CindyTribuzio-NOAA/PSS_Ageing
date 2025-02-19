@@ -6,6 +6,7 @@
 # confidential fishery dependent data and/or passwords
 *confidential*
 database.csv
+*development*
 
 # Don't track data
 *.xlsx
