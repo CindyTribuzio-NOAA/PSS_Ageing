@@ -5,3 +5,4 @@ This repository houses analyses, data and documents for the NPRB Project 2301. A
 Please do not use the information on this site without contacting project collaborators:
 
 Lead PI: Cindy Tribuzio, Alaska Fisheries Science Center, NOAA-NMFS, cindy.tribuzio@noaa.gov
+Beth Matta, Alaska Fisheries Science Center, NOAA-NMFS, beth.matta@noaa.gov
