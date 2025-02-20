@@ -1,10 +1,12 @@
 ---
 title: "NPRB2301 Sample and Data Update"
 format: pdf
-output-file: "NPRB2301_sample_report_Feb_19_2025"
+output-file: "NPRB2301_sample_report"
 editor: visual
 date: today
 date-format: long
+project:
+  output-dir: Documents/Project_Updates/
 ---
 
 ```{r set-up}
