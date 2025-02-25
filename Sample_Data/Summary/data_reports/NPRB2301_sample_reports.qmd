@@ -307,3 +307,5 @@ CSAA_sampleft <- (CSAA_start - CSAA_used)/CSAA_rate
 |N CSIAA sent | N CSIAA returned |N CSIAA samples left per budget|
 |-------------|------------------|-------------------------------|
 | 0           | 0                |`{r} CSAA_sampleft`            |
+
+![](NPRB2301_timeline.png)
