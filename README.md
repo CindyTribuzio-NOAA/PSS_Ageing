@@ -16,6 +16,4 @@ Please do not use the information on this site without contacting project collab
 - [Dan Stewart](mailto:StewarD2@arc.losrios.edu), American River College
 - [Darcie Neff](mailto:darcie@akbiomap.com), [Alaska BioMap](http://www.akbiomap.com/)
 - [Taylor Broek](mailto:taylor.broek@whoi.edu), Woods Hole Oceanographic Institute
-
-
-blah blah balg
+- [Charlotte Springer](cbspringer@alaska.edu), Alaska BioMap
