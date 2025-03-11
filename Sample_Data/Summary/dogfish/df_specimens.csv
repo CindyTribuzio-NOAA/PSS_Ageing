@@ -1,0 +1,21 @@
+specimen_id,length_cm,length_type,sex,Embryo_1,Embryo_2,Eye_L,Eye_R,Spine_P,Candle,rank,
+15,113.049314,Total Length,F,42,43,44,45,46,NA,4,
+16,114.253278,Total Length,F,48,49,50,51,52,NA,4,
+17,113.049314,Total Length,F,54,55,56,57,58,NA,4,
+18,111.84535,Total Length,F,60,NA,61,62,63,NA,4,
+20,113.049314,Total Length,F,NA,NA,1211,1212,78,NA,4,"eyes dups 2436/2437, in falcon tubes"
+24,114.253278,Total Length,F,NA,NA,1209,1210,79/80,NA,4,"eyes dups 2434/2435, in falcon tubes"
+28,108.233458,Total Length,F,NA,NA,1207,1208,91/92,NA,4,"eyes dups 2432/2433, in falcon tubes"
+29,105.82553,Total Length,F,NA,NA,1205,1206,94/95,NA,4,"eyes dups 2430/2431, in falcon tubes"
+231,NA,NA,NA,606,607,604,605,603,NA,2,
+232,NA,NA,NA,612,613,610,611,609,NA,2,
+233,NA,NA,NA,618,619,616,617,615,NA,2,
+234,NA,NA,NA,NA,NA,622,623,621,624,2,
+328,111.84535,Total Length,F,798,799,801,800,802,NA,4,
+1052,NA,NA,NA,15,18,16,17,14,NA,NA,
+1053,NA,NA,NA,20,23,21,22,19,NA,NA,
+1054,NA,NA,NA,26,27,25,28,24,NA,NA,
+1055,NA,NA,NA,NA,NA,30,31,29,NA,NA,
+1056,NA,NA,NA,33,34,35,36,32,NA,NA,
+1057,NA,NA,NA,39,NA,38,40,37,NA,NA,
+1814,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,probably part of one of the dup pairs above

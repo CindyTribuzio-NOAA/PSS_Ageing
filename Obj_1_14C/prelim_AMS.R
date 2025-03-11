@@ -21,7 +21,7 @@ layer_dat <- read_sheet('1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0') %>% clea
 nuc_dat <- layer_dat %>% 
   filter(layer_type == "nucleus")
 
-ggplot(nuc_dat, aes(x = tl_cm, y = delta14c))+
+ggplot(nuc_dat, aes(x = length_cm, y = delta14c, color = length_type))+
   geom_point()
 
 # plot AMS by layer for each animal----
@@ -55,10 +55,10 @@ pair_list <- layer_dat %>%
 layer_list <- layer_dat %>% 
   left_join(samp_dat) %>% 
   filter(specimen_id %in% pair_list$specimen_id) %>% 
-  select(sample_id, ams_id, layer_order, specimen_id, delta14c, sample_type) %>% 
-  group_by(specimen_id, sample_id) %>% 
+  select(sample_id, ams_id, layer_order, specimen_id, delta14c, sample_type, methods) %>% 
+  group_by(specimen_id, sample_id, methods) %>% 
   summarise(nucleus = min(layer_order), capsule = max(layer_order)) %>% 
-  pivot_longer(!c(specimen_id, sample_id), names_to = "layer_type", values_to = "layer_order")
+  pivot_longer(!c(specimen_id, sample_id, methods), names_to = "layer_type", values_to = "layer_order")
 
 pair_dat <- layer_dat %>% 
   left_join(samp_dat) %>% 
@@ -66,9 +66,21 @@ pair_dat <- layer_dat %>%
          layer_type %in% c("nucleus", "Capsule")) %>% 
   select(specimen_id, sample_type, layer_type, delta14c) %>% 
   pivot_wider(names_from = sample_type, values_from = delta14c) %>% 
-  filter(!is.na(Eye_L))
+  filter(!is.na(Eye_L)) %>% 
+  mutate(C14_diff = Eye_L - Eye_R)
 
-ggplot(pair_dat, aes(x = Eye_L, y = Eye_R))+
+methods_dat <- layer_dat %>% 
+  left_join(samp_dat) %>% 
+  filter(specimen_id %in% layer_list$specimen_id,
+         layer_type %in% c("nucleus", "Capsule")) %>% 
+  select(specimen_id, sample_type, layer_type, methods) %>% 
+  pivot_wider(names_from = sample_type, values_from = methods) %>% 
+  filter(!is.na(Eye_L)) %>% 
+  mutate(method = if_else(Eye_L == Eye_R, "Same", "Diff")) %>% 
+  select(specimen_id, layer_type, method) %>% 
+  left_join(pair_dat)
+
+ggplot(methods_dat, aes(x = Eye_L, y = Eye_R, color = method))+
   geom_point()
 
 t.test(formula = score ~ time,
