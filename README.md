@@ -12,8 +12,8 @@ Please do not use the information on this site without contacting project collab
 - [Cindy Tribuzio](mailto:cindy.tribuzio@noaa.gov), Alaska Fisheries Science Center, NOAA-NMFS (Lead PI)
 - [Allen Andrews](mailto:astrofish226@gmail.com), [Age and Longevity Research](https://astrofish.me/)
 - [Beth Matta](mailto:beth.matta@noaa.gov), Alaska Fisheries Science Center, NOAA-NMFS
-- [Bruce Buchholz](mailto:buchholz2@llnl.gov), Lawrence Livermore National Laboratories
-- [Dan Stewart](mailto:StewarD2@arc.losrios.edu), American River College
+- [Bruce Buchholz](mailto:buchholz2@llnl.gov), Lawrence Livermore National Laboratory
+- [Daniel Stewart](mailto:StewarD2@arc.losrios.edu), American River College
 - [Darcie Neff](mailto:darcie@akbiomap.com), [Alaska BioMap](http://www.akbiomap.com/)
-- [Taylor Broek](mailto:taylor.broek@whoi.edu), Woods Hole Oceanographic Institute
-- [Charlotte Springer](cbspringer@alaska.edu), Alaska BioMap
+- [Taylor Broek](mailto:taylor.broek@whoi.edu), [Woods Hole Oceanographic Institute, NOSAMS](https://www2.whoi.edu/site/nosams/)
+- [Charlotte Springer](mailto:cbspringer@alaska.edu), [Alaska BioMap](http://www.akbiomap.com/) and [University of Alaska Fairbanks, College of Fishery and Ocean Sciences] (https://www.uaf.edu/cfos/)
