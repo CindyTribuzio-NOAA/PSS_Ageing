@@ -1,6 +1,6 @@
 
 
-<img src = "Documents/NPRB2301_logo.png" align = "center">
+<img src = "Documents/NPRB2301_logo.png" align = "left">
 
 
 
