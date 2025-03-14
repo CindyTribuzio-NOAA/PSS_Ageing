@@ -1,6 +1,8 @@
-<center>![](Documents/NPRB2301_logo.png)</center>
+<center>
 
-\<center
+![](Documents/NPRB2301_logo.png)</center>
+
+</center>
 
 # NPRB 2301: Ageing of Pacific sleeper shark
 
@@ -11,7 +13,7 @@ This repository houses analyses, data and documents for the NPRB Project 2301. A
 Please do not use the information on this site without contacting project collaborators:
 
 | Name                                                                                                            | Email                                                        | Affiliation                                                                                                                                      |
-|-----------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+|--------------------|--------------------|--------------------------------|
 | [Cindy Tribuzio](https://www.fisheries.noaa.gov/contact/cindy-tribuzio) (Lead PI)                               | [cindy.tribuzio\@noaa.gov](mailto:cindy.tribuzio@noaa.gov)   | [Alaska Fisheries Science Center](https://www.fisheries.noaa.gov/about/alaska-fisheries-science-center)                                          |
 | [Allen Andrews](https://astrofish.me/)                                                                          | [astrofish226\@gmail.com](mailto:astrofish226@gmail.com)     | [Age and Longevity Research](https://astrofish.me/)                                                                                              |
 | [Beth Matta](https://www.fisheries.noaa.gov/contact/mary-elizabeth-beth-matta)                                  | [beth.matta\@noaa.gov](mailto:beth.matta@noaa.gov)           | [Alaska Fisheries Science Center](https://www.fisheries.noaa.gov/about/alaska-fisheries-science-center)                                          |
