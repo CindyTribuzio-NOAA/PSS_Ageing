@@ -9,9 +9,9 @@ This repository houses analyses, data and documents for the NPRB Project 2301. A
 
 Please do not use the information on this site without contacting project collaborators:
 
-- [Cindy Tribuzio](mailto:cindy.tribuzio@noaa.gov), Alaska Fisheries Science Center, NOAA-NMFS (Lead PI)
+- [Cindy Tribuzio](https://www.fisheries.noaa.gov/contact/cindy-tribuzio) [cindy.tribuzio@noaa.gov](mailto:cindy.tribuzio@noaa.gov), Alaska Fisheries Science Center, NOAA-NMFS (Lead PI)
 - [Allen Andrews](mailto:astrofish226@gmail.com), [Age and Longevity Research](https://astrofish.me/)
-- [Beth Matta](mailto:beth.matta@noaa.gov), Alaska Fisheries Science Center, NOAA-NMFS
+- [Beth Matta] [beth.matta@noaa.gov](mailto:beth.matta@noaa.gov), Alaska Fisheries Science Center, NOAA-NMFS
 - [Bruce Buchholz](mailto:buchholz2@llnl.gov), Lawrence Livermore National Laboratory
 - [Daniel Stewart](mailto:StewarD2@arc.losrios.edu), American River College
 - [Darcie Neff](mailto:darcie@akbiomap.com), [Alaska BioMap](http://www.akbiomap.com/)
