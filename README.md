@@ -18,3 +18,5 @@ Please do not use the information on this site without contacting project collab
 | Charlotte Springer                                                                                              | [cbspringer\@alaska.edu](mailto:cbspringer@alaska.edu)       | [Alaska BioMap](http://www.akbiomap.com/) and [University of Alaska Fairbanks, College of Fishery and Ocean Sciences](https://www.uaf.edu/cfos/) |
 
 This project is supported by a grant from the [North Pacific Research Board](https://nprb.org/)
+
+Regular project progress reports can be viewed in the [Project_Updates](https://github.com/CindyTribuzio-NOAA/PSS_Ageing/tree/main/Documents/Project_Updates) folder. 
