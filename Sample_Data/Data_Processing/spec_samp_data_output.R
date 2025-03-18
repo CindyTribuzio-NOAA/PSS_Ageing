@@ -109,13 +109,16 @@ samp_dat2 %>% write_sheet(ss = glink, sheet = "specimen_data")
 samp_dat3 <- samp_dat %>% 
   left_join(samp_spec_join) %>% 
   left_join(spec_dat2) %>% 
-  left_join(rank_loc) %>% 
   left_join(haul_spec_join) %>% 
   left_join(haul_dat) %>% 
-  select(sample_id, specimen_id, sex, length_cm, length_type, haul_year)
+  mutate(loc_complete = if_else(!is.na(large_marine_ecosystem), "Y","N"),
+         bio_complete = if_else(is.na(length_type) | length_type != "Total Length", "N", "Y"),
+         data_complete = if_else(loc_complete == "Y" & bio_complete == "Y", "Y", "N")) %>% 
+  left_join(rank_dat) %>% 
+  select(sample_id, specimen_id, species_common_name, sex, length_cm, length_type, haul_year) %>% 
+  left_join(layer_dat)
 
-layer_dat2 <- layer_dat %>% 
-  left_join(samp_dat3) %>% 
+layer_dat2 <- samp_dat3 %>% 
   #mutate(haul_year = year(haul_date_akt)) %>% 
   #select(!haul_date_akt) %>% 
   mutate(layer_wt_mg = (vial_dry_samp_g - vial_mt_g)*1000,

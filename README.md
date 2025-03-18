@@ -1,12 +1,6 @@
-
-
-<img src = "Documents/NPRB2301_logo.png" align = "left">
-
-
+![](Documents/NPRB2301_logo.png){align="center"}
 
 # NPRB 2301: Ageing of Pacific sleeper shark
-
-</center>
 
 This repository houses analyses, data and documents for the NPRB Project 2301. All data have been made non-confidential prior to inclusion in analyses. Project began September 1, 2023.
 
