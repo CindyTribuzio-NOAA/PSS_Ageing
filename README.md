@@ -1,4 +1,4 @@
-![](Documents/NPRB2301_logo.png){align="center"}
+![](Documents/NPRB2301_logo.png)
 
 # NPRB 2301: Ageing of Pacific sleeper shark
 
