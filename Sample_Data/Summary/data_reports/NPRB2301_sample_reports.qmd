@@ -49,6 +49,7 @@ This report summarizes the samples available for NPRB 2301, their status and the
 -   Stable isotope results updated ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555))
 -   Began peeling spiny dogfish eyes, very different eyes!
 -   Sent some of the potentially contaminated samples along with other layers for AMS processing to compare pairs
+-   Diameter measurements updated
 
 # Links and Resources
 
