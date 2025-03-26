@@ -9,11 +9,13 @@ project:
   output-dir: Documents/Project_Updates/
 ---
 
+![](NPRB2301_logo.png){fig-align="center"}
+
 ```{r set-up}
 #| echo: false
 #| warning: false
 #| output: false
-libs <- c("tidyverse", "janitor", "googlesheets4", 'DiagrammeR', 'patchwork')
+libs <- c("tidyverse", "janitor", "googlesheets4", 'DiagrammeR', 'patchwork', 'gtable', 'grid', 'gridExtra')
 #, "Hmisc", "RColorBrewer", "gridExtra", "gtable", 
 #          "grid", "flextable", "officer", "lubridate", "RODBC", "DBI", "gtable", "patchwork")
 if(length(libs[which(libs %in% rownames(installed.packages()) == FALSE )]) > 0) {
@@ -22,13 +24,18 @@ lapply(libs, library, character.only = TRUE)
 '%nin%'<-Negate('%in%') #this is a handy function
 round_any = function(x, accuracy, f=floor){f(x/ accuracy) * accuracy} #note that this is specific to rounding down
 
+roundUpNice <- function(x, nice=c(1,2,4,5,6,8,10)) { #rounds up to handy bin
+  if(length(x) != 1) stop("'x' must be of length 1")
+  10^floor(log10(x)) * nice[[which(x <= 10^floor(log10(x)) * nice)[[1]]]]
+}
+
 spec_dat <- read_sheet('1J3IKrdptj7eS3VZj_qbxXTXorgktHXnQ_gUv1mVaxwk') %>% clean_names()
 
 samp_spec_join <- read_sheet('1pbSRX_9vj3Xe3_vqK_psvamk18oGSH3Kb-R6NeVSQkc', sheet = 'Sample_Join') %>% clean_names()
 
 layer_dat <- read_sheet('1j-TdYjQsN56HmBb07apldWv-TvOh1S_9T3oP6LuKoHU') %>% clean_names() %>% 
   select(sample_id, ams_id, layer_type, layer_order, methods, vial_mt_g, vial_dry_samp_g, layer_diam_mm,
-         wt_to_nosams_mg, f_modern, fm_err, wt_to_sia_mg) %>% 
+         wt_to_nosams_mg, f_modern, fm_err, wt_to_sia_mg, cn_ratio) %>% 
   left_join(samp_spec_join)
 
 ```
@@ -37,9 +44,11 @@ This report summarizes the samples available for NPRB 2301, their status and the
 
 # Version Notes
 
--   NOSAMS AMS 14C results from the training layers are now available.
--   Another batch of layers sent to NOSAMS for AMS.
--   First batch of layers for stable isotopes sent to Stanford lab.
+-   Added info to the ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555))
+-   Modified this report
+-   Stable isotope results updated ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555))
+-   Began peeling spiny dogfish eyes, very different eyes!
+-   Sent some of the potentially contaminated samples along with other layers for AMS processing to compare pairs
 
 # Links and Resources
 
@@ -47,35 +56,24 @@ This report summarizes the samples available for NPRB 2301, their status and the
 -   [Research Workspace](https://www.researchworkspace.com/login) (password protected)
 -   [Google Folder](https://drive.google.com/drive/folders/1xsjlj4UVk1kSxjrBIXrRbMp6OHLY9GhE) (access controlled)
 
+# Project Timeline
+
+![](NPRB2301_timeline.png)
+
 # Specimen, Sample and Layer Summaries
 
 -   Each animal has a specimen_ID. The exception is spiny dogfish embryos, which are considered samples taken of the adult.
 -   Each eye, embryo, spine, etc. has a unique sample_id, which links back to the specimen_id that that sample was taken from.
--   Each eye is further separated into layers and each layer_id links back to the sample_id (and thus, specimen_id)."N" is the nucleus, each number is the sequential layer from the center out, "R" is the remainder. Most layers will simply be numbered 1, 2...n from the smallest to largest layer.
-
-```{r sample2layer, echo = F}
-# Will only render to html. Insert it as a .png in order to render to .pdf
-#library(DiagrammeR)
-#mermaid("
-#        graph LR
-#        A[specimen_id = 107] --> B[sample_id = 306]
-#        A[specimen_id = 107] --> C(sample_id = 304)
-#        B --> D(layer_id = 306_N)
-#        B --> E(layer_id = 306_2)
-#        B --> F(layer_id = 306_3)
-#        B --> G(layer_id = 306_4)
-#        B --> H(layer_id = 306_R)
-#        C --> I(layer_id = 304_N)
-#        C --> J(layer_id = 304_R)
-#        ")
-```
+-   Each eye is further separated into layers and each layer_id links back to the sample_id (and thus, specimen_id).Layers are numbered sequentially from the center out. Early numbering convention used "N" for nuleus, and "R" for the remainder.
 
 ![Specimens to samples to layers flow chart](sample_layer_flow_chart.png)
 
 ```{r changing-parameters, echo = F}
 
 ```
+
 ## Pacific sleeper sharks
+
 ```{r PSS_summary, echo = F}
 #| echo: false
 #| warning: false
@@ -130,8 +128,14 @@ all_spec <- graph_dat %>%
   group_by(l_bin, rank) %>% 
   summarise(n_sharks = length(length_cm))
 
+y_max <- all_spec %>% 
+  group_by(l_bin) %>% 
+  summarise(bin_max = sum(n_sharks))
+y_max <- max(y_max$bin_max)
+
 all_spec_fig <- ggplot(all_spec, aes(x = l_bin, y = n_sharks, fill = as.factor(rank)))+
   geom_bar(stat = "identity", position = 'stack')+
+  coord_cartesian(ylim = c(0,roundUpNice(y_max)))+
   labs(x = "Length Bin", y = "No. Sharks", title = "All Specimens", fill = "Rank")
 
 ams_spec<- graph_dat %>% 
@@ -140,7 +144,8 @@ ams_spec<- graph_dat %>%
   summarise(n_sharks = length(length_cm))
 
 ams_spec_fig <- ggplot(ams_spec, aes(x = l_bin, y = n_sharks, fill = as.factor(rank)))+
-  geom_bar(stat = "identity", position = 'stack')+
+  geom_bar(stat = "identity", position = 'stack', show.legend = FALSE)+
+    coord_cartesian(ylim = c(0,roundUpNice(y_max)))+
   labs(x = "Length Bin", y = "No. Sharks", title = "AMS Specimens", fill = "Rank")
 
 delam_spec <- graph_dat %>% 
@@ -149,7 +154,8 @@ delam_spec <- graph_dat %>%
   summarise(n_sharks = length(length_cm))
 
 delam_spec_fig <- ggplot(delam_spec, aes(x = l_bin, y = n_sharks, fill = as.factor(rank)))+
-  geom_bar(stat = "identity", position = 'stack')+
+  geom_bar(stat = "identity", position = 'stack', show.legend = FALSE)+
+    coord_cartesian(ylim = c(0,roundUpNice(y_max)))+
   labs(x = "Length Bin", y = "No. Sharks", title = "Delaminated Specimens", fill = "Rank")
 
 rem_spec  <- graph_dat %>% 
@@ -158,7 +164,8 @@ rem_spec  <- graph_dat %>%
   summarise(n_sharks = length(length_cm))
 
 remaining_spec_fig <- ggplot(rem_spec, aes(x = l_bin, y = n_sharks, fill = as.factor(rank)))+
-  geom_bar(stat = "identity", position = 'stack')+
+  geom_bar(stat = "identity", position = 'stack', show.legend = FALSE)+
+    coord_cartesian(ylim = c(0,roundUpNice(y_max)))+
   labs(x = "Length Bin", y = "No. Sharks", title = "Remaining Specimens", fill = "Rank")
 
 pr_dat <- PSS_dat %>% 
@@ -174,6 +181,7 @@ pr_dat <- PSS_dat %>%
   group_by(l_bin, category) %>% 
   summarise(tot_prs = length(n_eyes))
 ```
+
 The below table only includes specimens with both length and haul data. There are some samples without haul data, and some without length. As data gaps get filled in, these numbers will change. Please request any other data breakdowns for future reports.
 
 | N PSS      | N PSS eyes     | N PSS Delaminated | N PSS Layers     |
@@ -185,14 +193,34 @@ For the purposes of the below graphs, all unknown length types are treated as To
 ```{r}
 #| echo: false
 #| warning: false
-(all_spec_fig|delam_spec_fig)/(ams_spec_fig|remaining_spec_fig)
+#| fig-asp: .7
+#| out-width: 95%
+#| fig-width: 8.142857
+
+#out2fig = function(out.width, out.width.default = 0.7, fig.width.default = 6) {
+#  fig.width.default * out.width / out.width.default 
+#} #helpful function for figuring out height/widths (https://arelbundock.com/posts/quarto_figures/index.html)
+#out2fig(0.3)
+
+all_spec_fig + delam_spec_fig + ams_spec_fig + remaining_spec_fig+ plot_layout(ncol = 1, guides = "collect", axis_titles = "collect")
+
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-asp: 0.3
+#| out-width: 95%
+#| fig-width: 8.142857
+#| out-height: 30%
+#| fig-height: 2.571429
 
 ggplot(pr_dat, aes(x = l_bin, y = tot_prs, fill = category))+
   geom_bar(stat = "identity", position = 'stack')+
   labs(x = "Length Bin", y = "No. Sharks", title = "Paired Eye Specimens Delaminated", fill = "")
 ```
-
 ## Spiny dogfish
+
 ```{r}
 #| echo: false
 #| warning: false
@@ -216,18 +244,19 @@ nSD_wodat <- SD_dat %>%
 nSD_wodatavail <- length(unique(nSD_wodat$specimen_id))
 ```
 
-|N SD     |N SD with full data|N SD available | N SD with samples but no length|
-|---------|-------------------|---------------|--------------------------------|
-|`{r} nSD`| `{r} nSD_wdat`    |`{r} nSD_avail`| `{r} nSD_wodatavail`           |
+| N SD      | N SD with full data | N SD available  | N SD with samples but no length |
+|------------------|------------------|------------------|-------------------|
+| `{r} nSD` | `{r} nSD_wdat`      | `{r} nSD_avail` | `{r} nSD_wodatavail`            |
 
 There are two concerns with spiny dogfish samples:
 
-1. Four spiny dogfish were processed before we identified potential contaminations and considered not available, however are included in the total number of spiny dogfish.
-2. A subset of spiny dogfish do not have length or specific haul data (8). All of these samples do have both eyes and embryos and may still be useful for analyses between mother/offspring.
+1.  Four spiny dogfish were processed before we identified potential contaminations and considered not available, however are included in the total number of spiny dogfish.
+2.  A subset of spiny dogfish do not have length or specific haul data (8). All of these samples do have both eyes and embryos and may still be useful for analyses between mother/offspring.
 
-No spiny dogfish eyes have been delaminated for AMS or stable isotopes yet.
+Began "dry peels" of spiny dogfish eye lens. These lens behave quite differently from the PSS lens. They are more solid, with clearly defined "petals" that peel away. Wil has been helping with these and confirms that the spiny dogfish eyes are much more similar to all of the teleost eyes that he has worked with. Working hypothesis is that the more visual predators may have more structural eyes.
 
 # AMS
+
 ```{r}
 #| echo: false
 #| warning: false
@@ -246,20 +275,22 @@ NOSAMS_start <- 150080
 NOSAMS_rate <- 268
 NOSAMS_sampleft <- (NOSAMS_start - NOSAMS_used)/NOSAMS_rate
 ```
-|N AMS sent     | N AMS returned |N AMS samples left per budget|
-|---------------|----------------|-----------------------------|
-| `{r} nsent`   | `{r} nAMS`     |`{r} NOSAMS_sampleft`        |
+
+| N AMS sent  | N AMS returned | N AMS samples left per budget |
+|-------------|----------------|-------------------------------|
+| `{r} nsent` | `{r} nAMS`     | `{r} NOSAMS_sampleft`         |
 
 AMS results can be found in [NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555).
 
-|Date Sent      | N layers sent |N layers returned|
-|---------------|---------------|-----------------|
-| Mar 25, 2019  | 8             |8                |
-| Aug  5, 2019  | 11            |11               |
-| Sep 11, 2024  | 36            |35               | 
-| Feb  6, 2025  | 70            |0                | 
+| Date Sent    | N layers sent | N layers returned |
+|--------------|---------------|-------------------|
+| Mar 25, 2019 | 8             | 8                 |
+| Aug 5, 2019  | 11            | 11                |
+| Sep 11, 2024 | 36            | 35                |
+| Feb 6, 2025  | 70            | 0                 |
 
 # Stable Isotopes
+
 ```{r}
 #| echo: false
 #| warning: false
@@ -272,24 +303,29 @@ AMS results can be found in [NPRB2301_layer_results](https://docs.google.com/spr
 nSIAsent<- layer_dat %>% 
   filter(!is.na(wt_to_sia_mg))
 nSIAsent <- length(nSIAsent$ams_id)
+nSIA <- layer_dat %>% 
+  filter(!is.na(cn_ratio))
+nSIA <- length(nSIA$cn_ratio)
 
 # get the below info from Taylor as needed
-SIA_used <- 0
-SIA_start <- 5600
 SIA_rate <- 10
+SIA_used <- nSIA*SIA_rate
+SIA_start <- 5600
 SIA_sampleft <- (SIA_start - SIA_used)/SIA_rate
 ```
-|N SIA sent     | N SIA returned |N SIA samples left per budget|
-|---------------|----------------|-----------------------------|
-| `{r} nSIAsent`| 0              |`{r} SIA_sampleft`           |
 
-|Date Sent      | N layers sent |N layers returned|
-|---------------|---------------|-----------------|
-| Feb 10, 2025  | 81            |0                |
+| N SIA sent     | N SIA returned | N SIA samples left per budget |
+|----------------|----------------|-------------------------------|
+| `{r} nSIAsent` | `{r} nSIA`     | `{r} SIA_sampleft`            |
 
-First batch of stable isotope samples have been sent to Stanford lab for analysis. Stay tuned for results.
+| Date Sent    | N layers sent | N layers returned |
+|--------------|---------------|-------------------|
+| Feb 10, 2025 | 81            | 81                |
+
+Stable isotope results can be found in [NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555).
 
 # CSIAA
+
 ```{r}
 #| echo: false
 #| warning: false
@@ -304,8 +340,7 @@ CSAA_start <- 14550
 CSAA_rate <- 485
 CSAA_sampleft <- (CSAA_start - CSAA_used)/CSAA_rate
 ```
-|N CSIAA sent | N CSIAA returned |N CSIAA samples left per budget|
-|-------------|------------------|-------------------------------|
-| 0           | 0                |`{r} CSAA_sampleft`            |
 
-![](NPRB2301_timeline.png)
+| N CSIAA sent | N CSIAA returned | N CSIAA samples left per budget |
+|--------------|------------------|---------------------------------|
+| 0            | 0                | `{r} CSAA_sampleft`             |

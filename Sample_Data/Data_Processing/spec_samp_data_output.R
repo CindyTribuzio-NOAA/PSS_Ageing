@@ -41,7 +41,7 @@ rank_dat <- read_sheet('1i5Q1b6F8m9RK7l_L5-5fmbTkJq1hisUn8w2dwogeTPs') %>% clean
 # eye layer data
 layer_dat <- read_sheet('1j-TdYjQsN56HmBb07apldWv-TvOh1S_9T3oP6LuKoHU') %>% clean_names() %>% 
   select(sample_id, ams_id, layer_type, layer_order, methods, vial_mt_g, vial_dry_samp_g, layer_diam_mm,
-         wt_to_nosams_mg, f_modern, fm_err)
+         wt_to_nosams_mg, f_modern, fm_err, wt_to_sia_mg, wt_p_n, wt_p_c, d15n, d13c, cn_ratio)
 
 # Cleaning up data weirdos ----
 # reads in mixed format columns as lists, convert to character then unnest them
@@ -121,12 +121,12 @@ samp_dat3 <- samp_dat %>%
 layer_dat2 <- samp_dat3 %>% 
   #mutate(haul_year = year(haul_date_akt)) %>% 
   #select(!haul_date_akt) %>% 
-  mutate(layer_wt_mg = (vial_dry_samp_g - vial_mt_g)*1000,
+  mutate(#layer_wt_mg = (vial_dry_samp_g - vial_mt_g)*1000, #this is a kinda meaningless parameter, given the poor scale
          D14C = 1000 * (f_modern -1),
          D14C_err = 1000 * fm_err,
          delta14C = 1000 * (f_modern * exp((1950 - haul_year)/8276)-1)) %>% 
   select(!c(vial_mt_g, vial_dry_samp_g)) %>% 
-  filter(f_modern >= 0)
+  filter(f_modern >= 0 | cn_ratio >= 0)
 
 layer_link <- "https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=0#gid=0"
 layer_dat2 %>% write_sheet(ss = layer_link, sheet = "layer_results")

@@ -20,5 +20,9 @@ shapefiles
 # ignore zip files
 *.zip
 
+# ignore ppt files
+*.ppt
+*.pptx
+
 # Windows thumbnail cache files
 Thumbs.db
