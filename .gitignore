@@ -14,6 +14,7 @@ database.csv
 *.xlsm
 *.Rdata
 *.xls
+*.csv
 
 # ignore shape files
 shapefiles
