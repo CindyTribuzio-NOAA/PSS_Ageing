@@ -16,6 +16,7 @@ Please do not use the information on this site without contacting project collab
 | [Darcie Neff](http://www.akbiomap.com/)                                                                         | [darcie\@akbiomap.com](mailto:darcie@akbiomap.com)           | [Alaska BioMap](http://www.akbiomap.com/)                                                                                                        |
 | Taylor Broek                                                                                                    | [taylor.broek\@whoi.edu](mailto:taylor.broek@whoi.edu)       | [Woods Hole Oceanographic Institute, NOSAMS](https://www2.whoi.edu/site/nosams/)                                                                 |
 | Charlotte Springer                                                                                              | [cbspringer\@alaska.edu](mailto:cbspringer@alaska.edu)       | [Alaska BioMap](http://www.akbiomap.com/) and [University of Alaska Fairbanks, College of Fishery and Ocean Sciences](https://www.uaf.edu/cfos/) |
+| Wil Licht                                                                                                       |                                                               |
 
 This project is supported by a grant from the [North Pacific Research Board](https://nprb.org/)
 
