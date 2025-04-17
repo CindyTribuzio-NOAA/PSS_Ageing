@@ -44,12 +44,13 @@ This report summarizes the samples available for NPRB 2301, their status and the
 
 # Version Notes
 
--   Added info to the ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555))
--   Modified this report
+-   14C results updated ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555))
 -   Stable isotope results updated ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555))
--   Began peeling spiny dogfish eyes, very different eyes!
--   Sent some of the potentially contaminated samples along with other layers for AMS processing to compare pairs
--   Diameter measurements updated
+-   Layer diameters updated ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555))
+-   Spiny dogfish embryo eyes have been delaminated/dried, ready for next steps
+-   Spiny dogfish spine reading in progress
+-   Samples selected for CSIAA, prepping now (see notes below)
+
 
 # Links and Resources
 
@@ -65,7 +66,8 @@ This report summarizes the samples available for NPRB 2301, their status and the
 
 -   Each animal has a specimen_ID. The exception is spiny dogfish embryos, which are considered samples taken of the adult.
 -   Each eye, embryo, spine, etc. has a unique sample_id, which links back to the specimen_id that that sample was taken from.
--   Each eye is further separated into layers and each layer_id links back to the sample_id (and thus, specimen_id).Layers are numbered sequentially from the center out. Early numbering convention used "N" for nuleus, and "R" for the remainder.
+-   Each eye is further separated into layers and each layer_id links back to the sample_id (and thus, specimen_id).Layers are numbered sequentially from the outside towards the center. Early numbering convention used "N" for nucleus, and "R" for the remainder.
+-   Embryo each have a sample_id, but two eyes. Each eye and/or layer is labeled with the sample_id, L or R and layer number (as applicable).
 
 ![Specimens to samples to layers flow chart](sample_layer_flow_chart.png)
 
@@ -88,19 +90,23 @@ nPSS <- nrow(PSS_dat)
 nPSSeyes <- PSS_dat %>% 
   select(c(eye_l, eye_r)) %>% 
   sum(na.rm = T)
-nPSSdelam <- length(unique(layer_dat$specimen_id))
-nPSSgoodeye <- layer_dat %>% 
+PSS_layer_dat <- layer_dat %>% 
+  left_join(samp_spec_join) %>% 
+  left_join(spec_dat) %>% 
+  filter(species_common_name == "Pacific Sleeper Shark")
+nPSSdelam <- length(unique(PSS_layer_dat$specimen_id))
+nPSSgoodeye <- PSS_layer_dat %>% 
   filter(methods != "M9/M10") %>% 
   group_by(specimen_id) %>% 
   summarise(n = length(sample_id)) %>% 
   nrow()
-nPSSlayers <- layer_dat %>% 
+nPSSlayers <- PSS_layer_dat %>% 
   filter(methods != "M9/M10") %>% 
   group_by(specimen_id) %>% 
   summarise(n = length(sample_id))
 nPSSlayers <- sum(nPSSlayers$n)
 
-spec_ams <- layer_dat %>% 
+spec_ams <- PSS_layer_dat %>% 
   filter(methods != "M9/M10") %>% 
   group_by(specimen_id, sample_id) %>% 
   summarise(nlayers = length(f_modern),
@@ -110,7 +116,7 @@ spec_ams <- layer_dat %>%
   group_by(specimen_id) %>% 
   summarise(n_ams = length(ams_results))
 
-spec_delam <- layer_dat %>% 
+spec_delam <- PSS_layer_dat %>% 
   filter(methods != "M9/M10") %>% 
   group_by(specimen_id, sample_id) %>% 
   summarise(nlayers = length(f_modern)) %>% 
@@ -220,6 +226,7 @@ ggplot(pr_dat, aes(x = l_bin, y = tot_prs, fill = category))+
   geom_bar(stat = "identity", position = 'stack')+
   labs(x = "Length Bin", y = "No. Sharks", title = "Paired Eye Specimens Delaminated", fill = "")
 ```
+
 ## Spiny dogfish
 
 ```{r}
@@ -236,7 +243,7 @@ nSD_wdat <- length(unique(nSD_wdat$specimen_id))
 nSD_delam <- SD_dat %>% 
   filter(!is.na(length_cm)) %>% 
   left_join(layer_dat) %>% 
-  filter(is.na(methods))
+  filter(methods != "M9/M10") #filter is for potentialy contaminated samples
 nSD_avail <- length(unique(nSD_delam$specimen_id))
 
 nSD_wodat <- SD_dat %>% 
@@ -256,7 +263,7 @@ There are two concerns with spiny dogfish samples:
 
 Began "dry peels" of spiny dogfish eye lens. These lens behave quite differently from the PSS lens. They are more solid, with clearly defined "petals" that peel away. Wil has been helping with these and confirms that the spiny dogfish eyes are much more similar to all of the teleost eyes that he has worked with. Working hypothesis is that the more visual predators may have more structural eyes.
 
-# AMS
+# Carbon 14
 
 ```{r}
 #| echo: false
@@ -277,18 +284,19 @@ NOSAMS_rate <- 268
 NOSAMS_sampleft <- (NOSAMS_start - NOSAMS_used)/NOSAMS_rate
 ```
 
-| N AMS sent  | N AMS returned | N AMS samples left per budget |
+| N 14C sent  | N 14C returned | N 14C samples left per budget |
 |-------------|----------------|-------------------------------|
 | `{r} nsent` | `{r} nAMS`     | `{r} NOSAMS_sampleft`         |
 
-AMS results can be found in [NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555).
+14C results can be found in [NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555).
 
 | Date Sent    | N layers sent | N layers returned |
 |--------------|---------------|-------------------|
 | Mar 25, 2019 | 8             | 8                 |
 | Aug 5, 2019  | 11            | 11                |
 | Sep 11, 2024 | 36            | 35                |
-| Feb 6, 2025  | 70            | 0                 |
+| Feb 6, 2025  | 70            | 48                |
+| Mar 31, 2025 | 96            | 0                 |
 
 # Stable Isotopes
 
@@ -305,7 +313,8 @@ nSIAsent<- layer_dat %>%
   filter(!is.na(wt_to_sia_mg))
 nSIAsent <- length(nSIAsent$ams_id)
 nSIA <- layer_dat %>% 
-  filter(!is.na(cn_ratio))
+  filter(!is.na(wt_to_sia_mg),
+         !is.na(cn_ratio))
 nSIA <- length(nSIA$cn_ratio)
 
 # get the below info from Taylor as needed
@@ -322,6 +331,7 @@ SIA_sampleft <- (SIA_start - SIA_used)/SIA_rate
 | Date Sent    | N layers sent | N layers returned |
 |--------------|---------------|-------------------|
 | Feb 10, 2025 | 81            | 81                |
+| Apr 1, 2025  | 111           | 51                |
 
 Stable isotope results can be found in [NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555).
 
@@ -341,6 +351,8 @@ CSAA_start <- 14550
 CSAA_rate <- 485
 CSAA_sampleft <- (CSAA_start - CSAA_used)/CSAA_rate
 ```
+
+As per the PI meeting notes, we are sending 5 sequence layers from our two largest animals and the core and outermost layer for 5 of the next largest animals. These eyes are either already delaminated or are in the process and will be shipped soon.
 
 | N CSIAA sent | N CSIAA returned | N CSIAA samples left per budget |
 |--------------|------------------|---------------------------------|

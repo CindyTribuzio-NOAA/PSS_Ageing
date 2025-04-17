@@ -144,3 +144,4 @@ layer_dat3 <- layer_dat %>%
             wt_to_nosams_mg))
 
 write_csv(layer_dat3, paste0(getwd(), "/Sample_Data/Data_Processing/layers_to_NOSAMS.csv"))
+
