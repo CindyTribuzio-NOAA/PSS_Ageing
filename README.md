@@ -2,7 +2,7 @@
 
 # NPRB 2301: Ageing of Pacific sleeper shark
 
-This repository houses analyses and documents for the NPRB Project 2301. Project began September 1, 2023. Data will be posted at the completion of the project. The Goal of this project is to expand the knowledge base for the Pacific sleeper shark and provide improved information for stock assessment purposes by the following objectives: 
+This repository houses analyses and documents for the NPRB Project 2301. Project began September 1, 2023. Data will be posted at the completion of the project. The Goal of this project is to expand the knowledge base for the Pacific sleeper shark and Pacific spiny dogfish, and to provide improved information for stock assessment purposes by the following objectives: 
 
 1. Evaluate 14C values in Pacific sleeper shark and Pacific spiny dogfish eye lens cores (earliest material) and outer layers (recent material) as an indicator of age. Assess the eye lens 14C chronology by comparison with validated ages of Pacific spiny dogfish. Estimate plausible ranges of age-at-length, age-at-maturity, and lifespan of PSS.
 2. Investigate sources of potential variation in isotopic values (13C, 14C, and 15N) of shark eye lens protein. These include sample quality (e.g., freezing/thawing altering the structure of the eye lens), the potential for protein turnover in eye lenses, dietary and maternal contributions, and the effects of habitat, depth, and region on isotope uptake.
