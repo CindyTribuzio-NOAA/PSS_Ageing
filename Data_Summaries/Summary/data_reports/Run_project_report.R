@@ -2,7 +2,7 @@
 
 library(quarto)
 
-quarto_render(paste0(getwd(), "/Sample_Data/Summary/data_reports/NPRB2301_sample_reports.qmd"), 
+quarto_render(paste0(getwd(), "/Data_Summaries/Summary/data_reports/NPRB2301_sample_reports.qmd"), 
               output_file = paste0("NPRB2301_",Sys.Date(), ".pdf"))
 
 #---- Moves the files to a more meaningful location

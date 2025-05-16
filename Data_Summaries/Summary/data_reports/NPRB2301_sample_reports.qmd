@@ -29,7 +29,8 @@ roundUpNice <- function(x, nice=c(1,2,4,5,6,8,10)) { #rounds up to handy bin
   10^floor(log10(x)) * nice[[which(x <= 10^floor(log10(x)) * nice)[[1]]]]
 }
 
-spec_dat <- read_sheet('1J3IKrdptj7eS3VZj_qbxXTXorgktHXnQ_gUv1mVaxwk') %>% clean_names()
+spec_dat <- read_sheet('1J3IKrdptj7eS3VZj_qbxXTXorgktHXnQ_gUv1mVaxwk') %>% clean_names() %>% 
+  mutate(rank = replace_na(rank, 0))
 
 samp_spec_join <- read_sheet('1pbSRX_9vj3Xe3_vqK_psvamk18oGSH3Kb-R6NeVSQkc', sheet = 'Sample_Join') %>% clean_names()
 
@@ -44,13 +45,10 @@ This report summarizes the samples available for NPRB 2301, their status and the
 
 # Version Notes
 
--   14C results updated ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555))
--   Stable isotope results updated ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555))
--   Layer diameters updated ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555))
--   Spiny dogfish embryo eyes have been delaminated/dried, ready for next steps
+-   Layer diameters and sample weights updated ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555))
 -   Spiny dogfish spine reading in progress
--   Samples selected for CSIAA, prepping now (see notes below)
-
+-   Samples delaminated for CSIA-AA, shipping soon
+-   Fixed code bugs in this report, [Issue #22](https://github.com/CindyTribuzio-NOAA/PSS_Ageing/issues/22) and [Issue #23](https://github.com/CindyTribuzio-NOAA/PSS_Ageing/issues/23) 
 
 # Links and Resources
 
@@ -142,37 +140,43 @@ y_max <- max(y_max$bin_max)
 
 all_spec_fig <- ggplot(all_spec, aes(x = l_bin, y = n_sharks, fill = as.factor(rank)))+
   geom_bar(stat = "identity", position = 'stack')+
-  coord_cartesian(ylim = c(0,roundUpNice(y_max)))+
+  coord_cartesian(ylim = c(0,roundUpNice(y_max)), xlim = c(0, 500), expand = F)+
   labs(x = "Length Bin", y = "No. Sharks", title = "All Specimens", fill = "Rank")
 
-ams_spec<- graph_dat %>% 
+ams_spec<- graph_dat %>%
+  add_row(specimen_id = 0, length_cm = 0, length_type= 'Total Length', n_delam = 0, n_ams = 0, rank = 0, l_bin = 0) %>%
   filter(!is.na(n_ams)) %>% 
   group_by(l_bin, rank) %>% 
-  summarise(n_sharks = length(length_cm))
+  summarise(n_sharks = length(length_cm))%>% 
+  mutate(n_sharks = if_else(rank == 0, 0, n_sharks))
 
 ams_spec_fig <- ggplot(ams_spec, aes(x = l_bin, y = n_sharks, fill = as.factor(rank)))+
-  geom_bar(stat = "identity", position = 'stack', show.legend = FALSE)+
-    coord_cartesian(ylim = c(0,roundUpNice(y_max)))+
+  geom_bar(stat = "identity", position = 'stack')+
+    coord_cartesian(ylim = c(0,roundUpNice(y_max)), xlim = c(0, 500), expand = F)+
   labs(x = "Length Bin", y = "No. Sharks", title = "AMS Specimens", fill = "Rank")
 
 delam_spec <- graph_dat %>% 
+  add_row(specimen_id = 0, length_cm = 0, length_type= 'Total Length', n_delam = 0, n_ams = NA, rank = 0, l_bin = 0) %>% 
   filter(!is.na(n_delam)) %>% 
   group_by(l_bin, rank) %>% 
-  summarise(n_sharks = length(length_cm))
+  summarise(n_sharks = length(length_cm))%>% 
+  mutate(n_sharks = if_else(rank == 0, 0, n_sharks))
 
 delam_spec_fig <- ggplot(delam_spec, aes(x = l_bin, y = n_sharks, fill = as.factor(rank)))+
-  geom_bar(stat = "identity", position = 'stack', show.legend = FALSE)+
-    coord_cartesian(ylim = c(0,roundUpNice(y_max)))+
+  geom_bar(stat = "identity", position = 'stack',)+
+    coord_cartesian(ylim = c(0,roundUpNice(y_max)), xlim = c(0, 500), expand = F)+
   labs(x = "Length Bin", y = "No. Sharks", title = "Delaminated Specimens", fill = "Rank")
 
 rem_spec  <- graph_dat %>% 
+  add_row(specimen_id = 0, length_cm = 0, length_type= 'Total Length', n_delam = NA, n_ams = NA, rank = 1, l_bin = 0) %>% 
   filter(is.na(n_delam)) %>% 
   group_by(l_bin, rank) %>% 
-  summarise(n_sharks = length(length_cm))
+  summarise(n_sharks = length(length_cm)) %>% 
+  mutate(n_sharks = if_else(rank == 1, 0, n_sharks))
 
 remaining_spec_fig <- ggplot(rem_spec, aes(x = l_bin, y = n_sharks, fill = as.factor(rank)))+
-  geom_bar(stat = "identity", position = 'stack', show.legend = FALSE)+
-    coord_cartesian(ylim = c(0,roundUpNice(y_max)))+
+  geom_bar(stat = "identity", position = 'stack')+
+    coord_cartesian(ylim = c(0,roundUpNice(y_max)), xlim = c(0, 500), expand = F)+
   labs(x = "Length Bin", y = "No. Sharks", title = "Remaining Specimens", fill = "Rank")
 
 pr_dat <- PSS_dat %>% 
@@ -195,7 +199,7 @@ The below table only includes specimens with both length and haul data. There ar
 |------------|----------------|-------------------|------------------|
 | `{r} nPSS` | `{r} nPSSeyes` | `{r} nPSSgoodeye` | `{r} nPSSlayers` |
 
-For the purposes of the below graphs, all unknown length types are treated as Total Length until we resolve how to determine that. Ranks are from 1 (lowest) to 4 (highest) and described [here](https://docs.google.com/spreadsheets/d/1i5Q1b6F8m9RK7l_L5-5fmbTkJq1hisUn8w2dwogeTPs/edit?gid=0#gid=0). Rank = 1 are samples that had poor handling and may have thawed before delamination, Rank = 2 are collections with missing length or haul data, but do have at least a "source" (being who provided the sample), Rank = 3 are collections with complete data, but some uncertainties (i.e., length type), and Rank = 4 are survey collections with best chain of custody and full data available. Many specimens have not yet been attributed to a "source" in the database, this is intentional. Many of the at-sea observer provided samples did not have full data with the sample, or deck forms submitted. Some of these data gaps will be filled as we dig through at-sea observer databases, and those specimens will change from "NA" to a numerical ranking.
+For the purposes of the below graphs, all unknown length types are treated as Total Length until we resolve how to determine that. Ranks are from 1 (lowest) to 4 (highest) and described [here](https://docs.google.com/spreadsheets/d/1i5Q1b6F8m9RK7l_L5-5fmbTkJq1hisUn8w2dwogeTPs/edit?gid=0#gid=0). Rank = 1 are samples that had poor handling and may have thawed before delamination, Rank = 2 are collections with missing length or haul data, but do have at least a "source" (being who provided the sample), Rank = 3 are collections with complete data, but some uncertainties (i.e., length type), and Rank = 4 are survey collections with best chain of custody and full data available. Many specimens have not yet been attributed to a "source" in the database, this is intentional. Many of the at-sea observer provided samples did not have full data with the sample, or deck forms submitted. Some of these data gaps will be filled as we dig through at-sea observer databases, and those specimens will change from rank = 0 to the appropriate rank 1 - rank 4 value.
 
 ```{r}
 #| echo: false
@@ -252,9 +256,9 @@ nSD_wodat <- SD_dat %>%
 nSD_wodatavail <- length(unique(nSD_wodat$specimen_id))
 ```
 
-| N SD      | N SD with full data | N SD available  | N SD with samples but no length |
+| N SD | N SD with full data | N SD available | N SD with samples but no length |
 |------------------|------------------|------------------|-------------------|
-| `{r} nSD` | `{r} nSD_wdat`      | `{r} nSD_avail` | `{r} nSD_wodatavail`            |
+| `{r} nSD` | `{r} nSD_wdat` | `{r} nSD_avail` | `{r} nSD_wodatavail` |
 
 There are two concerns with spiny dogfish samples:
 
@@ -278,25 +282,27 @@ nsent<- layer_dat %>%
 nsent <- length(nsent$ams_id)
 
 # get the below info from Taylor as needed
-NOSAMS_used <- 9380
-NOSAMS_start <- 150080
-NOSAMS_rate <- 268
+NOSAMS_start <- 150080 #starting funds at WHOI for 14C samples
+NOSAMS_rate <- 268 #WHOI rate per 14C sample
+Nstart <- NOSAMS_start/NOSAMS_rate
+NOSAMS_used <- NOSAMS_rate*nAMS #not used, current balance of WHOI budget, but not updated
 NOSAMS_sampleft <- (NOSAMS_start - NOSAMS_used)/NOSAMS_rate
 ```
 
-| N 14C sent  | N 14C returned | N 14C samples left per budget |
-|-------------|----------------|-------------------------------|
-| `{r} nsent` | `{r} nAMS`     | `{r} NOSAMS_sampleft`         |
+| N 14C sent  | N 14C returned | N 14C samples left per budget | Total N budgeted |
+|-------------|----------------|-------------------------------|------------------|
+| `{r} nsent` | `{r} nAMS`     | `{r} NOSAMS_sampleft`         | `{r} Nstart`     |
 
 14C results can be found in [NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555).
 
 | Date Sent    | N layers sent | N layers returned |
 |--------------|---------------|-------------------|
-| Mar 25, 2019 | 8             | 8                 |
-| Aug 5, 2019  | 11            | 11                |
+| Mar 25, 2019 | 11            | 11                |
+| Aug 5, 2019  | 8             | 8                 |
 | Sep 11, 2024 | 36            | 35                |
-| Feb 6, 2025  | 70            | 48                |
+| Feb 6, 2025  | 70            | 70                |
 | Mar 31, 2025 | 96            | 0                 |
+| Apr 28, 2025 | 50            | 0                 |
 
 # Stable Isotopes
 
@@ -321,21 +327,24 @@ nSIA <- length(nSIA$cn_ratio)
 SIA_rate <- 10
 SIA_used <- nSIA*SIA_rate
 SIA_start <- 5600
+SIA_Nstart <- SIA_start/SIA_rate
 SIA_sampleft <- (SIA_start - SIA_used)/SIA_rate
 ```
 
-| N SIA sent     | N SIA returned | N SIA samples left per budget |
-|----------------|----------------|-------------------------------|
-| `{r} nSIAsent` | `{r} nSIA`     | `{r} SIA_sampleft`            |
+| N SIA sent     | N SIA returned | N SIA samples left per budget | Total N Budgeted |
+|----------------|----------------|-------------------------------|------------------|
+| `{r} nSIAsent` | `{r} nSIA`     | `{r} SIA_sampleft`            |`{r} SIA_Nstart`  |
 
 | Date Sent    | N layers sent | N layers returned |
 |--------------|---------------|-------------------|
-| Feb 10, 2025 | 81            | 81                |
-| Apr 1, 2025  | 111           | 51                |
+| Feb 4, 2025  | 70            | 70                |
+| Mar 31, 2025 | 107           | 107               |
+| Apr 1, 2025  | 15            | 15                |
+| Apr 25, 2025 | 35            | 0                 |
 
 Stable isotope results can be found in [NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555).
 
-# CSIAA
+# CSIA-AA
 
 ```{r}
 #| echo: false
@@ -349,11 +358,12 @@ Stable isotope results can be found in [NPRB2301_layer_results](https://docs.goo
 CSAA_used <- 0
 CSAA_start <- 14550
 CSAA_rate <- 485
+CSAA_Nstart <- CSAA_start/CSAA_rate
 CSAA_sampleft <- (CSAA_start - CSAA_used)/CSAA_rate
 ```
 
-As per the PI meeting notes, we are sending 5 sequence layers from our two largest animals and the core and outermost layer for 5 of the next largest animals. These eyes are either already delaminated or are in the process and will be shipped soon.
+NOTE: we have funds for more samples than initially planned. Total sample size is now 30. We will proceed with the plan for the first 20, then discuss how to use the remaining samples. Plan: sequence layers (n=5) from either 507 or 508 (which ever has least layers for AMS) sequence layers (n=5) from 678 core and outer layer (n=2) from 161, 273, 422, 473, and 544
 
-| N CSIAA sent | N CSIAA returned | N CSIAA samples left per budget |
-|--------------|------------------|---------------------------------|
-| 0            | 0                | `{r} CSAA_sampleft`             |
+| N CSIA_AA sent | N CSIA_AA returned | N CSIA_AA samples left per budget | Total N Budgeted |
+|----------------|--------------------|-----------------------------------|------------------|
+| 0              | 0                  | `{r} CSAA_sampleft`               |`{r} CSAA_Nstart` |
