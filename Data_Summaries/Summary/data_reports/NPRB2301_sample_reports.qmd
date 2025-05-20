@@ -45,10 +45,10 @@ This report summarizes the samples available for NPRB 2301, their status and the
 
 # Version Notes
 
--   Layer diameters and sample weights updated ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555))
+-   14C results updated ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555)), NOTE: this batch includes some samples from the freeze dried layers for comparison to the current method. 
 -   Spiny dogfish spine reading in progress
 -   Samples delaminated for CSIA-AA, shipping soon
--   Fixed code bugs in this report, [Issue #22](https://github.com/CindyTribuzio-NOAA/PSS_Ageing/issues/22) and [Issue #23](https://github.com/CindyTribuzio-NOAA/PSS_Ageing/issues/23) 
+-   Added more haul data, which changes some specimen ranks, fixed some minor data entry errors
 
 # Links and Resources
 

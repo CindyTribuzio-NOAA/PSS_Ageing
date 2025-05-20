@@ -24,7 +24,7 @@ round_any = function(x, accuracy, f=round){f(x/ accuracy) * accuracy}
 # sample data (e.g., eyes, embryos)
 samp_dat <- read_sheet('1pbSRX_9vj3Xe3_vqK_psvamk18oGSH3Kb-R6NeVSQkc') %>% clean_names() %>% 
   filter(sample_type %in% c('Embryo_1', 'Eye', 'Embryo_2', 'Eye_L', 'Eye_R', 'Eye_B', 'Eye_A', 'Candle', 'Spine_P')) %>% 
-  select(-notes)
+  select(-notes_some_got_out_of_order)
 # lookup table for joining samples and specimens
 samp_spec_join <- read_sheet('1pbSRX_9vj3Xe3_vqK_psvamk18oGSH3Kb-R6NeVSQkc', sheet = 'Sample_Join') %>% clean_names()
 # specimen data (i.e., animal that the samples came from)
@@ -87,9 +87,9 @@ samp_dat2 <- samp_dat %>%
   left_join(haul_spec_join) %>% 
   left_join(haul_dat) %>% 
   select(c(specimen_id, species_common_name, length_cm, length_type, sex, large_marine_ecosystem,
-           haul_date_akt, noncon_lat, noncon_long, nmfs_area, sample_type, sample_id, source)) %>% 
+           haul_date_akt, haul_year, noncon_lat, noncon_long, nmfs_area, sample_type, sample_id, source)) %>% 
   group_by(specimen_id, species_common_name, length_cm, length_type, sex, large_marine_ecosystem, haul_date_akt, noncon_lat, noncon_long,
-           nmfs_area, sample_type, source) %>% 
+           haul_year, nmfs_area, sample_type, source) %>% 
   summarise(n_samp = length(sample_id)) %>% 
   pivot_wider(names_from = sample_type, values_from = n_samp) %>% 
   mutate(samp_test = sum(Eye_L, Eye_R, na.rm = T)) %>% 
