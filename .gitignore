@@ -16,6 +16,9 @@ database.csv
 *.xls
 *.csv
 
+# ignore folders
+no_upload/
+
 # ignore shape files
 shapefiles
 
