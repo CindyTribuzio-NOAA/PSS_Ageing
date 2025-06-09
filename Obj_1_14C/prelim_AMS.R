@@ -114,3 +114,17 @@ t.test(nuc_dat2$Eye_L, nuc_dat2$Eye_R,
        alternative = "two.sided",
        mu = 0, paired = TRUE,
        conf.level = 0.95)
+
+# 14C and SIA together----
+s420_dat <- layer_dat %>% 
+  filter(sample_id == 420) %>% 
+  select(layer_order, delta14c, d15n, d13c) %>% 
+  pivot_longer(!layer_order, names_to = 'metric', values_to = 'value')
+ggplot(s420_dat, aes(x = layer_order, y = value, color = metric))+
+  geom_point(show.legend = F , size = 4)+
+  #geom_smooth()+
+  facet_grid(metric~., scales = "free")+
+  labs(y = "", x = "Layer Order")+
+  theme_bw()+
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())

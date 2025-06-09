@@ -47,8 +47,9 @@ This report summarizes the samples available for NPRB 2301, their status and the
 
 -   14C results updated ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555)), NOTE: this batch includes some samples from the freeze dried layers for comparison to the current method. 
 -   Spiny dogfish spine reading in progress
--   Samples delaminated for CSIA-AA, shipping soon
--   Added more haul data, which changes some specimen ranks, fixed some minor data entry errors
+-   CSIA-AA samples in shipment
+-   Added more haul data, which changes some specimen ranks, fixed some minor data entry errors, see [NPRB2301_specimen_summary](https://docs.google.com/spreadsheets/d/1J3IKrdptj7eS3VZj_qbxXTXorgktHXnQ_gUv1mVaxwk/edit?gid=1344539499#gid=1344539499)
+-   Updated layer diameters for some layers
 
 # Links and Resources
 
@@ -299,10 +300,10 @@ NOSAMS_sampleft <- (NOSAMS_start - NOSAMS_used)/NOSAMS_rate
 |--------------|---------------|-------------------|
 | Mar 25, 2019 | 11            | 11                |
 | Aug 5, 2019  | 8             | 8                 |
-| Sep 11, 2024 | 36            | 35                |
+| Sept 11, 2024| 36            | 35                |
 | Feb 6, 2025  | 70            | 70                |
-| Mar 31, 2025 | 96            | 0                 |
-| Apr 28, 2025 | 50            | 0                 |
+| Mar 31, 2025 | 96            | 95                |
+| Apr 28, 2025 | 50            | 21                |
 
 # Stable Isotopes
 
