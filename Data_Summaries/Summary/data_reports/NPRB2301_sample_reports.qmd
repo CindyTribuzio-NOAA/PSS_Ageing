@@ -48,8 +48,6 @@ This report summarizes the samples available for NPRB 2301, their status and the
 -   14C results updated ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555)), NOTE: this batch includes some samples from the freeze dried layers for comparison to the current method. 
 -   Spiny dogfish spine reading in progress
 -   CSIA-AA samples in shipment
--   Added more haul data, which changes some specimen ranks, fixed some minor data entry errors, see [NPRB2301_specimen_summary](https://docs.google.com/spreadsheets/d/1J3IKrdptj7eS3VZj_qbxXTXorgktHXnQ_gUv1mVaxwk/edit?gid=1344539499#gid=1344539499)
--   Updated layer diameters for some layers
 
 # Links and Resources
 
@@ -57,7 +55,7 @@ This report summarizes the samples available for NPRB 2301, their status and the
 -   [Research Workspace](https://www.researchworkspace.com/login) (password protected)
 -   [Google Folder](https://drive.google.com/drive/folders/1xsjlj4UVk1kSxjrBIXrRbMp6OHLY9GhE) (access controlled)
 
-# Project Timeline
+# Project Timeline (not updated)
 
 ![](NPRB2301_timeline.png)
 
@@ -145,7 +143,7 @@ all_spec_fig <- ggplot(all_spec, aes(x = l_bin, y = n_sharks, fill = as.factor(r
   labs(x = "Length Bin", y = "No. Sharks", title = "All Specimens", fill = "Rank")
 
 ams_spec<- graph_dat %>%
-  add_row(specimen_id = 0, length_cm = 0, length_type= 'Total Length', n_delam = 0, n_ams = 0, rank = 0, l_bin = 0) %>%
+  #add_row(specimen_id = 0, length_cm = 0, length_type= 'Total Length', n_delam = 0, n_ams = 0, rank = 0, l_bin = 0) %>%
   filter(!is.na(n_ams)) %>% 
   group_by(l_bin, rank) %>% 
   summarise(n_sharks = length(length_cm))%>% 
@@ -157,7 +155,7 @@ ams_spec_fig <- ggplot(ams_spec, aes(x = l_bin, y = n_sharks, fill = as.factor(r
   labs(x = "Length Bin", y = "No. Sharks", title = "AMS Specimens", fill = "Rank")
 
 delam_spec <- graph_dat %>% 
-  add_row(specimen_id = 0, length_cm = 0, length_type= 'Total Length', n_delam = 0, n_ams = NA, rank = 0, l_bin = 0) %>% 
+  #add_row(specimen_id = 0, length_cm = 0, length_type= 'Total Length', n_delam = 0, n_ams = NA, rank = 0, l_bin = 0) %>% 
   filter(!is.na(n_delam)) %>% 
   group_by(l_bin, rank) %>% 
   summarise(n_sharks = length(length_cm))%>% 
@@ -282,6 +280,21 @@ nsent<- layer_dat %>%
   filter(!is.na(wt_to_nosams_mg))
 nsent <- length(nsent$ams_id)
 
+summ_dat <- read_sheet('1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0')
+
+nPSS14C <- summ_dat %>% 
+  group_by(species_common_name, specimen_id) %>% 
+  summarise(n_layers = length(sample_id)) %>% 
+  filter(species_common_name == 'Pacific Sleeper Shark') %>% 
+  nrow()
+
+nSD14C <- summ_dat %>% 
+  group_by(species_common_name, specimen_id) %>% 
+  summarise(n_layers = length(sample_id)) %>% 
+  filter(species_common_name == 'Spiny Dogfish') %>% 
+  nrow()
+
+
 # get the below info from Taylor as needed
 NOSAMS_start <- 150080 #starting funds at WHOI for 14C samples
 NOSAMS_rate <- 268 #WHOI rate per 14C sample
@@ -294,6 +307,12 @@ NOSAMS_sampleft <- (NOSAMS_start - NOSAMS_used)/NOSAMS_rate
 |-------------|----------------|-------------------------------|------------------|
 | `{r} nsent` | `{r} nAMS`     | `{r} NOSAMS_sampleft`         | `{r} Nstart`     |
 
+The below table summarizes the number of each species which have 14C results from at least one layer
+
+| N 14C PSS  | N 14C SD |
+|-------------|----------------|
+| `{r} nPSS14C` | `{r} nSD14C`     |
+
 14C results can be found in [NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555).
 
 | Date Sent    | N layers sent | N layers returned |
@@ -303,7 +322,7 @@ NOSAMS_sampleft <- (NOSAMS_start - NOSAMS_used)/NOSAMS_rate
 | Sept 11, 2024| 36            | 35                |
 | Feb 6, 2025  | 70            | 70                |
 | Mar 31, 2025 | 96            | 95                |
-| Apr 28, 2025 | 50            | 21                |
+| Apr 28, 2025 | 50            | 29                |
 
 # Stable Isotopes
 
