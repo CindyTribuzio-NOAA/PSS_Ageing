@@ -46,8 +46,12 @@ This report summarizes the samples available for NPRB 2301, their status and the
 # Version Notes
 
 -   14C results updated ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555)), NOTE: this batch includes some samples from the freeze dried layers for comparison to the current method. 
--   Spiny dogfish spine reading in progress
+-   PRELIMINARY spiny dogfish ages added ([NPRB2301_dogfish_spine_ages_PRELIMINARY](https://docs.google.com/spreadsheets/d/1vSwK6RotLo52VmTlqGsSaYjwvUTYKpq989liY06V87g/edit?gid=1357910555#gid=1357910555)), see notes below
 -   CSIA-AA samples in shipment
+-   Added "Protein Separation" and "Spiny Dogfish Ageing" sections, see below
+-   We are teaming with WDFW for the spine ageing and samples, in turn, we will include some of their dogfish in our analyses
+-   We are anticipating receiving 10-13 more spiny dogfish from BC and Puget Sound, all with length and haul data. These are not yet included in our inventory, but will be added as soon as they arrive.
+
 
 # Links and Resources
 
@@ -322,7 +326,7 @@ The below table summarizes the number of each species which have 14C results fro
 | Sept 11, 2024| 36            | 35                |
 | Feb 6, 2025  | 70            | 70                |
 | Mar 31, 2025 | 96            | 95                |
-| Apr 28, 2025 | 50            | 29                |
+| Apr 28, 2025 | 50            | 50                |
 
 # Stable Isotopes
 
@@ -387,3 +391,11 @@ NOTE: we have funds for more samples than initially planned. Total sample size i
 | N CSIA_AA sent | N CSIA_AA returned | N CSIA_AA samples left per budget | Total N Budgeted |
 |----------------|--------------------|-----------------------------------|------------------|
 | 0              | 0                  | `{r} CSAA_sampleft`               |`{r} CSAA_Nstart` |
+
+# Protein Separation
+Charlotte and Cindy have been working on separating the soluble from the insoluble proteins. Cindy will provide an update on this in an email with questions, notes and images of the process.
+
+# Spiny Dogfish Ageing
+Cindy, Beth and Charlotte have concluded preliminary reads of all of the spiny dogfish spines following protocols in [Tribuzio et al. 2017](https://spo.nmfs.noaa.gov/content/mfr/methods-preparation-pacific-spiny-dogfish-squalus-suckleyi-fin-spines-and-vertebrae-and). Those results are available in the [NPRB2301_dogfish_spine_ages_PRELIMINARY](https://docs.google.com/spreadsheets/d/1vSwK6RotLo52VmTlqGsSaYjwvUTYKpq989liY06V87g/edit?gid=1357910555#gid=1357910555). The age estimates follow the estimation methods recommended by [Tribuzio et al. 2010](https://spo.nmfs.noaa.gov/content/age-and-growth-spiny-dogfish-squalus-acanthias-gulf-alaska-analysis-alternative-growth).
+
+The spines are being sent to the WDFW ageing lab, as they are the current authority on ageing spiny dogfish and final age estimates will be provided once WDFW completes their reads. 
