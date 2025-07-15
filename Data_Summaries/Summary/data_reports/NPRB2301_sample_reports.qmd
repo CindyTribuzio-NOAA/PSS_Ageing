@@ -36,7 +36,7 @@ samp_spec_join <- read_sheet('1pbSRX_9vj3Xe3_vqK_psvamk18oGSH3Kb-R6NeVSQkc', she
 
 layer_dat <- read_sheet('1j-TdYjQsN56HmBb07apldWv-TvOh1S_9T3oP6LuKoHU') %>% clean_names() %>% 
   select(sample_id, ams_id, layer_type, layer_order, methods, vial_mt_g, vial_dry_samp_g, layer_diam_mm,
-         wt_to_nosams_mg, f_modern, fm_err, wt_to_sia_mg, cn_ratio) %>% 
+         wt_to_nosams_mg, f_modern, fm_err, wt_to_sia_mg, cn_ratio, wt_to_csiaa) %>% 
   left_join(samp_spec_join)
 
 ```
@@ -45,13 +45,11 @@ This report summarizes the samples available for NPRB 2301, their status and the
 
 # Version Notes
 
--   14C results updated ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555)), NOTE: this batch includes some samples from the freeze dried layers for comparison to the current method. 
--   PRELIMINARY spiny dogfish ages added ([NPRB2301_dogfish_spine_ages_PRELIMINARY](https://docs.google.com/spreadsheets/d/1vSwK6RotLo52VmTlqGsSaYjwvUTYKpq989liY06V87g/edit?gid=1357910555#gid=1357910555)), see notes below
--   CSIA-AA samples in shipment
--   Added "Protein Separation" and "Spiny Dogfish Ageing" sections, see below
--   We are teaming with WDFW for the spine ageing and samples, in turn, we will include some of their dogfish in our analyses
--   We are anticipating receiving 10-13 more spiny dogfish from BC and Puget Sound, all with length and haul data. These are not yet included in our inventory, but will be added as soon as they arrive.
-
+-   Updated diameter and sample submission information ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555)), NOTE: the updated diameters are for samples that have not been submitted for 14C, SIA or CSIAA yet, thus will not pre reflected in the NPRB2301_layer_results 
+-   Added in columns for the diameter notes and CSIAA (no results yet for CSIAA) to the output ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555))
+-   Batch of samples submitted for CSIAA, 14C and SIA, including three large PSS with many layers and diameters
+-   Sample selection for protein separation
+-   Fixed the "samples remaining in the budget" to reflect the samples from 2019 which were paid for with other funds and do not count against current budgets
 
 # Links and Resources
 
@@ -263,12 +261,7 @@ nSD_wodatavail <- length(unique(nSD_wodat$specimen_id))
 |------------------|------------------|------------------|-------------------|
 | `{r} nSD` | `{r} nSD_wdat` | `{r} nSD_avail` | `{r} nSD_wodatavail` |
 
-There are two concerns with spiny dogfish samples:
-
-1.  Four spiny dogfish were processed before we identified potential contaminations and considered not available, however are included in the total number of spiny dogfish.
-2.  A subset of spiny dogfish do not have length or specific haul data (8). All of these samples do have both eyes and embryos and may still be useful for analyses between mother/offspring.
-
-Began "dry peels" of spiny dogfish eye lens. These lens behave quite differently from the PSS lens. They are more solid, with clearly defined "petals" that peel away. Wil has been helping with these and confirms that the spiny dogfish eyes are much more similar to all of the teleost eyes that he has worked with. Working hypothesis is that the more visual predators may have more structural eyes.
+This section has not been updated, pending new samples arriving from BC and Washington. Stay tuned.
 
 # Carbon 14
 
@@ -281,7 +274,8 @@ nAMS <- layer_dat %>%
   filter(!is.na(f_modern))
 nAMS <- length(nAMS$ams_id)
 nsent<- layer_dat %>% 
-  filter(!is.na(wt_to_nosams_mg))
+  filter(!is.na(wt_to_nosams_mg),
+         methods %nin% c('M1', 'M2', 'M3', 'M4', 'M5', 'M6', 'M7', 'M8'))
 nsent <- length(nsent$ams_id)
 
 summ_dat <- read_sheet('1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0')
@@ -306,6 +300,7 @@ Nstart <- NOSAMS_start/NOSAMS_rate
 NOSAMS_used <- NOSAMS_rate*nAMS #not used, current balance of WHOI budget, but not updated
 NOSAMS_sampleft <- (NOSAMS_start - NOSAMS_used)/NOSAMS_rate
 ```
+The estimated N 14C samples left per budget reflects those that have been billed, not all of the samples that have been submitted.
 
 | N 14C sent  | N 14C returned | N 14C samples left per budget | Total N budgeted |
 |-------------|----------------|-------------------------------|------------------|
@@ -327,6 +322,7 @@ The below table summarizes the number of each species which have 14C results fro
 | Feb 6, 2025  | 70            | 70                |
 | Mar 31, 2025 | 96            | 95                |
 | Apr 28, 2025 | 50            | 50                |
+| July 14, 2025| 68            | 0                 |
 
 # Stable Isotopes
 
@@ -335,7 +331,6 @@ The below table summarizes the number of each species which have 14C results fro
 #| warning: false
 #| output: false
 
-# no results yet, so don't know what that will look like in layer_data file
 #nSIA <- layer_dat %>% 
 #  filter(!is.na(wt_to_sia_mg))
 #nSIA <- length(nSIA$ams_id)
@@ -365,6 +360,7 @@ SIA_sampleft <- (SIA_start - SIA_used)/SIA_rate
 | Mar 31, 2025 | 107           | 107               |
 | Apr 1, 2025  | 15            | 15                |
 | Apr 25, 2025 | 35            | 0                 |
+| July 14, 2025| 68            | 0                |
 
 Stable isotope results can be found in [NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555).
 
@@ -384,16 +380,26 @@ CSAA_start <- 14550
 CSAA_rate <- 485
 CSAA_Nstart <- CSAA_start/CSAA_rate
 CSAA_sampleft <- (CSAA_start - CSAA_used)/CSAA_rate
+
+nCSsent<- layer_dat %>% 
+  filter(!is.na(wt_to_csiaa))
+nCSsent <- length(nCSsent$ams_id)
+#nCS <- layer_dat %>% 
+#  filter(!is.na(wt_to_csiaa_mg),
+#         !is.na(cn_ratio))
+#nCS <- length(nSIA$cn_ratio)
 ```
 
 NOTE: we have funds for more samples than initially planned. Total sample size is now 30. We will proceed with the plan for the first 20, then discuss how to use the remaining samples. Plan: sequence layers (n=5) from either 507 or 508 (which ever has least layers for AMS) sequence layers (n=5) from 678 core and outer layer (n=2) from 161, 273, 422, 473, and 544
 
 | N CSIA_AA sent | N CSIA_AA returned | N CSIA_AA samples left per budget | Total N Budgeted |
 |----------------|--------------------|-----------------------------------|------------------|
-| 0              | 0                  | `{r} CSAA_sampleft`               |`{r} CSAA_Nstart` |
+| `{r} nCSsent`  | 0                  | `{r} CSAA_sampleft`               |`{r} CSAA_Nstart` |
 
 # Protein Separation
-Charlotte and Cindy have been working on separating the soluble from the insoluble proteins. Cindy will provide an update on this in an email with questions, notes and images of the process.
+Charlotte, Taylor and Cindy have developed [protocols](https://docs.google.com/document/d/1ImyYcjrZn9WYyd93Z4lyDQU1a0ZJj_SSmgSQs9gH3qc/edit?tab=t.0) for the separation of soluble from insoluble proteins.
+
+Delamination is beginning the week of July 13, 2025 for selected PSS eyes. Spiny dogfish eyes are pending new samples arriving from WA later in July.
 
 # Spiny Dogfish Ageing
 Cindy, Beth and Charlotte have concluded preliminary reads of all of the spiny dogfish spines following protocols in [Tribuzio et al. 2017](https://spo.nmfs.noaa.gov/content/mfr/methods-preparation-pacific-spiny-dogfish-squalus-suckleyi-fin-spines-and-vertebrae-and). Those results are available in the [NPRB2301_dogfish_spine_ages_PRELIMINARY](https://docs.google.com/spreadsheets/d/1vSwK6RotLo52VmTlqGsSaYjwvUTYKpq989liY06V87g/edit?gid=1357910555#gid=1357910555). The age estimates follow the estimation methods recommended by [Tribuzio et al. 2010](https://spo.nmfs.noaa.gov/content/age-and-growth-spiny-dogfish-squalus-acanthias-gulf-alaska-analysis-alternative-growth).
