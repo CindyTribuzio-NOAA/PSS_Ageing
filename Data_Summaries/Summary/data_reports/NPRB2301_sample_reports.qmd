@@ -45,7 +45,7 @@ This report summarizes the samples available for NPRB 2301, their status and the
 
 # Version Notes
 
--   Updated diameter and sample submission information ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555)), NOTE: the updated diameters are for samples that have not been submitted for 14C, SIA or CSIAA yet, thus will not pre reflected in the NPRB2301_layer_results 
+-   Updated diameter and sample submission information ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555)), NOTE: the updated diameters are for samples that have not been submitted for 14C, SIA or CSIAA yet, thus will not pre reflected in the NPRB2301_layer_results
 -   Added in columns for the diameter notes and CSIAA (no results yet for CSIAA) to the output ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555))
 -   Batch of samples submitted for CSIAA, 14C and SIA, including three large PSS with many layers and diameters
 -   Sample selection for protein separation
@@ -300,29 +300,30 @@ Nstart <- NOSAMS_start/NOSAMS_rate
 NOSAMS_used <- NOSAMS_rate*nAMS #not used, current balance of WHOI budget, but not updated
 NOSAMS_sampleft <- (NOSAMS_start - NOSAMS_used)/NOSAMS_rate
 ```
+
 The estimated N 14C samples left per budget reflects those that have been billed, not all of the samples that have been submitted.
 
 | N 14C sent  | N 14C returned | N 14C samples left per budget | Total N budgeted |
-|-------------|----------------|-------------------------------|------------------|
+|----------------|----------------|--------------------------|----------------|
 | `{r} nsent` | `{r} nAMS`     | `{r} NOSAMS_sampleft`         | `{r} Nstart`     |
 
 The below table summarizes the number of each species which have 14C results from at least one layer
 
-| N 14C PSS  | N 14C SD |
-|-------------|----------------|
-| `{r} nPSS14C` | `{r} nSD14C`     |
+| N 14C PSS     | N 14C SD     |
+|---------------|--------------|
+| `{r} nPSS14C` | `{r} nSD14C` |
 
 14C results can be found in [NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555).
 
-| Date Sent    | N layers sent | N layers returned |
-|--------------|---------------|-------------------|
-| Mar 25, 2019 | 11            | 11                |
-| Aug 5, 2019  | 8             | 8                 |
-| Sept 11, 2024| 36            | 35                |
-| Feb 6, 2025  | 70            | 70                |
-| Mar 31, 2025 | 96            | 95                |
-| Apr 28, 2025 | 50            | 50                |
-| July 14, 2025| 68            | 0                 |
+| Date Sent     | N layers sent | N layers returned |
+|---------------|---------------|-------------------|
+| Mar 25, 2019  | 11            | 11                |
+| Aug 5, 2019   | 8             | 8                 |
+| Sept 11, 2024 | 36            | 35                |
+| Feb 6, 2025   | 70            | 70                |
+| Mar 31, 2025  | 96            | 95                |
+| Apr 28, 2025  | 50            | 50                |
+| July 14, 2025 | 68            | 0                 |
 
 # Stable Isotopes
 
@@ -350,17 +351,17 @@ SIA_Nstart <- SIA_start/SIA_rate
 SIA_sampleft <- (SIA_start - SIA_used)/SIA_rate
 ```
 
-| N SIA sent     | N SIA returned | N SIA samples left per budget | Total N Budgeted |
-|----------------|----------------|-------------------------------|------------------|
-| `{r} nSIAsent` | `{r} nSIA`     | `{r} SIA_sampleft`            |`{r} SIA_Nstart`  |
+| N SIA sent | N SIA returned | N SIA samples left per budget | Total N Budgeted |
+|----------------|----------------|-------------------------|----------------|
+| `{r} nSIAsent` | `{r} nSIA` | `{r} SIA_sampleft` | `{r} SIA_Nstart` |
 
-| Date Sent    | N layers sent | N layers returned |
-|--------------|---------------|-------------------|
-| Feb 4, 2025  | 70            | 70                |
-| Mar 31, 2025 | 107           | 107               |
-| Apr 1, 2025  | 15            | 15                |
-| Apr 25, 2025 | 35            | 0                 |
-| July 14, 2025| 68            | 0                |
+| Date Sent     | N layers sent | N layers returned |
+|---------------|---------------|-------------------|
+| Feb 4, 2025   | 70            | 70                |
+| Mar 31, 2025  | 107           | 107               |
+| Apr 1, 2025   | 15            | 15                |
+| Apr 25, 2025  | 35            | 0                 |
+| July 14, 2025 | 68            | 0                 |
 
 Stable isotope results can be found in [NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555).
 
@@ -393,15 +394,17 @@ nCSsent <- length(nCSsent$ams_id)
 NOTE: we have funds for more samples than initially planned. Total sample size is now 30. We will proceed with the plan for the first 20, then discuss how to use the remaining samples. Plan: sequence layers (n=5) from either 507 or 508 (which ever has least layers for AMS) sequence layers (n=5) from 678 core and outer layer (n=2) from 161, 273, 422, 473, and 544
 
 | N CSIA_AA sent | N CSIA_AA returned | N CSIA_AA samples left per budget | Total N Budgeted |
-|----------------|--------------------|-----------------------------------|------------------|
-| `{r} nCSsent`  | 0                  | `{r} CSAA_sampleft`               |`{r} CSAA_Nstart` |
+|----------------|----------------|-------------------------|----------------|
+| `{r} nCSsent` | 0 | `{r} CSAA_sampleft` | `{r} CSAA_Nstart` |
 
 # Protein Separation
+
 Charlotte, Taylor and Cindy have developed [protocols](https://docs.google.com/document/d/1ImyYcjrZn9WYyd93Z4lyDQU1a0ZJj_SSmgSQs9gH3qc/edit?tab=t.0) for the separation of soluble from insoluble proteins.
 
 Delamination is beginning the week of July 13, 2025 for selected PSS eyes. Spiny dogfish eyes are pending new samples arriving from WA later in July.
 
 # Spiny Dogfish Ageing
+
 Cindy, Beth and Charlotte have concluded preliminary reads of all of the spiny dogfish spines following protocols in [Tribuzio et al. 2017](https://spo.nmfs.noaa.gov/content/mfr/methods-preparation-pacific-spiny-dogfish-squalus-suckleyi-fin-spines-and-vertebrae-and). Those results are available in the [NPRB2301_dogfish_spine_ages_PRELIMINARY](https://docs.google.com/spreadsheets/d/1vSwK6RotLo52VmTlqGsSaYjwvUTYKpq989liY06V87g/edit?gid=1357910555#gid=1357910555). The age estimates follow the estimation methods recommended by [Tribuzio et al. 2010](https://spo.nmfs.noaa.gov/content/age-and-growth-spiny-dogfish-squalus-acanthias-gulf-alaska-analysis-alternative-growth).
 
-The spines are being sent to the WDFW ageing lab, as they are the current authority on ageing spiny dogfish and final age estimates will be provided once WDFW completes their reads. 
+The spines are being sent to the WDFW ageing lab, as they are the current authority on ageing spiny dogfish and final age estimates will be provided once WDFW completes their reads.
