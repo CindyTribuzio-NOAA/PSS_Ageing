@@ -25,20 +25,20 @@ Delamination Training         :done,          year1_6,    2024-08-06, 2024-08-09
 
 section Year 2 (Sept 1, 2024 - Aug 31, 2025)
 Training samples to WHOI      :done,          year2_1,    2023-09-11, 24h #note years are faked in the following blocks to make things line up
-Production Delamination       :active,        year2_2,    2023-10-28, 2024-08-31
+Production Delamination       :done,        year2_2,    2023-10-28, 2024-08-31
 14C preliminary evaluation    :done,          year2_3,    2024-01-10, 2024-02-28
 Interim Report                :done,          year2_4,    2024-01-31, 1d
 PI Meeting                    :done,          year2_5,    2024-02-26, 2024-02-28
 14C samples to WHOI           :active,        year2_6,    2024-02-06, 2024-08-31
 Stable isotope to Stanford    :active,        year2_7,    2024-02-10, 2024-08-31
-Protein separations           :               year2_8,    2024-07-01, 2024-07-14
-Manage Research Workspace     :active,        year2_9,    after year2_5, 180d
-CSIAA samples to UCSC         :               year2_10,   after year2_8, 5d
+Protein separations           :done,          year2_8,    2024-07-01, 2024-07-14
+Manage Research Workspace     :crit,          year2_9,    after year2_5, 180d
+CSIAA samples to UCSC         :done,         year2_10,   after year2_8, 5d
 
 
-section Year 3  (Sept 1, 2024 - Jan 31, 2026)
-Manage Research Workspace     :               year3_1,    2023-09-01, 180d
-Ship any remaining samples    :               year3_2,    2023-09-01, 30d
+section Year 3  (Sept 1, 2025 - Jan 31, 2026)
+Manage Research Workspace     :crit,          year3_1,    2023-09-01, 180d
+Ship any remaining samples    :crit,          year3_2,    2023-09-01, 30d
 Wrap up billing               :crit,          year3_3,    2024-01-01, 30d
 Present at AMSS (date TBD)    :crit,          year3_4,    2024-01-15, 3d
 Project End                   :crit,          year3_5,    2024-01-31, 1d
@@ -49,6 +49,7 @@ NPRB final report             :crit,          extras_2,   2024-01-31, 30d
 Wrap up manuscripts           :crit,          extras_3,   2024-01-31, 90d
 ")
 
-plotly::export(gannt, file = "NPRB2301_timeline.png") #saves to main working directory
+#does not work, saved the painful way by exporting from the graph pane in Rstudio
+export_graph(gannt, file_name = "NPRB2301_timeline.png") #saves to main working directory
 
 
