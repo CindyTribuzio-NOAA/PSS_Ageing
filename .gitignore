@@ -18,6 +18,7 @@ database.csv
 
 # ignore folders
 no_upload/
+sample_tracking/
 
 # ignore shape files
 shapefiles
