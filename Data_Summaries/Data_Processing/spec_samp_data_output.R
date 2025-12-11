@@ -40,7 +40,7 @@ haul_spec_join <- read_sheet('1pbSRX_9vj3Xe3_vqK_psvamk18oGSH3Kb-R6NeVSQkc', she
 rank_dat <- read_sheet('1i5Q1b6F8m9RK7l_L5-5fmbTkJq1hisUn8w2dwogeTPs') %>% clean_names()
 # eye layer data
 layer_dat <- read_sheet('1j-TdYjQsN56HmBb07apldWv-TvOh1S_9T3oP6LuKoHU') %>% clean_names() %>% 
-  select(sample_id, ams_id, layer_type, layer_order, methods, vial_mt_g, vial_dry_samp_g, layer_diam_mm, image_comments,
+  select(sample_id, sample_desc, ams_id, std_lyr_id, layer_type, protein_type, layer_order, methods, vial_mt_g, vial_dry_samp_g, layer_diam_mm, image_comments,
          wt_to_nosams_mg, f_modern, fm_err, wt_to_sia_mg, wt_p_n, wt_p_c, d15n, d13c, cn_ratio, wt_to_csiaa, ala,
          ala_stdv, gly,	gly_stdv,	thr,	thr_stdv,	ser,	ser_stdv,	val,	val_stdv,	leu,	leu_stdv,	ile,	ile_stdv,	nle,	nle_stdv,
          pro,	pro_stdv,	asp,	asp_stdv,	glu,	glu_stdv,	phe,	phe_stdv,	tyr,	tyr_stdv,	lys,	lys_stdv,	csiaa_notes)
@@ -133,7 +133,7 @@ layer_dat2 <- samp_dat3 %>%
 layer_link <- "https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=0#gid=0"
 layer_dat2 %>% write_sheet(ss = layer_link, sheet = "combined_layer_results")
 
-write_csv(layer_dat2, paste0(getwd(), "/Obj_1_14C/NPRB2301_layer_results"))
+#write_csv(layer_dat2, paste0(getwd(), "/Obj_1_14C/NPRB2301_layer_results"))
 
 ###
 
@@ -147,8 +147,8 @@ AMS_dat <- samp_dat3 %>%
   select(!c(vial_mt_g, vial_dry_samp_g)) %>% 
   filter(f_modern >= 0) %>% 
   select(c(sample_id, specimen_id, species_common_name, sex, length_cm, length_type, 
-           haul_year, large_marine_ecosystem, noncon_lat, noncon_long, ams_id, layer_type,
-           layer_order, methods, layer_diam_mm, image_comments, wt_to_nosams_mg, f_modern, fm_err, D14C, D14C_err, delta14C))
+           haul_year, large_marine_ecosystem, noncon_lat, noncon_long, sample_desc, ams_id, std_lyr_id, layer_type,
+           protein_type, layer_order, methods, layer_diam_mm, image_comments, wt_to_nosams_mg, f_modern, fm_err, D14C, D14C_err, delta14C))
 
 layer_link <- "https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=0#gid=0"
 AMS_dat %>% write_sheet(ss = layer_link, sheet = "14C_layer_results")
@@ -157,8 +157,8 @@ SIA_dat <- samp_dat3 %>%
   select(!c(vial_mt_g, vial_dry_samp_g)) %>% 
   filter(cn_ratio >= 0) %>% 
   select(c(sample_id, specimen_id, species_common_name, sex, length_cm, length_type, 
-           haul_year, large_marine_ecosystem, noncon_lat, noncon_long,ams_id, layer_type,
-           layer_order, methods, layer_diam_mm, image_comments, wt_to_sia_mg, wt_p_n, wt_p_c, d15n, d13c, cn_ratio))
+           haul_year, large_marine_ecosystem, noncon_lat, noncon_long, sample_desc, ams_id, std_lyr_id, layer_type,
+           protein_type, layer_order, methods, layer_diam_mm, image_comments, wt_to_sia_mg, wt_p_n, wt_p_c, d15n, d13c, cn_ratio))
 
 layer_link <- "https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=0#gid=0"
 SIA_dat %>% write_sheet(ss = layer_link, sheet = "SIA_layer_results")
@@ -167,7 +167,8 @@ CSI_dat <- samp_dat3 %>%
   select(!c(vial_mt_g, vial_dry_samp_g)) %>% 
   filter(ala >= 0) %>% 
   select(c(sample_id, specimen_id, species_common_name, sex, length_cm, length_type, 
-           haul_year, large_marine_ecosystem, noncon_lat, noncon_long,ams_id, layer_type,
+           haul_year, large_marine_ecosystem, noncon_lat, noncon_long, sample_desc, ams_id, std_lyr_id, layer_type,
+           protein_type, 
            layer_order, methods, layer_diam_mm, image_comments, wt_to_csiaa, ala, ala_stdv, gly, gly_stdv, thr, thr_stdv,
            ser, ser_stdv, val, val_stdv, leu, leu_stdv, ile, ile_stdv, nle, nle_stdv, pro, pro_stdv, asp, asp_stdv, 
            glu, glu_stdv, phe, phe_stdv, tyr, tyr_stdv, lys, lys_stdv, csiaa_notes))
