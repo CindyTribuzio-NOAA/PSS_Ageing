@@ -194,7 +194,7 @@ glink <- "https://docs.google.com/spreadsheets/d/1vSwK6RotLo52VmTlqGsSaYjwvUTYKp
 df_age %>% write_sheet(ss = glink, sheet = "dogfish_spine_ages")
 ```
 
-All of the Pacific spiny dogfish sampled for this study were adult females. There were `{r} ndf` that were aged, `{r} ndf_TL` with associated length data, ranging in size from `{r} min_tl` to `{r} max_tl` cm total length. None of the readers were significantly different from the median of the four readers (@fig-F1). All of the spines were considered worn, meaning that the LRP >= 2.45. The final age estimates and birth years, with uncertainty ranges can be found in [NPRB2301_dogfish_spine_ages](https://https://docs.google.com/spreadsheets/d/1vSwK6RotLo52VmTlqGsSaYjwvUTYKpq989liY06V87g/edit?gid=1736666004#gid=1736666004)
+All of the Pacific spiny dogfish sampled for this study were adult females. There were `{r} ndf` that were aged, `{r} ndf_TL` with associated length data, ranging in size from `{r} min_tl` to `{r} max_tl` cm total length. None of the readers were significantly different from the median of the four readers (@fig-F1). All of the spines were considered worn, meaning that the LRP >= 2.45. The final age estimates and birth years, with uncertainty ranges can be found in [NPRB2301_dogfish_spine_ages](https://docs.google.com/spreadsheets/d/1vSwK6RotLo52VmTlqGsSaYjwvUTYKpq989liY06V87g/edit?gid=1736666004#gid=1736666004)
 
 # Figures
 

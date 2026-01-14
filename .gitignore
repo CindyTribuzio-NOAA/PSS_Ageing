@@ -8,6 +8,8 @@
 database.csv
 *development*
 *DNS*
+*nogit*
+
 
 # Don't track data
 *.xlsx
