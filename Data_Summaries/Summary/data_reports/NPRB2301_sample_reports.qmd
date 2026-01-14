@@ -45,11 +45,15 @@ This report summarizes the samples available for NPRB 2301, their status and the
 
 # Version Notes
 
--   Lots up updated data ([NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555))
--   We have some decisions to make on the soluble and insoluble protein samples. Are there enough data?
--   For ease of data management, [NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555) has been somewhat restructured. The same wide format sheet is available ('combined_layer_results'), but it has a lot of white space. I created separate tabs for each of the data output types to clean up white space.
--   Changed the original specimen summary sheet to [NPRB2301_specimens_available_summary](https://docs.google.com/spreadsheets/d/1J3IKrdptj7eS3VZj_qbxXTXorgktHXnQ_gUv1mVaxwk/edit?gid=1344539499#gid=1344539499). This sheet is a list of all of the animals available for the project.
--   Created a new summary of processed specimens, for a quickie look up cheat sheet [NPRB2301_specimens_processed_summary](https://docs.google.com/spreadsheets/d/1Yr6yGoU-_5JCO69TGdjaRJYhw2AL2YMG6kYeCGMQKyw/edit?gid=1062836159#gid=1062836159). This sheet shows the animals that have had samples processed, what type of analysis and how many per animal.
+-   New columns added to make data management easier:
+    -   "new_layer_type" is a more accurate reflection of what the layers contained and is standardized to minimize categories and confusion
+    -   "std_lyr_id" takes all the different formats of layer_id and ams_id and makes a single format across ALL samples.
+    -   "sample_desc" Text descriptor of what type of sample it is and from what species to make filtering quicker in analytics
+    -   "protein_type" is for filtering whole layers, soluble or insoluble portions
+-   All soluble/insoluble protein samples have been returned. Data can be found in [NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555), 14C_layer_results sheet. Filter on protein type.
+-   Lens diameters have been updated and double checked. Charlotte is working on taking more measurements from eyes still in the freezer. Data can be found in [NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555), layer_diameter_results sheet.
+-   Beth, Charlotte and Cindy are working on the length extrapolation, stay tuned for a mini-report.
+-   All spiny dogfish ages have been finalized, Cindy is completing a report on this. Data are available in [NPRB2301_dogfish_spine_ages](https://https://docs.google.com/spreadsheets/d/1vSwK6RotLo52VmTlqGsSaYjwvUTYKpq989liY06V87g/edit?gid=1736666004#gid=1736666004)
 
 # Links and Resources
 
@@ -310,7 +314,7 @@ NOSAMS_sampleft <- floor(NOSAMS_left/276)
 The estimated N 14C samples left per budget reflects those that have been submitted, but do not reflect the lost samples or the potential rebudgeting of WHOI funds. We are going to have some remaining samples available and need to discuss how best to proceed and how fast we can proceed.
 
 | N 14C sent  | N 14C returned | N 14C samples left per budget | Total N budgeted |
-|-----------------|-----------------|-----------------------|-----------------|
+|-----------------|-----------------|---------------------|-----------------|
 | `{r} nsent` | `{r} nAMS`     | `{r} NOSAMS_sampleft`         | `{r} Nstart`     |
 
 The below table summarizes the number of each species which have 14C results from at least one layer
@@ -332,6 +336,8 @@ The below table summarizes the number of each species which have 14C results fro
 | July 14, 2025 | 68            | 68                |
 | Aug 25, 2025  | 36            | 30                |
 | Sept 9, 2025  | 141           | 141               |
+| Dec 2, 2025   | 18            | 14                |
+| Dec 15, 2025  | 68            | 0 *needs to be updated                |
 
 # Stable Isotopes
 
@@ -360,7 +366,7 @@ SIA_sampleft <- (SIA_start - SIA_used)/SIA_rate
 ```
 
 | N SIA sent | N SIA returned | N SIA samples left per budget | Total N Budgeted |
-|-----------------|-----------------|-----------------------|-----------------|
+|-----------------|-----------------|---------------------|-----------------|
 | `{r} nSIAsent` | `{r} nSIA` | `{r} SIA_sampleft` | `{r} SIA_Nstart` |
 
 | Date Sent     | N layers sent | N layers returned |
@@ -405,17 +411,17 @@ nCSsent <- length(nCSsent$ams_id)
 NOTE: we have funds for more samples than initially planned. Total sample size is now 35. The samples were so "clean" that they did not cost as much to process. We need to discuss how best to proceed with the remaining 5 samples: should we do more samples from an individual already sent, or a new shark? These remaining 5 samples will be pre-billed so we have some flexibility on sending these.
 
 | N CSIA_AA sent | N CSIA_AA returned | N CSIA_AA samples left per budget | Total N Budgeted |
-|-----------------|-----------------|-----------------------|-----------------|
+|-----------------|-----------------|---------------------|-----------------|
 | `{r} nCSsent` | 25 | `{r} CSAA_sampleft` | `{r} CSAA_Nstart` |
 
 # Protein Separation
 
-The 14C data are back from NOSAMS. 30 of 36 samples were able to be run. 5 of the lost samples were soluble portions that were too small and the other was lost during processing. We need to determine if we have sufficient data for this analysis!
+All of the 14C data for soluble and insoluble proteins are back from NOSAMS. 54 samples were submitted, with data returned for 45. Eight of the samples without data were soluble portions that were too small and the other was lost during processing.
 
-Soluble and insoluble portion layer results are in the [NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555). Samples for this analysis are noted by ams_ids with "I" or "S" at the end.
+Soluble and insoluble portion layer results are in the [NPRB2301_layer_results](https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=1357910555#gid=1357910555) 14C_layer_results sheet. Samples for this analysis are noted by std_layer_ids with "I" or "S" at the end and can be easily filtered by protein_type.
 
 # Spiny Dogfish Ageing
 
-Cindy, Beth and Charlotte have concluded preliminary reads of all of the spiny dogfish spines following protocols in [Tribuzio et al. 2017](https://spo.nmfs.noaa.gov/content/mfr/methods-preparation-pacific-spiny-dogfish-squalus-suckleyi-fin-spines-and-vertebrae-and). Those results are available in the [NPRB2301_dogfish_spine_ages_PRELIMINARY](https://docs.google.com/spreadsheets/d/1vSwK6RotLo52VmTlqGsSaYjwvUTYKpq989liY06V87g/edit?gid=1357910555#gid=1357910555). The age estimates follow the estimation methods recommended by [Tribuzio et al. 2010](https://spo.nmfs.noaa.gov/content/age-and-growth-spiny-dogfish-squalus-acanthias-gulf-alaska-analysis-alternative-growth).
+WDFW has concluded the final reading of spiny dogfish spines. For reference, the spine reading methods are detailed in [Tribuzio et al. 2017](https://spo.nmfs.noaa.gov/content/mfr/methods-preparation-pacific-spiny-dogfish-squalus-suckleyi-fin-spines-and-vertebrae-and).
 
-The spines are being sent to the WDFW ageing lab, as they are the current authority on ageing spiny dogfish and final age estimates will be provided once WDFW completes their reads.
+Spiny dogfish ages are available in [NPRB2301_dogfish_spine_ages](https://https://docs.google.com/spreadsheets/d/1vSwK6RotLo52VmTlqGsSaYjwvUTYKpq989liY06V87g/edit?gid=1736666004#gid=1736666004). The age estimates follow the estimation methods recommended by [Tribuzio et al. 2010](https://spo.nmfs.noaa.gov/content/age-and-growth-spiny-dogfish-squalus-acanthias-gulf-alaska-analysis-alternative-growth).

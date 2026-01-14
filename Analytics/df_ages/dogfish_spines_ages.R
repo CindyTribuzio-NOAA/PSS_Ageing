@@ -1,4 +1,4 @@
-# Updated 1 Jul 2025 by C. Tribuzio
+# Updated 7 January 2026 by C. Tribuzio
 # combines sample, specimen, and spine data for spiny dogfish
 
 # Setup ----
@@ -55,10 +55,25 @@ df_age <- df_age %>%
 summ_age <- df_age %>% 
   group_by(sample_id, specimen_id, species_common_name, sex, length_cm, length_type, large_marine_ecosystem, haul_date_akt, noncon_lat, 
            noncon_long, haul_year, nmfs_area) %>% 
-  summarise(med_age = median(est_age))
+  summarise(med_age = median(est_age, na.rm = T))
 
 # write to google drive ----
 glink <- "https://docs.google.com/spreadsheets/d/1vSwK6RotLo52VmTlqGsSaYjwvUTYKpq989liY06V87g/edit?gid=0#gid=0"
-summ_age %>% write_sheet(ss = glink, sheet = "preliminary_dogfish_spine_ages")
+summ_age %>% write_sheet(ss = glink, sheet = "dogfish_spine_ages")
 
+# compare median to WDFW authority values----
+Wage <- df_age %>% 
+  filter(reader == "WDFW_final") %>% 
+  select(sample_id, est_age)
 
+Mage <- summ_age %>% 
+  ungroup() %>% 
+  select(sample_id, med_age)
+
+WMcomp <- Wage %>% 
+  left_join(Mage) %>% 
+  mutate(age_diff = est_age - med_age)
+
+ggplot(WMcomp, aes(x = est_age, y = med_age))+
+  geom_point()+
+  geom_abline(intercept = 0, slope = 1, color = "red", linetype = "dashed")
