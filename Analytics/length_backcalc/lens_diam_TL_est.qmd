@@ -665,11 +665,15 @@ ggsave(plot = f5,
 
 f6_PSSdat <- f4_PSSdat %>% 
   select(length_cm, LDw, LDh) %>% 
-  pivot_longer(!length_cm, names_to = "type", values_to = 'diam_mm')
-f6_PSS <- ggplot(f6_PSSdat, aes(x = length_cm, y = diam_mm, color = type))+
+  pivot_longer(!length_cm, names_to = "type", values_to = 'diam_mm') %>% 
+  mutate(Layer = if_else(type == 'LDh', 'FHL', 'Capsule'))
+f6_PSS <- ggplot(f6_PSSdat, aes(x = length_cm, y = diam_mm, color = Layer))+
   geom_point()+
   geom_smooth(method = "lm", se = TRUE) +
-  labs(title = "Pacific Sleeper Shark")+
+  scale_color_viridis_d(option = "viridis", end = 0.85)+
+  labs(title = "Pacific Sleeper Shark", 
+       x = 'Total Length (cm)',
+       y = 'Layer Diameter (mm)')+
   theme_bw()
 
 f6_SDdat <- m15dat_v2 %>% 
@@ -677,14 +681,19 @@ f6_SDdat <- m15dat_v2 %>%
 
 f6_SDdat <- f6_SDdat %>% 
   select(length_cm, LDw, LDh) %>% 
-  pivot_longer(!length_cm, names_to = "type", values_to = 'diam_mm')
-f6_SD <- ggplot(f6_SDdat, aes(x = length_cm, y = diam_mm, color = type))+
+  pivot_longer(!length_cm, names_to = "type", values_to = 'diam_mm')%>% 
+  mutate(Layer = if_else(type == 'LDh', 'FHL', 'Capsule'))
+f6_SD <- ggplot(f6_SDdat, aes(x = length_cm, y = diam_mm, color = Layer))+
   geom_point()+
   geom_smooth(method = "lm", se = TRUE) +
-  labs(title = "Spiny Dogfish")+
+  scale_color_viridis_d(option = "viridis", end = 0.85)+
+  labs(title = "Spiny Dogfish", 
+       x = 'Total Length (cm)',
+       y = 'Layer Diameter (mm)')+
   theme_bw()
 
-f6 <- f6_PSS/f6_SD
+f6 <- f6_PSS/f6_SD + plot_layout(axes = "collect",
+                                 guides = "collect")
 
 ggsave(plot = f6, 
        filename = paste0(getwd(), "/Fig6_LD_TL.png"),
