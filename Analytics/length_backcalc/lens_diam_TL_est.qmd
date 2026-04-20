@@ -23,35 +23,48 @@ The purpose of this analysis is to estimate body size of Pacific sleeper sharks 
 
 # Introduction
 
-Vertebrate eye lenses grow continuously throughout life, adding sequential layers around an embryonic core over time. Other researchers have demonstrated linear relationships between the fish eye lens diameter and total length, including for the elasmobranchs porbeagle shark *Lamna nasus*, Atlantic spiny dogfish *Squalus acanthias*, thorny skate *Amblyraja radiata*, round ray *Rajella fyllae*, and leopard sharks *Triakis semifasciata* (Quaeck-Davies et al. 2018; Leifsdottir and Campana 2023; Kuntz 2025). In this subanalysis, we describe the relationship between whole lens diameter and the diameter of the hardened portion of the lens to the total length of Pacific sleeper sharks *Sominosus pacificus* and Pacific spiny dogfish *Squalus suckleyi* to estimate the total length at the time of formation of each peeled eye layer in order to link delta C-14 and stable isotope values to body size.
+Vertebrate eye lenses grow continuously throughout life, adding sequential layers around an embryonic core over time. Other researchers have demonstrated linear relationships between the fish eye lens diameter and total length, including for the elasmobranchs porbeagle shark *Lamna nasus*, Atlantic spiny dogfish *Squalus acanthias*, thorny skate *Amblyraja radiata*, round ray *Rajella fyllae*, and leopard sharks *Triakis semifasciata* (Quaeck-Davies et al. 2018; Leifsdottir and Campana 2023; Kuntz et al 2025). In this subanalysis, we describe the relationship between whole lens diameter and the diameter of the hardened portion of the lens (i.e., apoptotic layers) to the total length of Pacific sleeper sharks *Sominosus pacificus* and Pacific spiny dogfish *Squalus suckleyi* to estimate the total length at the time of formation of each peeled eye layer in order to link delta C-14 and stable isotope values to body size.
 
 # Methods
 
 ## Imaging and measurements
 
-Eye lenses were dissected from frozen eye globes and photographed against a 10 x 10 mm grid background to spatially calibrate images for measurements (@fig-F1). For most individuals, a photograph was taken of the whole, intact lens and of the lens following each sequential peel to a small central nucleus. Eye lenses differed in appearance. While the majority of whole lenses were spherical, a few were oblong in shape; many appeared firmer and more opaque, whereas other lenses were surrounded with a clear jelly layer (@fig-F2). Measurements were generally taken through the equator at the widest point of the solid lens, unless the capsule was clearly beginning to delaminate from the rest of the lens. In those cases, the lens was measured where it appeared most spherical (@fig-F3). Some lenses were too irregular to measure. The condition of the lens was noted when taking measurements. All measurements were made using ImagePro v.10-11 (Media Cybernetics) and converted from pixels to mm in R statistical computing software.
+Eye lenses were dissected from frozen eye globes and photographed against a 10 x 10 mm grid background to spatially calibrate images for measurements (@fig-F1). For most individuals, a photograph was taken of the whole, intact lens and of the lens following each sequential peel to a small central nucleus. Eye lenses differed in appearance. While the majority of whole lenses were spherical, a few were oblong in shape; many appeared firmer and more opaque, whereas other lenses were surrounded with a clear jelly layer (@fig-F2). Measurements were generally taken through the equator at the widest point of the solid lens, unless the capsule was clearly beginning to delaminate from the rest of the lens. In those cases, the lens was measured where it appeared most spherical (@fig-F3). Some lenses were too irregular to measure. The condition of the lens was noted when taking measurements. All measurements were made using ImagePro v.10-11 (Media Cybernetics) and converted from pixels to mm in R statistical computing software. Images of samples with observations outside the 99% confidence limits of the regression of the whole lens diameter (*LD~w~*) or first hardened lens diameters (*LD~h~*) to the total length at capture (*TLc*) were re-examined in case of measurement error of the diameters.
 
 ## Comparison of capsule diameter to the diamter of the first hard layer
 
-The outermost layer of the whole lens is termed the “capsule”. Just medial of the capsule is a layer of jelly-like cuboidal epithelial cells, followed by hardened layers composed of crystalline proteins (Kuntz et al. 2025, Quack-Davies et al. 2018). Studies have suggested that the ratio of the whole lens diameter (*LD~w~*) and the first hardened layer (*LD~h~*) is consistent across the life of the fish, regardless of species (Leiffsdottir and Campana 2023). A regression of the *LD~h~* against the *LD~w~* was conducted by species, and a t-test was performed to test if the slopes of the lines were significantly different from 1. A slope of 1 would be expected if the *LD~w~* and *LD~h~* increased equally as the eye grows. Similarly, we also examined the relationships of the *LD~h~*:*LD~w~* to total body length at the time of capture (*TL~c~*) and the *LD~h~*:*LD~w~* to *LD~w~*, but tested if those slopes are significantly different from zero. In these cases a slope of zero would be expected if the ratio of *LD~h~*:*LD~w~* was conserved as the eye or fish grows.
+The outermost layer of the whole lens is termed the “capsule”. Just medial of the capsule is a layer of cuboidal epithelial cells, followed by the the pre-apoptotic layers, and the post-apoptotic hardened layers which are composed of crystalline proteins (Kuntz et al. 2025, Quack-Davies et al. 2018). Studies have suggested that the ratio of the whole lens diameter (*LD~w~*) and the first hardened layer (*LD~h~*) is consistent across the life of the fish, regardless of species (Leiffsdottir and Campana 2023). A regression of the *LD~h~* against the *LD~w~* was conducted by species, and a t-test was performed to test if the slopes of the lines were significantly different from 1. A slope of 1 would be expected if the *LD~w~* and *LD~h~* increased equally as the eye grows. Similarly, we also examined the relationships of the *LD~h~*:*LD~w~* to total body length at the time of capture (*TL~c~*) and the *LD~h~*:*LD~w~* to *LD~w~*, but tested if those slopes are significantly different from zero. In these cases a slope of zero would be expected if the ratio of *LD~h~*:*LD~w~* was conserved as the eye or fish grows.
 
 ## Relationship of *LD~w~* and *LD~h~* to *TL*
 
-The relationships between *LD~w~*, *LD~h~*, and *TLc* was described using separate linear models for each species and layer diameter type. The equation followed the form:
+Measurement error in *TL~c~* is a known source of uncertainty for this study. Samples were collected from many platforms and science crew, likely resulting in inconsistencies in total length measurements (e.g., straight line vs over the curve of the body, limited deck space for laying out large specimen, and placement of the caudal fin). It is not possible to account for this uncertainty and therefore, total length is assumed measured without error for all analyses.
 
-$$LD = a_i,j + TL_c*b_i,j$$
+The relationships between *LD~w~* and *TL~c~* was described using separate linear models for each species. The equation followed the form:
 
-Where *LD* is either *LD~w~* or *LD~h~*, *i* is the species and *j* is either *w* or *h* for the *LD~w~* or *LD~h~* regression. The slope and intercept parameters are *b* and *a*, respectively.
+$$LD_w = a_i + TL_c*b_i$$
 
-Images of samples with observations outside the 99% confidence limits of the fitted *LD~w~* or *LD~h~* ~ TLc relationships were re-examined for measurement errors. The R package ‘olsrr’ was used to examine residual patterns, check for highly influential observations, and run diagnostics.
+Where *i* is the species. The slope and intercept parameters are *b* and *a*, respectively.
+
+Similarly, the relationship between *LD~h~* and *TL~c~* was described using the same equation
+
+$$LD_h = c_i + TL_c*d_i$$
+
+but the slope and intercept parameters were *c* and *d*, respectively. [NOTE: due to coding, these parameters are still listed as a and b for both models and will be fixed in final editing. See Table 2, which denotes them by *LD~w~* and *LD~h~*]
+
+## Eye lens diameter at Age-0
+Kuntz et al. (in review) demonstrate the the diameter at age-0 can be identified by a significant peak or decline in the stable isotope values occurring after parturition, when the pups transition from maternal nourishment to self-feeding. A GAM was fit to each individual d13C and d15n data. The first derivative of the d13c models, or when the slope of the model changed from negative to positive, was used to identify the minimum for each individual. A mean layer diameter at the model minimum across individuals is assumed to be a proxy for the hardened lens diameter at birth (with 95% confidence intervals). 
+
+Similarly, the first peak of the 15n should also correspond to birth.
 
 ## Estimating fish length at the time of layer formation
 
-The above equation can be rewritten to estimate the total length at the time of layer formation (*TL~t~*) following Kuntz (2025):
+The above equation can be rewritten to estimate the total length at the time of layer formation (*TL~t~*) following Kuntz et al. (2025):
 
 $$TL_t = (LD_t - a_i,j) / b_i,j$$
 
 where *LD~t~* is the diameter of the lens following each sequential peel and the *a~i,j~* and *b~i,j~* parameters are from Table 2.
+
+Two estimates of *TL~t~* were estimated for each animal, using the *LD~w~* vs *TL* and *LD~h~* vs *TL* model parameters reported in @tbl-LDTL. Uncertainty was estimated based on random draws of the linear regression parameters (n = 1,000, normal distribution around the parameter estimate) and the 2.5th and 97.5th quantiles of the resultant *TL~t~* estimates.
 
 # Results
 
@@ -61,7 +74,7 @@ where *LD~t~* is the diameter of the lens following each sequential peel and the
 #| echo: false
 #| warning: false
 #| output: false
-libs <- c("tidyverse", "janitor", "googlesheets4", 'broom', 'patchwork', 'knitr')
+libs <- c("tidyverse", "janitor", "googlesheets4", 'broom', 'patchwork', 'knitr', 'mgcv', 'mvtnorm')
 
 if(length(libs[which(libs %in% rownames(installed.packages()) == FALSE )]) > 0) {
   install.packages(libs[which(libs %in% rownames(installed.packages()) == FALSE)])}
@@ -73,7 +86,8 @@ round_any = function(x, accuracy, f=round){f(x/ accuracy) * accuracy}
 diam_dat <- read_sheet('1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0', sheet = 'layer_diameter_results') %>% 
   clean_names() %>% 
   select(sample_desc, std_lyr_id, sample_id, specimen_id, species_common_name, length_cm, length_type, methods, 
-         new_layer_type, protein_type, layer_diam_mm, image_comments)
+         new_layer_type, protein_type, layer_diam_mm, image_comments) %>% 
+  mutate(length_mm = length_cm * 10)
 
 # capsule diameter vs. first "hard" layer----
 # capsule is the whole lens
@@ -88,7 +102,7 @@ m15dat <- diam_dat %>%
          new_layer_type %in% c('capsule', 'capsule/jelly layer', 'capsule/full eye',
                                'first hard layer', 'first hard layer/nucleus'),
          protein_type %in% c('Insoluble', 'whole layer'),
-         !is.na(length_cm),
+         !is.na(length_mm),
          image_comments != "oblong") %>% 
   select(!c(sample_desc, methods, image_comments, std_lyr_id, protein_type)) %>% 
   mutate(new_layer_type = case_when(
@@ -204,13 +218,13 @@ ratio_LDw <- coef_ratio_LDw %>%
          hypothesis = 'mu = 0')
 
 # lm of ratio to TL----
-lm(ratio ~ length_cm, data = m15dat)
+lm(ratio ~ length_mm, data = m15dat)
 
 lm_ratio_TL <- m15dat %>%
   group_by(species_common_name) %>%
   nest() %>%
   mutate(
-    model = map(data, ~ lm(ratio ~ length_cm, data = .x)),
+    model = map(data, ~ lm(ratio ~ length_mm, data = .x)),
     tidy  = map(model, tidy),
     glance = map(model, glance)
   )
@@ -224,7 +238,7 @@ coef_ratio_TL <- lm_ratio_TL %>%
       select(species_common_name, r.squared, df.residual),
     by = "species_common_name"
   ) %>%
-  filter(term == "length_cm") %>% 
+  filter(term == "length_mm") %>% 
   mutate(
     ci_low  = estimate - qt(0.975, df.residual) * std.error,
     ci_high = estimate + qt(0.975, df.residual) * std.error
@@ -248,7 +262,7 @@ lm_TL_LDw <- m15dat %>%
   group_by(species_common_name) %>%
   nest() %>%
   mutate(
-    model = map(data, ~ lm(length_cm ~ LDw, data = .x)),
+    model = map(data, ~ lm(length_mm ~ LDw, data = .x)),
     tidy  = map(model, tidy),
     glance = map(model, glance)
   )
@@ -261,7 +275,7 @@ coef_TL_LDw <- lm_TL_LDw %>%
       select(species_common_name, r.squared, df.residual),
     by = "species_common_name"
   ) %>%
-  #filter(term == "length_cm") %>% 
+  #filter(term == "length_mm") %>% 
   mutate(
     ci_low  = estimate - qt(0.975, df.residual) * std.error,
     ci_high = estimate + qt(0.975, df.residual) * std.error
@@ -284,7 +298,7 @@ lm_TL_LDh <- m15dat %>%
   group_by(species_common_name) %>%
   nest() %>%
   mutate(
-    model = map(data, ~ lm(length_cm ~ LDh, data = .x)),
+    model = map(data, ~ lm(length_mm ~ LDh, data = .x)),
     tidy  = map(model, tidy),
     glance = map(model, glance)
   )
@@ -297,7 +311,7 @@ coef_TL_LDh <- lm_TL_LDh %>%
       select(species_common_name, r.squared, df.residual),
     by = "species_common_name"
   ) %>%
-  #filter(term == "length_cm") %>% 
+  #filter(term == "length_mm") %>% 
   mutate(
     ci_low  = estimate - qt(0.975, df.residual) * std.error,
     ci_high = estimate + qt(0.975, df.residual) * std.error
@@ -343,7 +357,7 @@ diam_out <- LDw_LDh %>%
          Rsq = round(Rsq, 4),
          Pval = round(Pval, 4),
          Species = if_else(Species == 'Spiny Dogfish', 'SD', 'PSS'))
-#write_csv(diam_out, paste0(getwd(), "/Analytics/length_backcalc/LDw_vs_LDh.csv"))
+write_csv(diam_out, paste0(getwd(), "/LDw_vs_LDh.csv"))
 
 nPSSLD <- m15dat %>% 
   filter(species_common_name == 'Pacific Sleeper Shark') %>% 
@@ -367,13 +381,14 @@ Paired *LD~w~* and *LD~h~* were available from `{r} nPSSLD` Pacific sleeper shar
 embryo_dat <- read_sheet('1kdd8tVNa8AdP8VDm-sxqdtIo95JFA3NotBSdueF618E') %>% 
   clean_names() %>% 
   filter(length_cm > 0) %>% 
-  select(!notes) %>% 
-  rename(elength = length_cm, 
+  mutate(length_mm = length_cm * 10) %>% 
+  select(!c(length_cm, notes)) %>% 
+  rename(elength = length_mm, 
          eltype = length_type)
 
 diam_dat <- diam_dat %>% 
   left_join(embryo_dat) %>% 
-  mutate(length_cm = coalesce(length_cm, elength),
+  mutate(length_mm = coalesce(length_mm, elength),
          length_type = coalesce(length_type, eltype)) %>% 
   select(!c(elength, eltype))
 
@@ -381,10 +396,10 @@ diam_dat <- diam_dat %>%
 m15dat_v2 <- diam_dat %>% 
   filter(methods == 'M15',
          #sample_desc != 'SD embryo eye',
-         new_layer_type %in% c('capsule', 'capsule/jelly layer', 'capsule/full eye',
+         new_layer_type %in% c('capsule', 'capsule/preapoptotic', 'capsule/full eye',
                                'first hard layer', 'first hard layer/nucleus'),
          protein_type %in% c('Insoluble', 'whole layer'),
-         !is.na(length_cm),
+         !is.na(length_mm),
          image_comments != "oblong") %>% 
   select(!c(methods, image_comments, protein_type, std_lyr_id)) %>% 
   mutate(new_layer_type = case_when(
@@ -401,7 +416,7 @@ lm_TL_LDh <- m15dat_v2 %>%
   group_by(species_common_name) %>%
   nest() %>%
   mutate(
-    model = map(data, ~ lm(length_cm ~ LDh, data = .x)),
+    model = map(data, ~ lm(LDh ~ length_mm, data = .x)),
     tidy  = map(model, tidy),
     glance = map(model, glance)
   )
@@ -414,7 +429,7 @@ coef_TL_LDh <- lm_TL_LDh %>%
       select(species_common_name, r.squared, df.residual),
     by = "species_common_name"
   ) %>%
-  #filter(term == "length_cm") %>% 
+  #filter(term == "length_mm") %>% 
   mutate(
     ci_low  = estimate - qt(0.975, df.residual) * std.error,
     ci_high = estimate + qt(0.975, df.residual) * std.error
@@ -436,7 +451,7 @@ lm_TL_LDw <- m15dat_v2 %>%
   group_by(species_common_name) %>%
   nest() %>%
   mutate(
-    model = map(data, ~ lm(length_cm ~ LDw, data = .x)),
+    model = map(data, ~ lm(LDw ~ length_mm, data = .x)),
     tidy  = map(model, tidy),
     glance = map(model, glance)
   )
@@ -449,7 +464,7 @@ coef_TL_LDw <- lm_TL_LDw %>%
       select(species_common_name, r.squared, df.residual),
     by = "species_common_name"
   ) %>%
-  #filter(term == "length_cm") %>% 
+  #filter(term == "length_mm") %>% 
   mutate(
     ci_low  = estimate - qt(0.975, df.residual) * std.error,
     ci_high = estimate + qt(0.975, df.residual) * std.error
@@ -481,6 +496,17 @@ LD_TL_out <- TL_LDw %>%
          Model = model) %>% 
   mutate(Species = if_else(Species == 'Spiny Dogfish', 'SD', 'PSS'),
          Parameter = if_else(Parameter == '(Intercept)', 'a', 'b'))
+write.csv(LD_TL_out, paste0(getwd(), '/LD_TL.csv'))
+
+PSSR2 <- LD_TL_out %>% 
+  filter(Species == "PSS") %>% 
+  select(Rsq) %>% 
+  summarise(minR2 = min(Rsq))
+
+SDR2 <- LD_TL_out %>% 
+  filter(Species == "SD") %>% 
+  select(Rsq) %>% 
+  summarise(minR2 = min(Rsq))
 
 PSSw <- m15dat_v2 %>% 
   filter(species_common_name == "Pacific Sleeper Shark",
@@ -504,20 +530,334 @@ SDh <- m15dat_v2 %>%
 
 ```
 
-Paired LDw and TLc data were available from `{r} PSSw` Pacific sleeper sharks and `{r} SDw` spiny dogfish, while paired LDh and TLc data were was available from `{r} PSSh` Pacific sleeper sharks and `{r} PSSh` spiny dogfish. NEED TO DO THE influential evaluations still
+Paired *LD~w~* and *TL~c~* data were available from `{r} PSSw` Pacific sleeper sharks and `{r} SDw` spiny dogfish, while paired *LD~h~* and *TL~c~* data were was available from `{r} PSSh` Pacific sleeper sharks and `{r} SDh` spiny dogfish (@tbl-LDTL, @fig-F6). The regression of both of the *LD~w~* and *LD~h~* to *TL~c~* for Pacific sleeper shark had R2 > `{r} PSSR2$minR2`, suggesting that the linear regression explained most of the variability in the data. The regression of both of the *LD~w~* and *LD~h~* to *TL~c~* for Spiny Dogfish had R2 > `{r} SDR2$minR2`, suggesting that the linear regression explained most of the variability in the data.
 
-## Estimatig fish length at the time of layer formation
-
-```{r}
+## Eye lens diameter at Age-0
+```{r age_0_diam}
 #| echo: false
 #| warning: false
 #| output: false
 
-# get rid of embryos and jelly layers, only estimate for hardened layers. Pull out capsule diameters and add back in later
+# Bring in data from google sheets----
+SIA_dat <- read_sheet('1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0', sheet = 'SIA_layer_results') %>% 
+  clean_names() %>% 
+  filter(!is.na(layer_diam_mm))
+
+#note that this approach is simplistic, idea is a model for each animal, find the mean diam at max/min isotopes at small sizes and the 95% CI
+#filter out animals with too few samples
+samp_n <- SIA_dat %>% 
+  group_by(sample_id) %>% 
+  summarise(nsamp = length(layer_diam_mm)) %>% 
+  filter(nsamp > 5)
+
+#based on preliminary model runs and looking at the data, retain these sample_ids
+d13c_keep <- c(273, 420, 473, 504, 507, 508, 544, 
+               678, 3643, 44, 50, 57, 61, 604, 800, 3023, 3042,
+               3055, 3058, 3066)
+
+#specific layers to remove
+drops <- c('3023_12') #layers with non-sensical data returned
+
+mod_dat <- SIA_dat %>% 
+  filter(sample_id %in% samp_n$sample_id,
+         sample_id %in% d13c_keep,
+         std_lyr_id %nin% drops)
+
+#function to run gam on each animal d13c data, then using first derivative, locate the x value at minimum y value
+d13c_get_min_ci_deriv <- function(dat, nsim = 1000, n_eval = 200) {
+  n_unique <- n_distinct(dat$layer_diam_mm)
+  
+  # Too few points → no smooth minimum possible
+  if (n_unique < 4) {
+    return(tibble(
+      min_est = NA_real_,
+      lower = NA_real_,
+      upper = NA_real_,
+      boundary = NA
+    ))
+  }
+  
+  k_use <- min(6, n_unique - 1)
+  
+  m <- gam(d13c ~ s(layer_diam_mm, bs = "cr", k = k_use),
+           data = dat,
+           method = "REML")
+  
+  # evaluation grid (within individual only)
+  grid <- tibble(
+    layer_diam_mm = seq(min(dat$layer_diam_mm),
+                        max(dat$layer_diam_mm),
+                        length.out = n_eval)
+  )
+  
+  # lpmatrix for derivative
+  X0 <- predict(m, newdata = grid, type = "lpmatrix")
+  eps <- 1e-7
+  grid_eps <- grid
+  grid_eps$layer_diam_mm <- grid_eps$layer_diam_mm + eps
+  X1 <- predict(m, newdata = grid_eps, type = "lpmatrix")
+  Xp <- (X1 - X0) / eps   # derivative matrix
+  
+  # simulate coefficients
+  beta_sim <- rmvnorm(nsim, coef(m), vcov(m))
+  deriv_sim <- Xp %*% t(beta_sim)
+  
+  # find - to + zero crossings
+  root_locs <- apply(deriv_sim, 2, function(d) {
+    idx <- which(diff(sign(d)) == 2)
+    if (length(idx) == 0) return(NA_real_)
+    grid$layer_diam_mm[idx[1]]
+  })
+  
+  root_locs <- root_locs[!is.na(root_locs)]
+  
+  if (length(root_locs) == 0) {
+    return(tibble(
+      min_est = NA_real_,
+      lower = NA_real_,
+      upper = NA_real_,
+      boundary = TRUE
+    ))
+  }
+  
+  tibble(
+    min_est = median(root_locs),
+    lower = quantile(root_locs, 0.025),
+    upper = quantile(root_locs, 0.975),
+    stdev = sd(root_locs),
+    boundary = FALSE
+  )
+}
+
+d13c_min_results <- mod_dat %>%
+  group_by(species_common_name, sample_id) %>%
+  group_modify(~ d13c_get_min_ci_deriv(.x)) %>%
+  ungroup() %>% 
+  group_by(species_common_name) %>% 
+  summarise(mean_diam = mean(min_est, na.rm = T),
+            sd_diam = mean(stdev, na.rm = T),
+            LL_diam = mean(lower, na.rm = T),
+            UL_diam = mean(upper, na.rm = T)) %>% 
+  ungroup() %>% 
+  mutate(isotope = 'd13c')
+
+# get smooth model data
+d13c_get_smooth_df <- function(dat, n_eval = 200) {
+  n_unique <- n_distinct(dat$layer_diam_mm)
+  if (n_unique < 4) return(NULL)
+  k_use <- min(6, n_unique - 1)
+  m <- gam(d13c ~ s(layer_diam_mm, bs = "cr", k = k_use),
+           data = dat,
+           method = "REML")
+    grid <- tibble(
+    layer_diam_mm = seq(min(dat$layer_diam_mm),
+                        max(dat$layer_diam_mm),
+                        length.out = n_eval)
+  )
+  preds <- predict(m, newdata = grid, se.fit = TRUE)
+  grid %>%
+    mutate(
+      fit = preds$fit,
+      lower = fit - 1.96 * preds$se.fit,
+      upper = fit + 1.96 * preds$se.fit
+    )
+}
+
+d13c_smooth_df <- mod_dat %>%
+  group_by(species_common_name, sample_id) %>%
+  nest() %>%
+  mutate(smooth = map(data, d13c_get_smooth_df)) %>%
+  unnest(smooth) %>%
+  ungroup()
+
+d13c_min_individual <- mod_dat %>%
+  group_by(species_common_name, sample_id) %>%
+  group_modify(~ d13c_get_min_ci_deriv(.x)) %>%
+  filter(!is.na(min_est)) %>% 
+  ungroup()
+
+d13c_summ <- d13c_min_individual %>% 
+  group_by(species_common_name) %>% 
+  summarise(mean_diam = mean(min_est, na.rm = T),
+            #sd_diam = mean(stdev, na.rm = T),
+            LL_diam = mean(lower, na.rm = T),
+            UL_diam = mean(upper, na.rm = T)) %>% 
+  ungroup() %>% 
+  mutate(isotope = 'd13c')
+
+dummy15n_results <- d13c_summ %>% 
+  mutate(isotope = 'd15n')
+age_0_diam <- d13c_summ %>% 
+  bind_rows(dummy15n_results)
+
+PSSmdiam <- d13c_summ %>% 
+  filter(species_common_name == 'Pacific Sleeper Shark') %>% 
+  select(mean_diam) %>% 
+  round(., 4)
+PSSLLdiam <- d13c_summ %>% 
+  filter(species_common_name == 'Pacific Sleeper Shark') %>% 
+  select(LL_diam) %>% 
+  round(., 4)
+PSSULdiam <- d13c_summ %>% 
+  filter(species_common_name == 'Pacific Sleeper Shark') %>% 
+  select(UL_diam) %>% 
+  round(., 4)
+SDmdiam <- d13c_summ %>% 
+  filter(species_common_name == 'Spiny Dogfish') %>% 
+  select(mean_diam) %>% 
+  round(., 4)
+SDLLdiam <- d13c_summ %>% 
+  filter(species_common_name == 'Spiny Dogfish') %>% 
+  select(LL_diam) %>% 
+  round(., 4)
+SDULdiam <- d13c_summ %>% 
+  filter(species_common_name == 'Spiny Dogfish') %>% 
+  select(UL_diam) %>% 
+  round(., 4)
+  
+# now the same thing for d15n, but looking for first peak
+# didn't add the if/then to make this all one function
+#function to run gam on each animal d13c data, then using first derivative, locate the x value at minimum y value
+d15n_get_max_ci_deriv <- function(dat, nsim = 1000, n_eval = 200) {
+  n_unique <- n_distinct(dat$layer_diam_mm)
+  
+  # Too few points → no smooth minimum possible
+  if (n_unique < 4) {
+    return(tibble(
+      min_est = NA_real_,
+      lower = NA_real_,
+      upper = NA_real_,
+      boundary = NA
+    ))
+  }
+  
+  k_use <- min(6, n_unique - 1)
+  
+  m <- gam(d15n ~ s(layer_diam_mm, bs = "cr", k = k_use),
+           data = dat,
+           method = "REML")
+  
+  # evaluation grid (within individual only)
+  grid <- tibble(
+    layer_diam_mm = seq(min(dat$layer_diam_mm),
+                        max(dat$layer_diam_mm),
+                        length.out = n_eval)
+  )
+  
+  # lpmatrix for derivative
+  X0 <- predict(m, newdata = grid, type = "lpmatrix")
+  eps <- 1e-7
+  grid_eps <- grid
+  grid_eps$layer_diam_mm <- grid_eps$layer_diam_mm + eps
+  X1 <- predict(m, newdata = grid_eps, type = "lpmatrix")
+  Xp <- (X1 - X0) / eps   # derivative matrix
+  
+  # simulate coefficients
+  beta_sim <- rmvnorm(nsim, coef(m), vcov(m))
+  deriv_sim <- Xp %*% t(beta_sim)
+  
+  # find - to + zero crossings
+  root_locs <- apply(deriv_sim, 2, function(d) {
+    idx <- which(diff(sign(d)) == -2)
+    if (length(idx) == 0) return(NA_real_)
+    grid$layer_diam_mm[idx[1]]
+  })
+  
+  root_locs <- root_locs[!is.na(root_locs)]
+  
+  if (length(root_locs) == 0) {
+    return(tibble(
+      max_est = NA_real_,
+      lower = NA_real_,
+      upper = NA_real_,
+      boundary = TRUE
+    ))
+  }
+  
+  tibble(
+    max_est = median(root_locs),
+    lower = quantile(root_locs, 0.025),
+    upper = quantile(root_locs, 0.975),
+    stdev = sd(root_locs),
+    boundary = FALSE
+  )
+}
+
+d15n_min_results <- mod_dat %>%
+  group_by(species_common_name, sample_id) %>%
+  group_modify(~ d15n_get_max_ci_deriv(.x)) %>%
+  ungroup() %>% 
+  group_by(species_common_name) %>% 
+  summarise(mean_diam = mean(max_est, na.rm = T),
+            sd_diam = mean(stdev, na.rm = T),
+            LL_diam = mean(lower, na.rm = T),
+            UL_diam = mean(upper, na.rm = T)) %>% 
+  ungroup() %>% 
+  mutate(isotope = 'd15n')
+
+# get smooth model data
+d15n_get_smooth_df <- function(dat, n_eval = 200) {
+  n_unique <- n_distinct(dat$layer_diam_mm)
+  if (n_unique < 4) return(NULL)
+  k_use <- min(6, n_unique - 1)
+  m <- gam(d15n ~ s(layer_diam_mm, bs = "cr", k = k_use),
+           data = dat,
+           method = "REML")
+  grid <- tibble(
+    layer_diam_mm = seq(min(dat$layer_diam_mm),
+                        max(dat$layer_diam_mm),
+                        length.out = n_eval)
+  )
+  preds <- predict(m, newdata = grid, se.fit = TRUE)
+  grid %>%
+    mutate(
+      fit = preds$fit,
+      lower = fit - 1.96 * preds$se.fit,
+      upper = fit + 1.96 * preds$se.fit
+    )
+}
+
+d15n_smooth_df <- mod_dat %>%
+  group_by(species_common_name, sample_id) %>%
+  nest() %>%
+  mutate(smooth = map(data, d15n_get_smooth_df)) %>%
+  unnest(smooth) %>%
+  ungroup()
+
+d15n_min_individual <- mod_dat %>%
+  group_by(species_common_name, sample_id) %>%
+  group_modify(~ d15n_get_max_ci_deriv(.x)) %>%
+  ungroup()
+
+d15n_summ <- d15n_min_individual %>% 
+  group_by(species_common_name) %>% 
+  summarise(mean_diam = mean(max_est, na.rm = T),
+            #sd_diam = mean(stdev, na.rm = T),
+            LL_diam = mean(lower, na.rm = T),
+            UL_diam = mean(upper, na.rm = T)) %>% 
+  ungroup() %>% 
+  mutate(isotope = 'd15n')
+
+
+```
+
+The gam fits for each individual by species are in @fig-F7. The mean of the first derivative, or localized minima, across all individuals in a species resulted in estimated diameter at age-0 of `{r} PSSmdiam` (`{r} PSSLLdiam`-`{r} PSSLLdiam`, 95% CI) and `{r} SDmdiam` (`{r} SDLLdiam`-`{r} SDLLdiam`, 95% CI) for Pacific sleeper shark and spiny dogfish, respectively. The spiny dogfish are known to be highly mobile, and may move through many regions during the 18-22 month gestation, which may explain the high variability in the d13C curves. Conversely, while it is unknown exactly where adult Pacific sleeper shark reside, it is believed that the adults of the species generally inhabit the abyssal plain or other deep offshore environments. One current hypothesis is that the pregnant females move to nearer to shore to pup and the pups move to shallow nursery areas (e.g., Bering Sea). The consistent valley in the d13c across individuals suggests a similar movement pattern at the same size, possibly from the abyssal environment while in utero to a nearshore nursery habitat after pupping.
+
+The d15n data are more variable across individuals in both species. This could be explained by the large size at birth and the generalize/opportunistic feeding strategy from birth. Even though pups are more gape limited than adults, pups of both species could potentially feed at some of the same trophic levels as the adults. The initial peak of d15n is difficult to identify in most individuals and may be less informative for lens diameter at birth.
+
+
+## Estimatig fish length at the time of layer formation
+```{r TLc}
+#| echo: false
+#| warning: false
+#| output: false
+
+# get rid of embryos and pre-apoptotic layers, only estimate for hardened layers. Pull out capsule diameters and add back in later
+# capsule diameter should correspond to TL at capture
 
 est_dat <- diam_dat %>% 
   filter(sample_desc != 'SD embryo eye',
-    new_layer_type %nin% c('jelly layer', 'capsule', 'capsule/jelly layer', 'capsule/full eye'))
+    new_layer_type %nin% c('preapoptotic', 'capsule', 'capsule/preapoptotic'))
 
 # set up parameters
 params <- LD_TL_out %>% 
@@ -536,9 +876,95 @@ est_dat <- est_dat %>%
   left_join(params) %>% 
   mutate(LDw_lengthest = (layer_diam_mm - aw)/bw,
          LDh_lengthest = (layer_diam_mm - ah)/bh)
+
+# estimate uncertainty in TL
+# set up parameters, same as above, without rounded values
+raw_LDw_coef <- coef_TL_LDw %>% 
+  transmute(
+    species_common_name,
+    param_name = term,
+    param_val = estimate,
+    lwr   = ci_low,
+    upr   = ci_high,
+    se = std.error,
+    df = df.residual)%>% 
+  mutate(model = 'LDw vs TL')
+
+raw_LDh_coef <- coef_TL_LDh %>% 
+  transmute(
+    species_common_name,
+    param_name = term,
+    param_val = estimate,
+    lwr   = ci_low,
+    upr   = ci_high,
+    se = std.error,
+    df = df.residual)%>% 
+  mutate(model = 'LDh vs TL')
+
+rawLD_TL_out <- raw_LDw_coef %>% 
+  bind_rows(raw_LDh_coef) %>% 
+  rename(Species = species_common_name,
+         Parameter = param_name,
+         Value = param_val,
+         Lower = lwr,
+         Upper = upr,
+         StErr = se,
+         DF = df, 
+         Model = model) %>% 
+  mutate(Species = if_else(Species == 'Spiny Dogfish', 'SD', 'PSS'),
+         Parameter = if_else(Parameter == '(Intercept)', 'a', 'b'))
+
+unq_key <- unique(est_dat$std_lyr_id)
+TLest <- function(x) {floor((layer_diam_mm - rand_a)/rand_b)}
+
+loop_out <- as.data.frame(matrix(ncol = 7, nrow = length(unq_key)))
+colnames(loop_out) <- c("std_lyr_id", "TLw_rand", "lowerCIw", "upperCIw", "TLh_rand", "lowerCIh", "upperCIh")
+
+est_dat2 <- est_dat %>% 
+  mutate(Species = if_else(species_common_name == 'Pacific Sleeper Shark', 'PSS', 'SD')) %>% 
+  select(std_lyr_id, Species, layer_diam_mm)
+
+for (i in 1:length(unq_key)){
+  loopdat <- est_dat2 %>% 
+    filter(std_lyr_id == unq_key[i])
+  loop_params <- rawLD_TL_out %>% 
+    filter(Species == loopdat$Species)
+  rand_mat <- as.data.frame(matrix(ncol = 4, nrow = 1000))
+  colnames(rand_mat) <- c('aw', 'bw', 'ah', 'bh')
+  for (j in 1: nrow(loop_params)){
+    rand_val <- rnorm(1000, 
+                            mean = loop_params$Value[j],
+                            #sd = loop_params$StErr[j] * sqrt(loop_params$DF[j] + 2)),
+                            sd = (loop_params$Upper[j] - loop_params$Value[j])/1.96)
+    rand_mat[,j] <- rand_val
+  }
+  rand_mat <- rand_mat %>% 
+    mutate(layer_diam_mm = loopdat$layer_diam_mm,
+      estTL_w = (layer_diam_mm - aw)/bw,
+      estTL_h = (layer_diam_mm - ah)/bh)
+  loop_out[i,1]  <- unq_key[i]
+  loop_out[i,2] <- round(mean(rand_mat$estTL_w, na.rm = T), 3)
+  loop_out[i,3] <- round(quantile(rand_mat$estTL_w, 0.025, na.rm = T), 3)
+  loop_out[i,4]  <- round(quantile(rand_mat$estTL_w, 0.975, na.rm = T), 3)
+  loop_out[i,5] <- round(mean(rand_mat$estTL_h, na.rm = T), 3)
+  loop_out[i,6] <- round(quantile(rand_mat$estTL_h, 0.025, na.rm = T), 3)
+  loop_out[i,7]  <- round(quantile(rand_mat$estTL_h, 0.975, na.rm = T), 3)
+}
+
+est_dat <- est_dat %>% 
+  left_join(loop_out)
   
 ```
 
+The TLt was estimated for each layer diameter based on the linear regression, with uncertainty (@fig-F8). The *TL~t~* estimates derived from the regression of the LDw were smaller, for both species, and resulted in many negative *TL~t~* estimates and many *TL~t~* well below the hypothesized size at birth. 
+
+# Discussion
+
+The type and composition of the layer diameters being used to predict length needs to be considered. The ratio of the whole lens diameter to the first hardened layers (or diameter at the first post-apoptotic layer) increases with size of the eye. It is unclear if this is a function of time or size, or both. The LDw includes the pre-apoptotic layers and the capsule surrounding the whole lens. The process of apoptosis may occur at different rates throughout the growth trajectory of an animal, resulting in the significant change in the relationship between the LDh and LDw. It would be incorrect to make further predictions without considering the different biological processes between the LDh and LDw.
+
+The majority of the layer diameter data for this study is from the post-apoptotic layers. For consistency, we recommend using the linear model between the LDh and TLc to predict TLt. The LDw is representative to the TLc, not to post-apoptotic processes.
+
+The stable isotope data does not appear to be informative for estimating lens diameter at age-0, but further discussions and interpretations may change this.
 
 # Tables
 
@@ -547,7 +973,7 @@ est_dat <- est_dat %>%
 #| warning: false
 #| output: true
 #| label: tbl-diam
-#| tbl-cap: Linear regression slope statistics, with 95% confidence intervals, standard error, Rsquared, degrees of freedom, t-test p-value at alpha = 0.05, the model and the hypothesis that was tested
+#| tbl-cap: Linear regression model results with the slope, intercept, 95% confidence intervals, standard error, Rsquared, degrees of freedom, t-test p-value at alpha = 0.05, the model and the hypothesis that was tested.
 
 knitr::kable(
   diam_out,
@@ -558,7 +984,7 @@ knitr::kable(
 
 ```
 
-```{r table1}
+```{r table2}
 #| echo: false
 #| warning: false
 #| output: true
@@ -587,14 +1013,29 @@ knitr::kable(
 #| warning: false
 #| output: false
 
+# uses faceting to separat species
+#ggplot(m15dat, aes(x = LDw, y = LDh, color = species_common_name))+
+#  geom_point(show.legend = F)+
+#  geom_smooth(method = "lm", level = 0.95, show.legend = F)+ # Adds the line and 95% confidence interval
+#  geom_abline(slope = 1, intercept = -4, linetype = "dashed")+
+#  scale_color_viridis_d(option = "turbo", end = 0.85)+
+#  coord_cartesian(xlim = c(0, 20), ylim = c(0, 20))+
+#  labs(x = 'Whole Lens Diam (mm)', y = 'First Hardened Layer Diam (mm)')+
+#  facet_grid(species_common_name~.)+
+#  theme_bw()
+
+#plot might look better with separate species panels
 f4_PSSdat <- m15dat %>% 
   filter(species_common_name == 'Pacific Sleeper Shark')
 
 f4_PSS <- ggplot(f4_PSSdat, aes(x = LDw, y = LDh))+
   geom_point()+
   geom_smooth(method = "lm", level = 0.95)+ # Adds the line and 95% confidence interval
-  geom_abline(slope = 1, intercept = -4, color = "red", linetype = "dashed")+
-  facet_grid(species_common_name~.)+
+  geom_abline(slope = 1, intercept = -4, linetype = "dashed")+
+  scale_color_viridis_d(option = "mako", end = 0.85)+
+  coord_cartesian(xlim = c(0, 20), ylim = c(0, 20))+
+  labs(title = 'Pacific Sleeper Shark', x = 'Whole Lens Diam (mm)', y = 'First Hardened Layer Diam (mm)')+
+  #facet_grid(species_common_name~.)+
   theme_bw()
 
 f4_SDdat <- m15dat %>% 
@@ -603,60 +1044,100 @@ f4_SDdat <- m15dat %>%
 f4_SD <- ggplot(f4_SDdat, aes(x = LDw, y = LDh))+
   geom_point()+
   geom_smooth(method = "lm", level = 0.95)+ # Adds the line and 95% confidence interval
-  geom_abline(slope = 1, intercept = -4, color = "red", linetype = "dashed")+
-  facet_grid(species_common_name~.)+
+  geom_abline(slope = 1, intercept = -4, linetype = "dashed")+
+  scale_color_viridis_d(option = "viridis", end = 0.85)+
+  coord_cartesian(xlim = c(5, 15), ylim = c(5, 15))+
+labs(title = 'Spiny Dogfish', x = 'Whole Lens Diam (mm)', y = 'First Hardened Layer Diam (mm)')+
+  #facet_grid(species_common_name~.)+
   theme_bw()
 
-f4 <- f4_PSS / f4_SD
+f4 <- f4_PSS/f4_SD + plot_layout(axes = "collect")
 
 ggsave(plot = f4, 
        filename = paste0(getwd(), "/Fig4_LDw_vs_LDh.png"),
-       dpi = 300)
+       dpi = 300,
+       width = 5, height = 4, units = 'in')
 ```
 
-![Linear regressions of the diameter of the whole eye (LDw) and the first hardened layer (LDh). Shaded region represents the 95% confidence interval. The red dashed line is the expected 1:1 replacement line, null hypothesis mu = 1.](Fig4_LDw_vs_LDh.png){#fig-F4}
+![Linear regressions of the diameter (in milimeters) of the whole lens (*LD~w~*) and the first hardened layer (*LD~h~*). The shaded region represents the 95% confidence interval. The dashed line is the expected 1:1 replacement line, null hypothesis mu = 1.](Fig4_LDw_vs_LDh.png){#fig-F4}
 
 ```{r Fig5}
 #| echo: false
 #| warning: false
 #| output: false
 
-f5_PSSTL <- ggplot(f4_PSSdat, aes(x = length_cm, y = ratio))+
-  geom_point()+
-  geom_smooth(method = "lm", level = 0.95)+ # Adds the line and 95% confidence interval
-  #geom_abline(slope = 1, intercept = -4, color = "red", linetype = "dashed")+
-  facet_grid(species_common_name~.)+
-  theme_bw()
+# Calculate R2 values
+r2_PSSTL  <- summary(lm(ratio ~ length_mm, data = f4_PSSdat))$r.squared
+r2_PSSLDw <- summary(lm(ratio ~ LDw, data = f4_PSSdat))$r.squared
+r2_SDTL   <- summary(lm(ratio ~ length_mm, data = f4_SDdat))$r.squared
+r2_SDLDw  <- summary(lm(ratio ~ LDw, data = f4_SDdat))$r.squared
 
-f5_PSSLDw <- ggplot(f4_PSSdat, aes(x = LDw, y = ratio))+
-  geom_point()+
-  geom_smooth(method = "lm", level = 0.95)+ # Adds the line and 95% confidence interval
-  #geom_abline(slope = 1, intercept = -4, color = "red", linetype = "dashed")+
-  facet_grid(species_common_name~.)+
-  theme_bw()
+# Common theme
+pub_theme <- theme_bw(base_size = 14) +
+  theme(
+    plot.title = element_text(size = 12),
+    axis.title = element_text(size = 12),
+    panel.grid = element_blank()
+  )
 
-f5_SDTL <- ggplot(f4_SDdat, aes(x = length_cm, y = ratio))+
-  geom_point()+
-  geom_smooth(method = "lm", level = 0.95)+ # Adds the line and 95% confidence interval
-  #geom_abline(slope = 1, intercept = -4, color = "red", linetype = "dashed")+
-  facet_grid(species_common_name~.)+
-  theme_bw()
+f5_PSSTL <- ggplot(f4_PSSdat, aes(length_mm, ratio)) +
+  geom_point(size = 2, alpha = 0.7) +
+  geom_smooth(method = "lm", se = TRUE, color = "black") +
+  annotate("text", x = Inf, y = -Inf,
+           label = paste0("R² = ", round(r2_PSSTL, 3)),
+           hjust = 1.1, vjust = -0.5, size = 3) +
+  labs(title = "Pacific Sleeper Shark",
+       x = "Total Length (mm)",
+       y = "LDh : LDw") +
+  pub_theme
 
-f5_SDLDw <- ggplot(f4_SDdat, aes(x = LDw, y = ratio))+
-  geom_point()+
-  geom_smooth(method = "lm", level = 0.95)+ # Adds the line and 95% confidence interval
-  #geom_abline(slope = 1, intercept = -4, color = "red", linetype = "dashed")+
-  facet_grid(species_common_name~.)+
-  theme_bw()
+f5_PSSLDw <- ggplot(f4_PSSdat, aes(LDw, ratio)) +
+  geom_point(size = 2, alpha = 0.7) +
+  geom_smooth(method = "lm", se = TRUE, color = "black") +
+  annotate("text", x = Inf, y = -Inf,
+           label = paste0("R² = ", round(r2_PSSLDw, 3)),
+           hjust = 1.1, vjust = -0.5, size = 3) +
+  labs(title = "Pacific Sleeper Shark",
+       x = "LDw",
+       y = "LDh : LDw") +
+  pub_theme
 
-f5 <- (f5_PSSTL + f5_PSSLDw)/(f5_SDTL + f5_SDLDw)
+f5_SDTL <- ggplot(f4_SDdat, aes(length_mm, ratio)) +
+  geom_point(size = 2, alpha = 0.7) +
+  geom_smooth(method = "lm", se = TRUE, color = "black") +
+  annotate("text", x = Inf, y = -Inf,
+           label = paste0("R² = ", round(r2_SDTL, 3)),
+           hjust = 1.1, vjust = -0.5, size = 3) +
+  labs(title = "Spiny Dogfish",
+       x = "Total Length (mm)",
+       y = "LDh : LDw") +
+  pub_theme
+
+f5_SDLDw <- ggplot(f4_SDdat, aes(LDw, ratio)) +
+  geom_point(size = 2, alpha = 0.7) +
+  geom_smooth(method = "lm", se = TRUE, color = "black") +
+  annotate("text", x = Inf, y = -Inf,
+           label = paste0("R² = ", round(r2_SDLDw, 3)),
+           hjust = 1.1, vjust = -0.5, size = 3) +
+  labs(title = "Spiny Dogfish",
+       x = "LDw",
+       y = "LDh : LDw") +
+  pub_theme
+
+# Combine panels
+f5 <- (f5_PSSTL + f5_PSSLDw) /
+      (f5_SDTL + f5_SDLDw) +
+      plot_layout(axes = "collect_y")
+
+f5
 
 ggsave(plot = f5, 
        filename = paste0(getwd(), "/Fig5_ratio.png"),
-       dpi = 300)
+       dpi = 300,
+       height = 6)
 ```
 
-![Linear regressions of the ratio of the LDh to LDw relative to the total length at capture and to the LDw. Shaded region represents the 95% confidence interval.](Fig5_ratio.png){#fig-F5}
+![Linear regressions of the ratio of the diameter of the first hardened layer (*LD~h~*) to the diameter of the whole lens (*LD~w~*) relative to the total length at capture (*TL~c~*)and to the *LD~w~*. Shaded region represents the 95% confidence interval.](Fig5_ratio.png){#fig-F5}
 
 ```{r Fig6}
 #| echo: false
@@ -664,15 +1145,16 @@ ggsave(plot = f5,
 #| output: false
 
 f6_PSSdat <- f4_PSSdat %>% 
-  select(length_cm, LDw, LDh) %>% 
-  pivot_longer(!length_cm, names_to = "type", values_to = 'diam_mm') %>% 
-  mutate(Layer = if_else(type == 'LDh', 'FHL', 'Capsule'))
-f6_PSS <- ggplot(f6_PSSdat, aes(x = length_cm, y = diam_mm, color = Layer))+
+  select(length_mm, LDw, LDh) %>% 
+  pivot_longer(!length_mm, names_to = "type", values_to = 'diam_mm') %>% 
+  rename(Layer = type)
+  #mutate(Layer = if_else(type == 'LDh', 'FHL', 'Capsule'))
+f6_PSS <- ggplot(f6_PSSdat, aes(x = length_mm, y = diam_mm, color = Layer))+
   geom_point()+
   geom_smooth(method = "lm", se = TRUE) +
-  scale_color_viridis_d(option = "viridis", end = 0.85)+
+  scale_color_viridis_d(option = "mako", end = 0.85)+
   labs(title = "Pacific Sleeper Shark", 
-       x = 'Total Length (cm)',
+       x = 'Total Length (mm)',
        y = 'Layer Diameter (mm)')+
   theme_bw()
 
@@ -680,15 +1162,16 @@ f6_SDdat <- m15dat_v2 %>%
   filter(species_common_name == 'Spiny Dogfish')
 
 f6_SDdat <- f6_SDdat %>% 
-  select(length_cm, LDw, LDh) %>% 
-  pivot_longer(!length_cm, names_to = "type", values_to = 'diam_mm')%>% 
-  mutate(Layer = if_else(type == 'LDh', 'FHL', 'Capsule'))
-f6_SD <- ggplot(f6_SDdat, aes(x = length_cm, y = diam_mm, color = Layer))+
+  select(length_mm, LDw, LDh) %>% 
+  pivot_longer(!length_mm, names_to = "type", values_to = 'diam_mm') %>% 
+  rename(Layer = type)
+  #mutate(Layer = if_else(type == 'LDh', 'FHL', 'Capsule'))
+f6_SD <- ggplot(f6_SDdat, aes(x = length_mm, y = diam_mm, color = Layer))+
   geom_point()+
   geom_smooth(method = "lm", se = TRUE) +
-  scale_color_viridis_d(option = "viridis", end = 0.85)+
+  scale_color_viridis_d(option = "mako", end = 0.85)+
   labs(title = "Spiny Dogfish", 
-       x = 'Total Length (cm)',
+       x = 'Total Length (mm)',
        y = 'Layer Diameter (mm)')+
   theme_bw()
 
@@ -701,3 +1184,119 @@ ggsave(plot = f6,
 ```
 
 ![Linear regressions of the LDh and the LDw to the total length at capture. Shaded region represents the 95% confidence interval.](Fig6_LD_TL.png){#fig-F6}
+```{r Fig7}
+#| echo: false
+#| warning: false
+#| output: false
+
+d13c_age_0_diam <- d13c_summ 
+
+f7a <- ggplot() +
+  # raw data
+  geom_point(data = mod_dat,
+             aes(layer_diam_mm, d13c),
+             alpha = 0.4,
+             size = 1) +
+  
+  # smooth CI ribbon
+  geom_ribbon(data = d13c_smooth_df,
+              aes(layer_diam_mm,
+                  ymin = lower,
+                  ymax = upper,
+                  group = sample_id),
+              alpha = 0.15) +
+  
+  # smooth line
+  geom_line(data = d13c_smooth_df,
+            aes(layer_diam_mm, fit,
+                group = sample_id),
+            linewidth = 0.8) +
+  
+  # vertical lines at mean min-y value
+  geom_vline(data = d13c_age_0_diam, aes(xintercept = mean_diam, color = 'black'), show.legend = F)+
+  geom_vline(data = d13c_age_0_diam, aes(xintercept = LL_diam), color = 'black', linetype = 'dashed', show.legend = F)+
+  geom_vline(data = d13c_age_0_diam, aes(xintercept = UL_diam), color = 'black', linetype = 'dashed', show.legend = F)+
+  #geom_vline(data = d13c_min_individual, aes(xintercept = min_est), color = 'red', linetype = 'dashed', show.legend = F)+
+  
+  facet_wrap(.~ species_common_name, scales = 'free') +
+  theme_bw()
+
+d15n_age_0_diam <- d15n_summ
+f7b <- ggplot() +
+  # raw data
+  geom_point(data = mod_dat,
+             aes(layer_diam_mm, d15n),
+             alpha = 0.4,
+             size = 1) +
+  
+  # smooth CI ribbon
+  geom_ribbon(data = d15n_smooth_df,
+              aes(layer_diam_mm,
+                  ymin = lower,
+                  ymax = upper,
+                  group = sample_id),
+              alpha = 0.15) +
+  
+  # smooth line
+  geom_line(data = d15n_smooth_df,
+            aes(layer_diam_mm, fit,
+                group = sample_id),
+            linewidth = 0.8) +
+  
+  # vertical lines at mean min-y value
+  #geom_vline(data = d15n_age_0_diam, aes(xintercept = mean_diam, color = 'black'), show.legend = F)+
+  #geom_vline(data = d15n_age_0_diam, aes(xintercept = LL_diam), color = 'black', linetype = 'dashed', show.legend = F)+
+  #geom_vline(data = d15n_age_0_diam, aes(xintercept = UL_diam), color = 'black', linetype = 'dashed', show.legend = F)+
+  
+  facet_wrap(.~ species_common_name, scales = 'free') +
+  theme_bw()
+
+f7 <- f7a/f7b + plot_layout(axes = "collect",
+                                 guides = "collect")
+
+ggsave(plot = f7, 
+       filename = paste0(getwd(), "/Fig7_d13c.png"),
+       dpi = 300)
+```
+
+![Bulk d13c data with individual GAM models for each animal. Solid vertical lines are the mean layer diameter of the model minimum d13c, Dashed lines are the 95% confidence interval](Fig7_d13c.png){#fig-F7}
+
+```{r Fig8}
+#| echo: false
+#| warning: false
+#| output: false
+
+TL_plotdat <- est_dat %>% 
+  select(species_common_name, sample_id, layer_diam_mm, LDw_lengthest, LDh_lengthest, lowerCIw, upperCIw, lowerCIh, upperCIh) %>%
+  rename(LDw = LDw_lengthest,
+         LDh = LDh_lengthest) %>% 
+  pivot_longer(!c(species_common_name, sample_id, layer_diam_mm), 
+               names_to = c(".value","model"),
+               names_pattern = "(LD|lowerCI|upperCI)(w|h)") %>% 
+  rename(TL_est = LD)
+
+#size at birth info for reference lines
+tl_birth <- d13c_age_0_diam %>% 
+  select(species_common_name) %>% 
+  mutate(tlbirth = c(400, 262))
+
+f8 <- ggplot(TL_plotdat, aes(x = layer_diam_mm, y = TL_est, color = model))+
+  geom_point()+
+  geom_line()+
+  geom_errorbar(aes(ymin = lowerCI, ymax = upperCI), show.legend = F)+
+  facet_grid(.~species_common_name)+
+  scale_color_viridis_d(option = "mako", end = 0.85)+
+  labs(y = 'Total Length (mm)',
+       x = 'Layer Diameter (mm)')+
+  geom_vline(data = d13c_age_0_diam, aes(xintercept = mean_diam, color = 'black'), show.legend = F)+
+  geom_vline(data = d13c_age_0_diam, aes(xintercept = LL_diam), color = 'black', linetype = 'dashed', show.legend = F)+
+  geom_vline(data = d13c_age_0_diam, aes(xintercept = UL_diam), color = 'black', linetype = 'dashed', show.legend = F)+
+    geom_hline(data = tl_birth, aes(yintercept = tlbirth), color = 'black', linetype = 'dashed', show.legend = F)+
+  theme_bw()
+
+ggsave(plot = f8, 
+       filename = paste0(getwd(), "/Fig8_predTL.png"),
+       dpi = 300)
+```
+
+![Predicted total lengths (in mm) based on the whole lens diameters (LDw) and first hardenend layer (LDh) linear models. The horizontal dashed line is the estimated size at birth from literature. The vertical solid black line is the estimated diameter at birth based on the d13c data, with 95% confidence intervals in dashed lines.](Fig8_predTL.png){#fig-F8}

@@ -38,7 +38,8 @@ haul_spec_join <- read_sheet('1pbSRX_9vj3Xe3_vqK_psvamk18oGSH3Kb-R6NeVSQkc', she
 rank_dat <- read_sheet('1i5Q1b6F8m9RK7l_L5-5fmbTkJq1hisUn8w2dwogeTPs') %>% clean_names()
 # eye layer data
 layer_dat <- read_sheet('1j-TdYjQsN56HmBb07apldWv-TvOh1S_9T3oP6LuKoHU') %>% clean_names() %>% 
-  select(sample_id, sample_desc, ams_id, std_lyr_id, layer_type, new_layer_type, protein_type, layer_order, methods, vial_mt_g, vial_dry_samp_g, layer_diam_mm, image_comments,
+  select(sample_id, sample_desc, ams_id, std_lyr_id, layer_type, new_layer_type, protein_type, layer_order, methods, vial_mt_g, vial_dry_samp_g,
+         grid_pixels, grid_mm, diameter_pixels, comments2,
          wt_to_nosams_mg, f_modern, fm_err, wt_to_sia_mg, wt_p_n, wt_p_c, d15n, d13c, cn_ratio, wt_to_csiaa, ala,
          ala_stdv, gly,	gly_stdv,	thr,	thr_stdv,	ser,	ser_stdv,	val,	val_stdv,	leu,	leu_stdv,	ile,	ile_stdv,	nle,	nle_stdv,
          pro,	pro_stdv,	asp,	asp_stdv,	glu,	glu_stdv,	phe,	phe_stdv,	tyr,	tyr_stdv,	lys,	lys_stdv,	csiaa_notes)
@@ -59,7 +60,7 @@ samp_dat <- samp_dat %>%
   mutate(sample_type = if_else(sample_type == "Eye" | sample_type == "Eye_A", "Eye_L", 
                                if_else(sample_type == "Eye_B", "Eye_R", sample_type)))
 
-#length conversion
+#length conversion ----
 # dogfish length conversions from Tribuzio and Kruse 2012
 dfa_pcl <- 3.48859
 dfb_pcl <- 1.203964
@@ -78,6 +79,10 @@ spec_dat2 <- spec_dat %>%
   rename(length_cm = length2,
          length_type = lt2)
 
+# Eye lens diameter estimates ----
+layer_dat <- layer_dat %>% 
+  mutate(layer_diam_mm = (diameter_pixels*grid_mm)/grid_pixels) %>% 
+  rename(image_comments = comments2)
 
 # make nice specimen summary table----
 samp_dat2 <- samp_dat %>% 
