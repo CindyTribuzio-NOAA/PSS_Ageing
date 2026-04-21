@@ -23,38 +23,39 @@ The purpose of this analysis is to estimate body size of Pacific sleeper sharks 
 
 # Introduction
 
-Vertebrate eye lenses grow continuously throughout life, adding sequential layers around an embryonic core over time. Other researchers have demonstrated linear relationships between the fish eye lens diameter and total length, including for the elasmobranchs porbeagle shark *Lamna nasus*, Atlantic spiny dogfish *Squalus acanthias*, thorny skate *Amblyraja radiata*, round ray *Rajella fyllae*, and leopard sharks *Triakis semifasciata* (Quaeck-Davies et al. 2018; Leifsdottir and Campana 2023; Kuntz et al 2025). In this subanalysis, we describe the relationship between whole lens diameter and the diameter of the hardened portion of the lens (i.e., apoptotic layers) to the total length of Pacific sleeper sharks *Sominosus pacificus* and Pacific spiny dogfish *Squalus suckleyi* to estimate the total length at the time of formation of each peeled eye layer in order to link delta C-14 and stable isotope values to body size.
+Vertebrate eye lenses grow continuously throughout life, adding sequential layers around an embryonic core over time. Other researchers have demonstrated linear relationships between the fish eye lens diameter and total length, including for the elasmobranchs porbeagle shark *Lamna nasus*, Atlantic spiny dogfish *Squalus acanthias*, thorny skate *Amblyraja radiata*, round ray *Rajella fyllae*, and leopard sharks *Triakis semifasciata* (Quaeck-Davies et al. 2018; Leifsdottir and Campana 2023; Kuntz et al 2025). In this subanalysis, we describe the relationships of whole lens diameter and the diameter of the hardened portion of the lens (i.e., post-apoptotic layers) to the total length of Pacific sleeper sharks *Sominosus pacificus* and Pacific spiny dogfish *Squalus suckleyi* to estimate the total length at the time of formation of each peeled eye layer in order to link delta C-14 and stable isotope values to body size.
 
 # Methods
 
 ## Imaging and measurements
 
-Eye lenses were dissected from frozen eye globes and photographed against a 10 x 10 mm grid background to spatially calibrate images for measurements (@fig-F1). For most individuals, a photograph was taken of the whole, intact lens and of the lens following each sequential peel to a small central nucleus. Eye lenses differed in appearance. While the majority of whole lenses were spherical, a few were oblong in shape; many appeared firmer and more opaque, whereas other lenses were surrounded with a clear jelly layer (@fig-F2). Measurements were generally taken through the equator at the widest point of the solid lens, unless the capsule was clearly beginning to delaminate from the rest of the lens. In those cases, the lens was measured where it appeared most spherical (@fig-F3). Some lenses were too irregular to measure. The condition of the lens was noted when taking measurements. All measurements were made using ImagePro v.10-11 (Media Cybernetics) and converted from pixels to mm in R statistical computing software. Images of samples with observations outside the 99% confidence limits of the regression of the whole lens diameter (*LD~w~*) or first hardened lens diameters (*LD~h~*) to the total length at capture (*TLc*) were re-examined in case of measurement error of the diameters.
+Eye lenses were dissected from frozen eye globes and photographed against a 10 x 10 mm grid background to spatially calibrate images for measurements (@fig-F1). For most individuals, a photograph was taken of the whole, intact lens and of the lens following each sequential peel to a small central nucleus. Eye lenses differed in appearance. While the majority of whole lenses were spherical, a few were oblong in shape; many appeared firmer and more opaque, whereas other lenses were surrounded by a clear jelly layer (@fig-F2). Measurements were generally taken through the equator at the widest point of the solid lens, unless the capsule was clearly beginning to delaminate from the rest of the lens. In those cases, the lens was measured where it appeared most spherical (@fig-F3). Some lenses were too irregular to measure. The condition of the lens was noted when taking measurements. All measurements were made using ImagePro v.10-11 (Media Cybernetics) and converted from pixels to mm in R statistical computing software. Images of samples with observations outside the 99% confidence limits of the regressions of the whole lens diameter (*LD~w~*) or first hardened lens diameter (*LD~h~*) on the total length at capture (*TLc*) were re-examined to identify potential measurement errors.
 
 ## Comparison of capsule diameter to the diamter of the first hard layer
 
-The outermost layer of the whole lens is termed the “capsule”. Just medial of the capsule is a layer of cuboidal epithelial cells, followed by the the pre-apoptotic layers, and the post-apoptotic hardened layers which are composed of crystalline proteins (Kuntz et al. 2025, Quack-Davies et al. 2018). Studies have suggested that the ratio of the whole lens diameter (*LD~w~*) and the first hardened layer (*LD~h~*) is consistent across the life of the fish, regardless of species (Leiffsdottir and Campana 2023). A regression of the *LD~h~* against the *LD~w~* was conducted by species, and a t-test was performed to test if the slopes of the lines were significantly different from 1. A slope of 1 would be expected if the *LD~w~* and *LD~h~* increased equally as the eye grows. Similarly, we also examined the relationships of the *LD~h~*:*LD~w~* to total body length at the time of capture (*TL~c~*) and the *LD~h~*:*LD~w~* to *LD~w~*, but tested if those slopes are significantly different from zero. In these cases a slope of zero would be expected if the ratio of *LD~h~*:*LD~w~* was conserved as the eye or fish grows.
+The outermost layer of the whole lens is termed the “capsule”. Just medial of the capsule is a layer of cuboidal epithelial cells, followed by the pre-apoptotic layers, and then the post-apoptotic hardened layers which are composed of crystalline proteins (Kuntz et al. 2025, Quack-Davies et al. 2018). Studies have suggested that the ratio of the whole lens diameter (*LD~w~*) and the first hardened layer (*LD~h~*) is consistent across the life of the fish, regardless of species (Leiffsdottir and Campana 2023). A regression of the *LD~h~* against the *LD~w~* was conducted by species, and a t-test was performed to determine if the slopes of the lines were significantly different from 1. A slope of 1 would be expected if the *LD~w~* and *LD~h~* increased equally as the eye grows. Similarly, we also examined the relationships of the *LD~h~*:*LD~w~* to total body length at the time of capture (*TL~c~*) and the *LD~h~*:*LD~w~* to *LD~w~*, but tested if those slopes are significantly different from zero. In these cases a slope of zero would be expected if the ratio of *LD~h~*:*LD~w~* was conserved as the eye or fish grows.
 
-## Relationship of *LD~w~* and *LD~h~* to *TL*
+## Relationships of *LD~w~* and *LD~h~* to *TL*
 
-Measurement error in *TL~c~* is a known source of uncertainty for this study. Samples were collected from many platforms and science crew, likely resulting in inconsistencies in total length measurements (e.g., straight line vs over the curve of the body, limited deck space for laying out large specimen, and placement of the caudal fin). It is not possible to account for this uncertainty and therefore, total length is assumed measured without error for all analyses.
+Measurement error in *TL~c~* is a known source of uncertainty for this study. Samples were collected from many platforms, likely resulting in inconsistencies in total length measurements. Potential sources of variation include whether the tape measure was placed flat on the deck or over the curve of the body, inability to lay the shark flat due to limited deck space for laying out large specimen, and placement of the caudal fin (in a natural position or flexed). It is not possible to account for this uncertainty and therefore, total length is assumed measured without error for all analyses.
 
-The relationships between *LD~w~* and *TL~c~* was described using separate linear models for each species. The equation followed the form:
+The relationship between *LD~w~* and *TL~c~* was described using separate linear models for each species. The equation followed the form:
 
 $$LD_w = a_i + TL_c*b_i$$
 
-Where *i* is the species. The slope and intercept parameters are *b* and *a*, respectively.
+where *i* is the species. The slope and intercept parameters are *b* and *a*, respectively.
 
 Similarly, the relationship between *LD~h~* and *TL~c~* was described using the same equation
 
 $$LD_h = c_i + TL_c*d_i$$
 
-but the slope and intercept parameters were *c* and *d*, respectively. [NOTE: due to coding, these parameters are still listed as a and b for both models and will be fixed in final editing. See Table 2, which denotes them by *LD~w~* and *LD~h~*]
+but the slope and intercept parameters were *c* and *d*, respectively. \[NOTE: due to coding, these parameters are still listed as a and b for both models and will be fixed in final editing. See Table 2, which denotes them by *LD~w~* and *LD~h~*\]
 
-## Eye lens diameter at Age-0
-Kuntz et al. (in review) demonstrate the the diameter at age-0 can be identified by a significant peak or decline in the stable isotope values occurring after parturition, when the pups transition from maternal nourishment to self-feeding. A GAM was fit to each individual d13C and d15n data. The first derivative of the d13c models, or when the slope of the model changed from negative to positive, was used to identify the minimum for each individual. A mean layer diameter at the model minimum across individuals is assumed to be a proxy for the hardened lens diameter at birth (with 95% confidence intervals). 
+## Eye lens diameter at age-0
 
-Similarly, the first peak of the 15n should also correspond to birth.
+Kuntz et al. (in review) demonstrate for leopard shark that the the diameter at age-0 can be identified by a significant peak or decline in the stable isotope values occurring after parturition, when the pups transition from maternal nourishment to self-feeding. A genearlized additive model (GAM) was fit to each individual's d13C and d15N data. The first derivative of the d13C models, or when the slope of the model changed from negative to positive, was used to identify the minimum for each individual. A mean layer diameter at the model minimum across individuals is assumed to be a proxy for the hardened lens diameter at birth (with 95% confidence intervals).
+
+Similarly, the first peak of the d15N should also correspond to birth.
 
 ## Estimating fish length at the time of layer formation
 
@@ -68,7 +69,7 @@ Two estimates of *TL~t~* were estimated for each animal, using the *LD~w~* vs *T
 
 # Results
 
-## Comparison of capsule diameter to the diamter of the first hard layer
+## Comparison of capsule diameter to the diameter of the first hard layer
 
 ```{r set-up}
 #| echo: false
@@ -368,7 +369,7 @@ nSDLD <- m15dat %>%
   count()
 ```
 
-Paired *LD~w~* and *LD~h~* were available from `{r} nPSSLD` Pacific sleeper sharks and `{r} nSDLD` Pacific spiny dogfish with total length at time of capture. The slope of the regression line between *LD~h~* and *LD~w~* was significantly different from 1 (alpha = 0.05) for Pacific Sleeper Shark, but not Pacific Spiny Dogfish (@tbl-diam, Model = “LDh vs LDw”, @fig-F4). The slopes of the regression lines of the ratio of *LD~h~*:*LD~w~* relative to the *TL~c~* and relative to the *LD~w~* were significantly different from zero for Pacific sleeper sharks, but not for Pacific spiny dogfish (@tbl-diam, Model = “ratio vs TLc” and “ratio vs LDw”, respectively, @fig-F5).
+Paired *LD~w~* and *LD~h~* were available from `{r} nPSSLD` Pacific sleeper sharks and `{r} nSDLD` Pacific spiny dogfish with total length recorded at time of capture. The slope of the regression line between *LD~h~* and *LD~w~* was significantly different from 1 (p \< 0.05) for Pacific Sleeper Shark, but not Pacific Spiny Dogfish (@tbl-diam, Model = “LDh vs LDw”, @fig-F4). The slopes of the regression lines of the ratio of *LD~h~*:*LD~w~* relative to the *TL~c~* and relative to the *LD~w~* were significantly different from zero for Pacific sleeper sharks, but not for Pacific spiny dogfish (@tbl-diam, Model = “ratio vs TLc” and “ratio vs LDw”, respectively, @fig-F5).
 
 ## Relationship of *LD~w~* and *LD~h~* to *TL*
 
@@ -530,9 +531,10 @@ SDh <- m15dat_v2 %>%
 
 ```
 
-Paired *LD~w~* and *TL~c~* data were available from `{r} PSSw` Pacific sleeper sharks and `{r} SDw` spiny dogfish, while paired *LD~h~* and *TL~c~* data were was available from `{r} PSSh` Pacific sleeper sharks and `{r} SDh` spiny dogfish (@tbl-LDTL, @fig-F6). The regression of both of the *LD~w~* and *LD~h~* to *TL~c~* for Pacific sleeper shark had R2 > `{r} PSSR2$minR2`, suggesting that the linear regression explained most of the variability in the data. The regression of both of the *LD~w~* and *LD~h~* to *TL~c~* for Spiny Dogfish had R2 > `{r} SDR2$minR2`, suggesting that the linear regression explained most of the variability in the data.
+Paired *LD~w~* and *TL~c~* data were available from `{r} PSSw` Pacific sleeper sharks and `{r} SDw` spiny dogfish, while paired *LD~h~* and *TL~c~* data were available from `{r} PSSh` Pacific sleeper sharks and `{r} SDh` spiny dogfish (@tbl-LDTL, @fig-F6). The coefficients of determination (R2) from the regressions of both of the *LD~w~* and *LD~h~* to *TL~c~* for Pacific sleeper shark were \> `{r} PSSR2$minR2`, suggesting that the linear regression explained most of the variability in the data. The R2 of the regressions of both of the *LD~w~* and *LD~h~* to *TL~c~* for Spiny Dogfish were \> `{r} SDR2$minR2`, suggesting that the linear regression explained most of the variability in the data.
 
 ## Eye lens diameter at Age-0
+
 ```{r age_0_diam}
 #| echo: false
 #| warning: false
@@ -841,12 +843,12 @@ d15n_summ <- d15n_min_individual %>%
 
 ```
 
-The gam fits for each individual by species are in @fig-F7. The mean of the first derivative, or localized minima, across all individuals in a species resulted in estimated diameter at age-0 of `{r} PSSmdiam` (`{r} PSSLLdiam`-`{r} PSSLLdiam`, 95% CI) and `{r} SDmdiam` (`{r} SDLLdiam`-`{r} SDLLdiam`, 95% CI) for Pacific sleeper shark and spiny dogfish, respectively. The spiny dogfish are known to be highly mobile, and may move through many regions during the 18-22 month gestation, which may explain the high variability in the d13C curves. Conversely, while it is unknown exactly where adult Pacific sleeper shark reside, it is believed that the adults of the species generally inhabit the abyssal plain or other deep offshore environments. One current hypothesis is that the pregnant females move to nearer to shore to pup and the pups move to shallow nursery areas (e.g., Bering Sea). The consistent valley in the d13c across individuals suggests a similar movement pattern at the same size, possibly from the abyssal environment while in utero to a nearshore nursery habitat after pupping.
+TheGAM fits for each individual by species are in @fig-F7. The mean of the first derivative, or localized minima, across all individuals in a species resulted in estimated diameter at age-0 of `{r} PSSmdiam` (`{r} PSSLLdiam`-`{r} PSSLLdiam`, 95% CI) and `{r} SDmdiam` (`{r} SDLLdiam`-`{r} SDLLdiam`, 95% CI) for Pacific sleeper shark and spiny dogfish, respectively. Spiny dogfish are known to be highly mobile, and may move through many regions during the 18-22 month gestation period, which may explain the high variability in the d13C curves. Conversely, while it is unknown exactly where adult Pacific sleeper sharks reside, it is believed that adults of the species generally inhabit the abyssal plain or other deep offshore environments. One current hypothesis is that pregnant females move to nearer to shore to pup and the pups move to shallow nursery areas (e.g., Bering Sea). The consistent valley in d13C across individuals suggests a similar movement pattern at the same size, possibly from the abyssal environment while in utero to a nearshore nursery habitat after pupping.
 
-The d15n data are more variable across individuals in both species. This could be explained by the large size at birth and the generalize/opportunistic feeding strategy from birth. Even though pups are more gape limited than adults, pups of both species could potentially feed at some of the same trophic levels as the adults. The initial peak of d15n is difficult to identify in most individuals and may be less informative for lens diameter at birth.
+The d15N data are more variable across individuals in both species. This could be explained by the large size at birth and the generalist/opportunistic feeding strategy following birth. Even though pups are more gape-limited than adults, pups of both species could potentially feed at some of the same trophic levels as the adults. The initial peak of d15N is difficult to identify in most individuals and may be less informative for inferring lens diameter at birth.
 
+## Estimating fish length at the time of layer formation
 
-## Estimatig fish length at the time of layer formation
 ```{r TLc}
 #| echo: false
 #| warning: false
@@ -953,16 +955,18 @@ for (i in 1:length(unq_key)){
 
 est_dat <- est_dat %>% 
   left_join(loop_out)
+
+write.csv(est_dat, paste0(getwd(), '/TLt_at_layerdiam.csv'))
   
 ```
 
-The TLt was estimated for each layer diameter based on the linear regression, with uncertainty (@fig-F8). The *TL~t~* estimates derived from the regression of the LDw were smaller, for both species, and resulted in many negative *TL~t~* estimates and many *TL~t~* well below the hypothesized size at birth. 
+The *TL~t~* was estimated for each layer diameter based on the linear regression, with uncertainty (@fig-F8). The *TL~t~* estimates derived from the regression of the *LD~w~* were smaller for both species and resulted in many negative *TL~t~* estimates and many *TL~t~* well below the hypothesized size at birth.
 
 # Discussion
 
-The type and composition of the layer diameters being used to predict length needs to be considered. The ratio of the whole lens diameter to the first hardened layers (or diameter at the first post-apoptotic layer) increases with size of the eye. It is unclear if this is a function of time or size, or both. The LDw includes the pre-apoptotic layers and the capsule surrounding the whole lens. The process of apoptosis may occur at different rates throughout the growth trajectory of an animal, resulting in the significant change in the relationship between the LDh and LDw. It would be incorrect to make further predictions without considering the different biological processes between the LDh and LDw.
+This work illustrates that the type and composition of the layer diameters being used to predict length need to be considered. The ratio of the whole lens diameter to the first hardened layers (or diameter at the first post-apoptotic layer) increases with the size of the eye. It is unclear if this is a function of time or size, or both. The *LD~w~* includes the pre-apoptotic layers and the capsule surrounding the whole lens. The process of apoptosis may occur at different rates throughout the growth trajectory of an animal, resulting in the significant change in the relationship between the *LD~h~* and *LD~w~*. It would be incorrect to make further predictions without considering the different biological processes between the *LD~h~* and *LD~w~*.
 
-The majority of the layer diameter data for this study is from the post-apoptotic layers. For consistency, we recommend using the linear model between the LDh and TLc to predict TLt. The LDw is representative to the TLc, not to post-apoptotic processes.
+The majority of the layer diameter data for this study is from the post-apoptotic layers. For consistency, we recommend using the linear model between the *LD~h~* and *TL~c~* to predict *TL~t~*. The *LD~w~* is representative of the *TL~c~*, not to post-apoptotic processes.
 
 The stable isotope data does not appear to be informative for estimating lens diameter at age-0, but further discussions and interpretations may change this.
 
@@ -1183,7 +1187,8 @@ ggsave(plot = f6,
        dpi = 300)
 ```
 
-![Linear regressions of the LDh and the LDw to the total length at capture. Shaded region represents the 95% confidence interval.](Fig6_LD_TL.png){#fig-F6}
+![Linear regressions of the *LD~h~* and the *LD~w~* to the total length at capture. Shaded region represents the 95% confidence interval.](Fig6_LD_TL.png){#fig-F6}
+
 ```{r Fig7}
 #| echo: false
 #| warning: false
@@ -1259,7 +1264,7 @@ ggsave(plot = f7,
        dpi = 300)
 ```
 
-![Bulk d13c data with individual GAM models for each animal. Solid vertical lines are the mean layer diameter of the model minimum d13c, Dashed lines are the 95% confidence interval](Fig7_d13c.png){#fig-F7}
+![Bulk d13C and d15N data with individual fitted GAMs for each animal. Solid vertical lines are the mean layer diameter of the model minimum d13C, Dashed lines are the 95% confidence interval](Fig7_d13c.png){#fig-F7}
 
 ```{r Fig8}
 #| echo: false
@@ -1299,4 +1304,4 @@ ggsave(plot = f8,
        dpi = 300)
 ```
 
-![Predicted total lengths (in mm) based on the whole lens diameters (LDw) and first hardenend layer (LDh) linear models. The horizontal dashed line is the estimated size at birth from literature. The vertical solid black line is the estimated diameter at birth based on the d13c data, with 95% confidence intervals in dashed lines.](Fig8_predTL.png){#fig-F8}
+![Predicted total lengths (in mm) based on the whole lens diameters (*LD~w~*) and first hardenend layer (*LD~h~*) linear models. The horizontal dashed line is the estimated size at birth from literature. The vertical solid black line is the estimated diameter at birth based on the d13C data, with 95% confidence intervals in dashed lines.](Fig8_predTL.png){#fig-F8}

@@ -44,6 +44,23 @@ layer_dat <- read_sheet('1j-TdYjQsN56HmBb07apldWv-TvOh1S_9T3oP6LuKoHU') %>% clea
          ala_stdv, gly,	gly_stdv,	thr,	thr_stdv,	ser,	ser_stdv,	val,	val_stdv,	leu,	leu_stdv,	ile,	ile_stdv,	nle,	nle_stdv,
          pro,	pro_stdv,	asp,	asp_stdv,	glu,	glu_stdv,	phe,	phe_stdv,	tyr,	tyr_stdv,	lys,	lys_stdv,	csiaa_notes)
 
+# Bring in TL at layer formation estimates----
+# This is a bit circular, but these estimates are built off of the sheets created below, then
+# feed back to add in the estimates to the output data
+# IF TL estimates get updated:
+# Need to run the code, then run the TL estimation code, then this code again.
+
+TLest_dat <- read.csv(paste0(getwd(), '/Analytics/length_backcalc/TLt_at_layerdiam.csv')) %>% 
+  clean_names() %>% 
+  select(std_lyr_id, l_dh_lengthest, lower_c_ih, upper_c_ih) %>% 
+  rename(tldiamest = l_dh_lengthest,
+         tldiamest_ll = lower_c_ih,
+         tldiamest_ul = upper_c_ih) %>% 
+  mutate(tldiam_type = "lm",
+         tldiamest = tldiamest/10,
+         tldiamest_ll = tldiamest_ll/10,
+         tldiamest_ul = tldiamest_ul/10)
+
 # Cleaning up data weirdos ----
 # reads in mixed format columns as lists, convert to character then unnest them
 spec_dat$maturity <- as.character(spec_dat$maturity)
@@ -82,7 +99,9 @@ spec_dat2 <- spec_dat %>%
 # Eye lens diameter estimates ----
 layer_dat <- layer_dat %>% 
   mutate(layer_diam_mm = (diameter_pixels*grid_mm)/grid_pixels) %>% 
-  rename(image_comments = comments2)
+  rename(image_comments = comments2) %>% 
+  select(!c(grid_pixels, grid_mm, diameter_pixels)) %>% 
+  left_join(TLest_dat)
 
 # make nice specimen summary table----
 samp_dat2 <- samp_dat %>% 
@@ -151,7 +170,8 @@ AMS_dat <- samp_dat3 %>%
   filter(f_modern >= 0) %>% 
   select(c(sample_id, specimen_id, species_common_name, sex, length_cm, length_type, 
            haul_year, large_marine_ecosystem, noncon_lat, noncon_long, sample_desc, ams_id, std_lyr_id, new_layer_type,
-           protein_type, layer_order, methods, layer_diam_mm, image_comments, wt_to_nosams_mg, f_modern, fm_err, D14C, D14C_err, delta14C))
+           protein_type, layer_order, methods, layer_diam_mm, image_comments, tldiamest, tldiamest_ll, 
+           tldiamest_ul, wt_to_nosams_mg, f_modern, fm_err, D14C, D14C_err, delta14C))
 
 layer_link <- "https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=0#gid=0"
 AMS_dat %>% write_sheet(ss = layer_link, sheet = "14C_layer_results")
@@ -161,7 +181,8 @@ SIA_dat <- samp_dat3 %>%
   filter(cn_ratio >= 0) %>% 
   select(c(sample_id, specimen_id, species_common_name, sex, length_cm, length_type, 
            haul_year, large_marine_ecosystem, noncon_lat, noncon_long, sample_desc, ams_id, std_lyr_id, new_layer_type,
-           protein_type, layer_order, methods, layer_diam_mm, image_comments, wt_to_sia_mg, wt_p_n, wt_p_c, d15n, d13c, cn_ratio))
+           protein_type, layer_order, methods, layer_diam_mm, image_comments, tldiamest, tldiamest_ll, 
+           tldiamest_ul, wt_to_sia_mg, wt_p_n, wt_p_c, d15n, d13c, cn_ratio))
 
 layer_link <- "https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=0#gid=0"
 SIA_dat %>% write_sheet(ss = layer_link, sheet = "SIA_layer_results")
@@ -172,7 +193,8 @@ CSI_dat <- samp_dat3 %>%
   select(c(sample_id, specimen_id, species_common_name, sex, length_cm, length_type, 
            haul_year, large_marine_ecosystem, noncon_lat, noncon_long, sample_desc, ams_id, std_lyr_id, new_layer_type,
            protein_type, 
-           layer_order, methods, layer_diam_mm, image_comments, wt_to_csiaa, ala, ala_stdv, gly, gly_stdv, thr, thr_stdv,
+           layer_order, methods, layer_diam_mm, image_comments, tldiamest, tldiamest_ll, 
+           tldiamest_ul, wt_to_csiaa, ala, ala_stdv, gly, gly_stdv, thr, thr_stdv,
            ser, ser_stdv, val, val_stdv, leu, leu_stdv, ile, ile_stdv, nle, nle_stdv, pro, pro_stdv, asp, asp_stdv, 
            glu, glu_stdv, phe, phe_stdv, tyr, tyr_stdv, lys, lys_stdv, csiaa_notes))
 
@@ -184,7 +206,8 @@ diam_dat <- samp_dat3 %>%
   filter(layer_diam_mm >= 0) %>% 
   select(c(sample_id, specimen_id, species_common_name, sex, length_cm, length_type, 
            haul_year, large_marine_ecosystem, noncon_lat, noncon_long, sample_desc, ams_id, std_lyr_id, new_layer_type,
-           new_layer_type, protein_type, layer_order, methods, layer_diam_mm, image_comments))
+           new_layer_type, protein_type, layer_order, methods, layer_diam_mm, image_comments, tldiamest, tldiamest_ll, 
+           tldiamest_ul))
 
 layer_link <- "https://docs.google.com/spreadsheets/d/1xeHWScrJwWkeN_YV-C6euG_7G4w3u7nHjjew34BoSP0/edit?gid=0#gid=0"
 diam_dat %>% write_sheet(ss = layer_link, sheet = "layer_diameter_results")

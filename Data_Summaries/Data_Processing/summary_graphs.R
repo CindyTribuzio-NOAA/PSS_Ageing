@@ -247,9 +247,9 @@ ggsave(plot = allCSIAA, paste0(getwd(), '/Data_Summaries/Summary/summary_figs/co
 
 PSS14cdat <- layer_dat %>% 
   filter(species_common_name == "Pacific Sleeper Shark")
-ggplot(PSS14cdat, aes(x = layer_diam_mm, y = f_modern, color = as.factor(sample_id)))+
+PSS14Cfig <- ggplot(PSS14cdat, aes(x = layer_diam_mm, y = f_modern, color = as.factor(sample_id)))+
   geom_line(show.legend = F)+
   scale_color_viridis_d(option = "viridis", end = 0.85)+
   facet_grid(large_marine_ecosystem~.)+
   theme_bw()
-
+ggsave(plot = PSS14Cfig, paste0(getwd(), '/Data_Summaries/Summary/summary_figs/PSS_LME_14C.png'))
